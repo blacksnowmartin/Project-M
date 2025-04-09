@@ -2,7 +2,7 @@
 
 Here are some Happy New Year resolutions you can consider:
 
-**1. Quit Smoking:**
+**1. Quit Porn:**
 
 * **Action Plan:**
     * Set a quit date and stick to it.
