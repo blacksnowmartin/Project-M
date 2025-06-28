@@ -7,7 +7,7 @@ amazing remix bass acoustics with bass drum mixing with amazing fantastic build 
 start syncing the amazing acoustics with havana synthwave beat then electro-house beat and climax with rhumba style
 ```
 ```bash
-amazing remix bass acoustics with bass drum mixing with electrohouse build sessions for the beat
+amazing remix bass acoustics with bass drum mixing with electrohouse builds for climax sessions for the beat
 ```
 ```bash
 smooth upbeat piano play at first then electro-house beat next with super deejaying of acoustics backed by bass mixing
