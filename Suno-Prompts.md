@@ -32,3 +32,33 @@ Kindly check the full remix Youtube Blacksnow Martin and don't forget to subcrib
 ```bash
 soothing afro beat made into a calming electro-house with a taste of upbeat dancehall and reggaeton
 ```
+```bash
+dancecore
+```
+```bash
+rumba
+```
+```bash
+Harpischord Ambient House
+```
+```bash
+Caribbean
+```
+```bash
+Anti-folk Drumstep
+```
+```bash
+Hyper-grime
+```
+```bash
+Dakar afrobeat
+```
+```bash
+Spanish Acoustic Rock
+```
+```bash
+Celtic cloud rap
+```
+```bash
+Grunge African Folk
+```
