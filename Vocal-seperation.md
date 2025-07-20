@@ -1,7 +1,3 @@
-Yes, I can absolutely help you write code and create a software tool that separates vocals from songs.
-
-This process is commonly known as **source separation** or **vocal isolation**, and there are a few well-known methods to achieve it, including:
-
 ---
 
 ### ✅ **Options to Implement Vocal Separation**
