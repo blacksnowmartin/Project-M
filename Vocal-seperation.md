@@ -1,3 +1,5 @@
+
+
 ---
 
 ### ✅ **Options to Implement Vocal Separation**
@@ -79,14 +81,5 @@ This will create stems like:
 
 ---
 
-### ✅ Want a GUI App Instead?
+### ✅ Article by Martin Kitonga
 
-If you’d like, I can also help you build a **Python desktop app using Tkinter or PyQt** that lets you upload a song and get vocals separated.
-
-Let me know:
-
-* Do you want a **command-line tool** or a **desktop app**?
-* Do you have a preference for **Spleeter or Demucs**?
-* What format is your input audio in? (e.g., MP3, WAV)
-
-I can tailor the code or create a full project based on your setup.
