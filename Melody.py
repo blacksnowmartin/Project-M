@@ -30,3 +30,5 @@ plt.show()
 
 # Optionally, print out the MIDI notes
 print(midi_notes)
+
+# Add a GUI for this code
