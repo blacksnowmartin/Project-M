@@ -92,6 +92,4 @@ Here are some Happy New Year resolutions you can consider:
     * Show your loved ones that you care.
     * Create memories that will last a lifetime.
 
-**Remember:**
 
-The key to achieving your New Year's resolutions is to set realistic goals, make a plan, and stick to it. Don't be afraid to ask for help from friends, family, or professionals. Most importantly, be patient with yourself and celebrate your progress along the way.
