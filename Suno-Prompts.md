@@ -67,15 +67,7 @@ Havana Electropop
 boom-bap hip-hop remix to EDM/electro-house. Filtered drums, deep bass, then synth arps, 4/4 kick, off-beat hats. Drop: supersaw lead, side-chained bass, intricate drums. Breakdown to climax
 ```
 
-```bash
-[Instrumental]
-[Intro] [Gentle synth washes, distant chime SFX, airy pads, opening up.]
-[Verse] [Mellow half-time beat, liquid bassline, sparkling synth melody, serene atmosphere.]
-[Build-up] [Gentle filter opening, subtle synth swell, cymbal crash, soft transition.]
-[Chorus] [Deep sub-bass, intricate drum patterns, lush emotional chords, melodic wubs.]
-[Breakdown] [Floating arpeggios, warm pads, ethereal voices (instrumental), calm descent.]
-[Outro] [Fading synth chords, soft ambience, peaceful resolution.]
-```
+
 ```bash
 [Instrumental]
 [Intro] 
