@@ -65,7 +65,7 @@ Celtic cloud rap
 Grunge African Folk
 ```
 ```bash
-Havana Electropop
+Havana Electropop with edm effects
 ```
 ```bash
 boom-bap hip-hop remix to EDM/electro-house. Filtered drums, deep bass, then synth arps, 4/4 kick, off-beat hats. Drop: supersaw lead, side-chained bass, intricate drums. Breakdown to climax
