@@ -13,7 +13,7 @@ root.title("YouTube Video Links")
 
 # Video data
 videos = {
-    "Python Programming Tutorial": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+    "DeeJaying on a PC": "https://www.youtube.com/watch?v=A4VFRKz1uSU",
     "Data Science with Python": "https://www.youtube.com/watch?v=LHc8j8g1g0A",
     "Machine Learning Basics": "https://www.youtube.com/watch?v=Gv9_4yMHFhI",
 }
