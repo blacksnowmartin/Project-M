@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody Sequencer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase-related global variables from the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        
+        // Log all Firebase messages to console for debugging
+        setLogLevel('Debug');
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        let userId = '';
+        let isAuthReady = false;
+
+        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+        const sequencerContainer = document.getElementById('sequencer');
+        const playButton = document.getElementById('play-btn');
+        const saveButton = document.getElementById('save-btn');
+        const loadButton = document.getElementById('load-btn');
+        const stopButton = document.getElementById('stop-btn');
+        const tempoSlider = document.getElementById('tempo');
+        const statusMessage = document.getElementById('status-message');
+        const userIdDisplay = document.getElementById('user-id-display');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        const notes = ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5"];
+        const numSteps = 16;
+        const grid = [];
+
+        // Authentication and Firestore setup
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                userId = user.uid;
+                userIdDisplay.textContent = `Your User ID: ${userId}`;
+                isAuthReady = true;
+                // Once authenticated, start listening to data
+                listenToData();
+            } else {
+                // If no user, sign in anonymously or with custom token
+                try {
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                } catch (error) {
+                    console.error("Firebase Auth Error:", error);
+                }
+            }
+        });
+
+        const listenToData = () => {
+            const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
+            onSnapshot(userDocRef, (docSnap) => {
+                if (docSnap.exists() && isAuthReady) {
+                    try {
+                        const data = docSnap.data();
+                        if (data && data.notes) {
+                            const parsedNotes = JSON.parse(data.notes);
+                            if (parsedNotes.length === notes.length && parsedNotes[0].length === numSteps) {
+                                parsedNotes.forEach((row, rowIndex) => {
+                                    row.forEach((value, colIndex) => {
+                                        grid[rowIndex][colIndex] = value;
+                                        const cell = sequencerContainer.children[rowIndex].children[colIndex];
+                                        if (cell) {
+                                            cell.classList.toggle('bg-blue-500', value);
+                                            cell.classList.toggle('bg-gray-200', !value);
+                                        }
+                                    });
+                                });
+                                showMessage("Pattern loaded successfully!");
+                            }
+                        }
+                    } catch (e) {
+                        console.error("Error parsing Firestore data:", e);
+                    }
+                }
+            }, (error) => {
+                console.error("Error fetching Firestore data:", error);
+            });
+        };
+
+        // Create the sequencer grid
+        const createGrid = () => {
+            sequencerContainer.innerHTML = '';
+            for (let i = 0; i < notes.length; i++) {
+                const row = document.createElement('div');
+                row.className = 'flex justify-center';
+                const rowData = [];
+                for (let j = 0; j < numSteps; j++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'w-8 h-8 md:w-10 md:h-10 border border-gray-300 m-0.5 rounded-sm transition-colors cursor-pointer bg-gray-200 hover:bg-gray-300';
+                    cell.dataset.row = i;
+                    cell.dataset.col = j;
+                    cell.addEventListener('click', () => {
+                        const isNoteOn = !grid[i][j];
+                        grid[i][j] = isNoteOn;
+                        cell.classList.toggle('bg-blue-500', isNoteOn);
+                        cell.classList.toggle('bg-gray-200', !isNoteOn);
+                    });
+                    row.appendChild(cell);
+                    rowData.push(false);
+                }
+                sequencerContainer.appendChild(row);
+                grid.push(rowData);
+            }
+        };
+
+        let currentStep = 0;
+        let loop = null;
+
+        const showMessage = (message) => {
+            statusMessage.textContent = message;
+            statusMessage.classList.remove('hidden');
+            setTimeout(() => {
+                statusMessage.classList.add('hidden');
+            }, 3000);
+        };
+
+        // Play/Stop logic
+        const startPlayback = () => {
+            if (loop) return; // Prevent multiple loops
+            Tone.Transport.start();
+            loop = new Tone.Loop(time => {
+                const step = currentStep % numSteps;
+                // Highlight the current step
+                document.querySelectorAll('.sequencer-cell-highlight').forEach(el => el.classList.remove('bg-yellow-300', 'sequencer-cell-highlight'));
+                
+                const currentColumn = document.querySelectorAll(`[data-col="${step}"]`);
+                currentColumn.forEach(cell => {
+                    cell.classList.add('bg-yellow-300', 'sequencer-cell-highlight');
+                });
+                
+                // Play notes
+                notes.forEach((note, noteIndex) => {
+                    if (grid[noteIndex][step]) {
+                        synth.triggerAttackRelease(note, "8n", time);
+                    }
+                });
+                currentStep++;
+            }, "8n").start(0);
+            
+            playButton.textContent = 'Playing...';
+            playButton.disabled = true;
+            stopButton.disabled = false;
+        };
+
+        const stopPlayback = () => {
+            Tone.Transport.stop();
+            if (loop) {
+                loop.dispose();
+                loop = null;
+            }
+            currentStep = 0;
+            playButton.textContent = 'Play';
+            playButton.disabled = false;
+            stopButton.disabled = true;
+            document.querySelectorAll('.sequencer-cell-highlight').forEach(el => el.classList.remove('bg-yellow-300', 'sequencer-cell-highlight'));
+        };
+
+        // Button Event Listeners
+        playButton.addEventListener('click', startPlayback);
+        stopButton.addEventListener('click', stopPlayback);
+
+        // Save pattern to Firestore
+        saveButton.addEventListener('click', async () => {
+            if (!isAuthReady) {
+                showMessage("Authentication not ready. Please wait.");
+                return;
+            }
+            loadingIndicator.classList.remove('hidden');
+            try {
+                const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
+                const serializedNotes = JSON.stringify(grid);
+                await setDoc(docRef, {
+                    notes: serializedNotes,
+                    timestamp: Tone.now(),
+                    tempo: Tone.Transport.bpm.value
+                });
+                showMessage("Pattern saved successfully!");
+            } catch (e) {
+                console.error("Error saving document:", e);
+                showMessage("Error saving pattern. Check console.");
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+
+        // Load pattern from Firestore
+        loadButton.addEventListener('click', async () => {
+            if (!isAuthReady) {
+                showMessage("Authentication not ready. Please wait.");
+                return;
+            }
+            loadingIndicator.classList.remove('hidden');
+            try {
+                const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    if (data && data.notes) {
+                        const parsedNotes = JSON.parse(data.notes);
+                        if (parsedNotes.length === notes.length && parsedNotes[0].length === numSteps) {
+                            // Update the grid and UI
+                            parsedNotes.forEach((row, rowIndex) => {
+                                row.forEach((value, colIndex) => {
+                                    grid[rowIndex][colIndex] = value;
+                                    const cell = sequencerContainer.children[rowIndex].children[colIndex];
+                                    if (cell) {
+                                        cell.classList.toggle('bg-blue-500', value);
+                                        cell.classList.toggle('bg-gray-200', !value);
+                                    }
+                                });
+                            });
+                            // Update Tempo
+                            if (data.tempo) {
+                                tempoSlider.value = data.tempo;
+                                Tone.Transport.bpm.value = data.tempo;
+                            }
+                            showMessage("Pattern loaded successfully!");
+                        } else {
+                            showMessage("Data structure mismatch. Cannot load.");
+                        }
+                    }
+                } else {
+                    showMessage("No saved pattern found.");
+                }
+            } catch (e) {
+                console.error("Error loading document:", e);
+                showMessage("Error loading pattern. Check console.");
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+
+        // Clear button logic
+        document.getElementById('clear-btn').addEventListener('click', () => {
+            stopPlayback();
+            grid.forEach(row => row.fill(false));
+            document.querySelectorAll('#sequencer div div').forEach(cell => {
+                cell.classList.remove('bg-blue-500');
+                cell.classList.add('bg-gray-200');
+            });
+            showMessage("Grid cleared.");
+        });
+
+        // Tempo slider logic
+        tempoSlider.addEventListener('input', (e) => {
+            Tone.Transport.bpm.value = e.target.value;
+            document.getElementById('tempo-display').textContent = `${e.target.value} BPM`;
+        });
+        
+        // Initial setup
+        window.onload = () => {
+            createGrid();
+            Tone.start();
+            Tone.Transport.bpm.value = tempoSlider.value;
+            stopButton.disabled = true;
+            document.getElementById('tempo-display').textContent = `${tempoSlider.value} BPM`;
+        };
+    </script>
+    <style>
+        .sequencer-cell-highlight {
+            transition: background-color 0.1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen font-sans p-4">
+    <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full flex flex-col items-center space-y-6">
+        <div class="text-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Melody Sequencer</h1>
+            <p class="mt-2 text-md text-gray-500">Click on the grid to create a beat. Save it for later!</p>
+            <div id="user-id-display" class="mt-2 text-xs text-gray-400">Loading user ID...</div>
+        </div>
+        
+        <!-- Sequencer Grid -->
+        <div id="sequencer" class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
+            <!-- Grid will be generated by JavaScript -->
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-wrap justify-center gap-2 md:gap-4 mt-4 w-full">
+            <button id="play-btn" class="px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-md hover:bg-green-600 transition-transform transform hover:scale-105">Play</button>
+            <button id="stop-btn" class="px-6 py-3 bg-red-500 text-white font-bold rounded-full shadow-md hover:bg-red-600 transition-transform transform hover:scale-105">Stop</button>
+            <button id="clear-btn" class="px-6 py-3 bg-gray-500 text-white font-bold rounded-full shadow-md hover:bg-gray-600 transition-transform transform hover:scale-105">Clear</button>
+            <button id="save-btn" class="px-6 py-3 bg-indigo-500 text-white font-bold rounded-full shadow-md hover:bg-indigo-600 transition-transform transform hover:scale-105">Save</button>
+            <button id="load-btn" class="px-6 py-3 bg-purple-500 text-white font-bold rounded-full shadow-md hover:bg-purple-600 transition-transform transform hover:scale-105">Load</button>
+        </div>
+
+        <!-- Tempo Slider -->
+        <div class="w-full max-w-xs text-center space-y-2">
+            <label for="tempo" class="text-sm font-semibold text-gray-700">Tempo: <span id="tempo-display">120 BPM</span></label>
+            <input type="range" id="tempo" min="60" max="240" value="120" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
+        </div>
+
+        <!-- Status Message and Loading -->
+        <div class="relative w-full text-center h-8">
+            <div id="status-message" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden"></div>
+            <div id="loading-indicator" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Processing...
+            </div>
+        </div>
+    </div>
+</body>
+</html>
