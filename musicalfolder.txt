@@ -1,0 +1,240 @@
+ Volume in drive C is Windows 10
+ Volume Serial Number is 4EE7-454F
+
+ Directory of C:\Users\User\Downloads\Music
+
+10/03/2025  12:19 AM    <DIR>          .
+10/03/2025  12:19 AM    <DIR>          ..
+06/29/2025  12:26 AM           638,778  Symphony.mp3
+07/14/2025  04:54 AM           581,936 254.mp3
+07/07/2025  07:53 PM         5,747,966 Alex Kasau Katombi - Shabiki KK(official video).mp3
+06/27/2025  02:53 PM         7,772,297 ALEX KASAU KATOMBI - THINGITHA (OFFICIAL 4K VIDEO) Sms SKIZA 8547068 TO 811.mp3
+07/04/2025  10:27 AM         8,692,016 ALEX KASAU KATOMBI-NGATHO(OFFICIAL AUDIO).mp3
+07/11/2025  02:02 AM        11,338,324 ALEX KASAU KATOMBI-NYAMU DANCE CHALLENGE.mp3
+07/02/2025  01:59 AM         8,643,115 ALEX KASAU KATOMBI-SIMBA(OFFICIAL 4K VIDEO).mp3
+05/18/2025  07:13 AM         5,573,014 ALEX+KASAU+KATOMBI-Ex-+(OFFICIAL+VIDEO).m4a
+05/07/2025  08:49 PM         8,093,336 ALEX+KASAU+KATOMBI-KWENDA(OFFICIAL+AUDIO).m4a
+06/26/2025  02:21 AM         5,990,564 Alex+Kasau+Katombi-Thina+(official+video).m4a
+05/28/2025  04:52 PM         5,878,168 Alex+Kasau+kisinga-Wendo+wa+ngoo+(Official+video).m4a
+06/24/2025  12:55 PM           354,357 Another love.mp3
+07/12/2025  10:45 PM         8,918,968 ARUSI A.IC KISAYANI (OFFICIAL VIDEO).mp3
+07/12/2025  10:51 PM           887,882 ARUSI.mp3
+07/06/2025  02:19 AM           405,140 Atarudi.mp3
+07/01/2025  12:21 AM           241,300 Bado 1.mp3
+07/01/2025  12:24 AM           441,502 Bado 2.mp3
+06/07/2025  11:31 PM           853,128 bado ni kinene.m4a
+06/30/2025  11:57 PM         3,999,588 Bado.mp3
+07/13/2025  11:41 PM           786,945 Barua ya Dunia.mp3
+07/02/2025  02:01 AM        12,600,352 Ben Mbatha (Kativui Mweene) - Susu Nomau (Official video) Sms SKIZA 5801825 to 811.mp3
+05/05/2025  05:37 PM         8,764,995 Ben+Mbatha+(Kativui+Mweene)++-+Ni+Tofauti+(Official+video).m4a
+06/18/2025  02:25 AM         6,715,576 Ben+Mbatha+(Kativui+Mweene)+-+Kamjesh+(Official+video)+Sms+SKIZA+5801754+to+811.m4a
+05/02/2025  02:06 PM         8,917,196 Ben+Mbatha+(Kativui+Mweene)+-+Kivuthya+(Official+video).m4a
+05/02/2025  10:07 PM         8,189,705 Ben+Mbatha+(Kativui+Mweene)+-+Mulise+Itini+(Official+video)+Sms+SKIZA+5801788+to+811.m4a
+05/02/2025  10:05 PM         7,674,802 Ben+Mbatha+(Kativui+Mweene)+-+Ndina+Raha+(Official+video)+Sms+SKIZA+5801796+to+811.m4a
+05/02/2025  10:04 PM         5,372,371 Ben+Mbatha+(Kativui+Mweene)+-+Ngakola+Ngitaa+(Official+video)+Sms+SKIZA+5801798+to+811.m4a
+05/10/2025  02:43 PM         8,917,947 Ben+Mbatha+(Kativui+Mweene)+-+Penzi+(Official+video)+Sms+SKIZA+5801818+to+811.m4a
+05/02/2025  10:05 PM         5,666,603 Ben+Mbatha+(Kativui+Mweene)+-+Programme+Xmas+(Official+video)+Sms+SKIZA+5801820+to+811.m4a
+06/18/2025  02:11 AM         8,362,794 Ben+Mbatha+(Kativui+Mweene)+-+Uka+Toto+(Official+Audio).m4a
+07/19/2025  08:54 PM        83,874,520 Best of R&B 2025 Mix ?? Usher, Ne Yo, Beyonce, Nelly, Chris Brown, Rihanna, Ciara, Ashanti.mp3
+06/26/2025  07:45 PM           499,157 Beta.m4a
+06/08/2025  11:18 PM         4,682,742 Bien - Lost & Found (Official Audio).mp3
+05/30/2025  04:39 PM         4,154,233 Bien - Ma Cherie (Official Music Video).mp3
+05/29/2025  11:49 PM           852,241 champez.m4a
+05/01/2025  01:52 PM        10,008,776 Cherono+I+miss+You+by++Ken+Wa+Maria+++(Official+video).m4a
+05/22/2025  12:46 AM         2,693,607 Chris+Kaiga+-+CHAIN+CHAIN+(Official+Music+Video).m4a
+07/18/2025  06:47 PM        39,990,873 CHURCHILL+SHOW+IN+ARUSHA+????-+S01E03.m4a
+07/18/2025  07:10 PM           462,352 CHURCHILL.m4a
+04/30/2025  02:28 AM           275,960 CITIZEN+TV+3D+INTRO+ANIMATION+(REMAKE).m4a
+06/09/2025  09:54 PM         4,571,181 Darassa - Hasara Roho (Official Music Video) - Tanzania.mp3
+06/02/2025  12:47 PM         4,319,352 Diamond+Platnumz+-+Utanipenda+(Lyric+with+English+Translation+Video).m4a
+07/09/2025  11:36 PM         6,676,408 Dicky Mulwa - Munyiva.mp3
+07/09/2025  11:33 PM         6,664,496 Dicky Mulwa - Ngilesi.mp3
+06/09/2025  08:37 PM         5,741,642 Dodo.mp3
+06/26/2025  02:09 AM         8,043,693 Download J Balvin Willy William Mi Gente Official Video by Sky - Listen MP3 320 KBPS & WAV for FREE on Audio.com.mp3
+07/14/2025  04:43 AM         3,310,373 East African Community Anthem - Brass Version.mp3
+07/13/2025  11:33 PM         5,866,403 Elani - Barua Ya Dunia [@elanimuziki] [SKIZA 7630594] SMS to 811.mp3
+06/28/2025  12:32 AM         9,442,462 facebook by nyaiika m.mutisya(OFFICIAL VIDEO ).mp3
+05/06/2025  05:05 PM        11,278,583 Freddie+Googz+Twiikaniata+by+Ken+wa+Maria+(OFFICIAL+VIDEO).m4a
+05/28/2025  05:14 PM         8,937,776 Fundamentals by Ken wa Maria (OFFICIAL VIDEO).mp3
+06/09/2025  09:15 PM         5,019,408 Gundu.mp3
+06/08/2025  10:48 AM           956,428 happy birthay.mp3
+07/06/2025  01:59 AM         7,529,044 Harmonize - Atarudi (Official Music Video).mp3
+07/02/2025  02:50 AM         5,417,515 Harmonize - Mtaje (Official Audio).mp3
+07/17/2025  03:41 PM         5,926,589 Harmonize - Vibaya (Official Audio).mp3
+06/21/2025  06:13 PM         5,947,278 Harmonize - Wapo (Official Audio).mp3
+06/10/2025  10:07 PM           438,957 Hasara Roho.mp3
+05/15/2025  01:25 AM         3,312,266 hayawani.m4a
+04/30/2025  09:05 AM        25,118,559 hulaballoo.m4a
+05/31/2025  10:45 PM           312,352 I love you Rayvanny.mp3
+05/31/2025  11:46 PM           293,964 i miss you.mp3
+04/28/2025  03:56 AM         5,643,987 JOHN+MBAKA+-+KILA+WAVANDA++(Official+Music+Video)+SMS+SKIZA+5294874+TO+811.m4a
+07/20/2025  08:19 PM         4,586,733 Jonas Blue - Rise ft. Jack & Jack Official Instrumental.mp3
+06/21/2025  12:30 AM         6,093,982 Juacali feat Sana - kwaheri (Official Video).mp3
+06/01/2025  06:26 AM        10,004,645 Kalaptop+Pole+by+Ken+wa+Maria+(OFFICIAL+AUDIO).m4a
+05/10/2025  11:26 AM         4,260,022 Katika+Viumbe+Vyote,+Barabara+13+-+Kwa+Viumbe+Vyote.m4a
+05/11/2025  12:57 PM         6,246,784 Katika+Viumbe+Vyote,+Barabara+13+-+Wakati+Ule+wa+Nuhu.m4a
+06/18/2025  12:40 AM         7,220,522 Kelitu Kaseo.mp3
+07/14/2025  04:44 AM           987,565 Kenya National Anthem (Instrumental).mp3
+05/19/2025  03:21 PM         5,387,767 kenya nchi yangu.m4a
+06/24/2025  12:49 AM         8,350,334 KEVIN KYALOH - SYOKA UKE (OFFICIAL VIDEO) SMS SKIZA 8545030 to 811.mp3
+05/29/2025  11:47 PM         4,165,560 KHALIGRAPH+JONES+-+CHAMPEZ+(OFFICIAL+VIDEO).m4a
+07/17/2025  02:22 AM        11,649,913 Kilinga Mweene - Mbikye Ngwikye Official Audio.mp3
+05/24/2025  01:07 AM         9,512,742 kilunda kiyisi mbesa.m4a
+07/02/2025  02:56 AM         8,739,693 KITHUNGUDI BY SANITA WOTE OFFICIAL AUDIO.mp3
+05/25/2025  12:00 AM         8,563,485 Kuku+Danger+-+Uthaithi+wa+Kivindu+(Official+Visualizer).m4a
+05/11/2025  09:00 PM           230,306 kungulu+kwangal-111pc.m4a
+05/11/2025  08:47 PM         7,863,428 kungulu+kwangala+(Official+cover+video)+by+kasheshe+parody+++kangaroo+Tv.m4a
+07/01/2025  12:06 AM           169,580 Kwangwaru 1.m4a
+07/01/2025  12:11 AM           220,507 Kwangwaru T.m4a
+07/01/2025  12:01 AM         3,642,489 Kwangwaru.m4a
+06/22/2025  02:38 PM         6,771,075 Kwetu Pazuri.mp3
+05/24/2025  01:13 AM         4,809,288 kwoosa uvoo .m4a
+07/06/2025  02:03 AM         5,962,951 Lava Lava - Desh Desh (Official Music Video).mp3
+07/06/2025  02:04 AM         5,962,951 Lava Lava - Desh Desh (Official Music Video)_2.mp3
+06/17/2025  12:36 AM        11,772,793 Les Wanyika - Sina Makosa.mp3
+06/24/2025  12:44 PM         4,482,122 Lewis Capaldi - Someone You Loved.mp3
+07/20/2025  08:27 PM         5,644,466 Lil Nas X, Jack Harlow - INDUSTRY BABY (Instrumental).mp3
+05/30/2025  04:50 PM           450,906 Ma cherie.mp3
+05/09/2025  08:59 PM         6,486,222 MAIMA+-+BADO+NIKINENE+(Official+video).m4a
+06/04/2025  12:42 AM         6,286,965 MAIMA+-+KINZE+KATANGI+(Official+video).m4a
+05/13/2025  04:50 PM         7,098,667 MAIMA+-+MAIMA+NDIMUTHUKUMI+(Official+video).m4a
+04/28/2025  03:42 AM         6,698,507 MAIMA+-+UTONYI+WA+MAIMA+(Official+video).m4a
+05/20/2025  10:15 PM         8,458,715 MAIMA+-+WIMUSEO+NGAI+(Official+video).m4a
+07/11/2025  11:22 PM           595,102 Maimu Fake.mp3
+06/05/2025  08:06 PM         6,902,529 MARIETTA.m4a
+07/11/2025  10:20 PM         8,651,892 Mavenzi Ma Anita Official Audio By Kijana Musyoki.mp3
+04/28/2025  04:33 AM         6,362,626 MBESA+-+Sms+Skiza+5290044+to+811+Justus+Myello+(Official+Lyrics+Videoc2019).m4a
+07/17/2025  02:24 AM           506,076 Mbikye Ngwikye.mp3
+06/17/2025  12:37 AM        13,091,245 Mbilia Bel - Nakei Nairobi (El Alambre) [Clip Officiel].mp3
+07/06/2025  02:32 AM         5,468,297 Mbosso - Pawa (Official Music Video).mp3
+07/17/2025  03:15 PM         5,468,297 Mbosso - Pawa (Official Music Video)_2.mp3
+06/19/2025  11:51 AM         4,576,163 Mbosso Ft Costa Titch & Alfa Kat - Shetani (Official Music Video).mp3
+05/18/2025  12:01 AM         4,954,625 Mbwe Mbwe Official Music Video.mp3
+06/26/2025  02:32 AM         1,888,408 mi gen.mp3
+06/26/2025  02:26 AM         1,502,214 Mi gente.mp3
+05/16/2025  01:16 PM         6,018,472 Miao Ya Nzovi official video.mp3
+05/12/2025  02:14 PM         4,545,025 minimal-pressure.mp3
+07/04/2025  02:36 AM         9,320,835 Misuuni Super Jazz - Syindu Sya Nzeve (Official video).mp3
+05/16/2025  09:45 AM        36,703,043 mkuru.m4a
+07/22/2025  09:52 AM        20,449,626 Morning I AM Affirmations to Attract Wealth & Abundance! 21 Day Challenge!.mp3
+07/22/2025  10:03 AM        20,449,626 Morning I AM Affirmations to Attract Wealth & Abundance! 21 Day Challenge!_2.mp3
+07/05/2025  12:51 AM           563,349 movie afro.mp3
+05/01/2025  12:58 PM         6,322,380 Mr.Kampango_Mercy+Ka+Kanyangi+(Official+Video+part+2)+Sms+Skiza+8541611+to+811.m4a
+06/13/2025  09:17 PM         9,382,813 MRS.MJ+BY+KAEWA+SUPERSTARS(4K+VIDEO)--+REACH+US+VIA+..0713501701.m4a
+07/08/2025  09:13 PM           698,546 Mukui wa Miti.mp3
+07/09/2025  11:41 PM         1,225,802 Munyiva.mp3
+07/07/2025  08:12 PM           765,629 Muoi Musyi s.mp3
+07/07/2025  06:54 PM        12,665,554 Muoi Musyi.mp3
+10/03/2025  12:19 AM                 0 musicalfolder.txt
+07/14/2025  06:15 PM         6,619,356 Mutoriah - Nakuombea (Official Video).mp3
+05/08/2025  01:30 PM         9,095,968 mutwawa kakai kilonzo.m4a
+07/08/2025  09:17 PM           229,440 mweene cinema.m4a
+07/14/2025  06:11 PM        13,984,633 MWENDWA - ELYX B DAN (Official Music Video)  -SMS SKIZA 5813719 TO 811.mp3
+07/14/2025  06:14 PM        13,984,633 MWENDWA - ELYX B DAN (Official Music Video)  -SMS SKIZA 5813719 TO 811_2.mp3
+05/05/2025  06:15 PM         4,880,093 mwendwa maria (2).m4a
+05/05/2025  05:39 PM         4,880,093 mwendwa maria.m4a
+07/08/2025  05:01 PM         7,456,884 mwene cinema.m4a
+05/26/2025  06:13 PM           896,918 My+Darling+rmx+-+Chella+ft.+Diamond+Platnumz+dance+challenge??????????+#dance+#chella+#diamond.m4a
+07/15/2025  08:35 PM         2,439,973 Nakuombea sana.mp3
+07/15/2025  08:33 PM         2,099,337 Nakuombea.mp3
+04/30/2025  10:17 AM         5,309,543 NDEKE+YA+MUTHANGA+-NGAI+EKAA+TAKE+(+SATANI+EWITE+KISšNGULI)+(Official+4K+Video)+SKIZA+6912719+TO+811.m4a
+05/06/2025  07:10 AM         6,485,380 ndoloto.m4a
+05/24/2025  08:28 PM         8,629,977 Ngai+evinya+ketha+niokwo+-+kinyambu+boys+band+(official+audio).m4a
+07/05/2025  12:50 AM           389,466 Ngatho.mp3
+05/16/2025  10:36 AM         6,305,857 ngavisaa ni nau.m4a
+07/09/2025  11:35 PM           366,269 Ngilesi.mp3
+07/12/2025  10:53 PM           436,486 Ngozi Ya Kondoo.mp3
+06/29/2025  12:22 AM           347,461 Niiwa ninoete.mp3
+06/28/2025  05:30 AM        17,771,970 Niiwa ninoete[NINGUTHINA].mp3
+05/12/2025  04:25 PM           324,334 nokia tune.m4a
+06/03/2025  02:31 PM        10,572,832 Nosie Kamuchina by Ken wa Maria (OFFICIAL AUDIO).mp3
+05/13/2025  02:25 PM           262,197 Ntampata Wapi.mp3
+05/31/2025  10:57 PM           240,881 Number one.mp3
+07/11/2025  02:05 AM           556,858 NYAMU DANCE.mp3
+05/15/2025  01:08 AM         3,679,005 Nyashinski+-+Time+Of+My+Life+(feat.+Bien).m4a
+07/13/2025  11:32 PM         5,850,102 OCTOPIZZO -  Oliel  [ItsNambaNaneTv].mp3
+07/13/2025  11:40 PM           739,297 Oliel.mp3
+04/30/2025  08:22 AM        26,554,746 Premier+Full+Episode+-++Pete+S1+Episode+1+-+Maisha+Magic+East.m4a
+05/30/2025  04:28 AM         5,128,496 Rayvanny - I love you (Official Music Video) SMS SKIZA 8548826 to 811.mp3
+06/22/2025  02:37 PM         9,972,225 Rose Muhando Hatumo.mp3
+05/06/2025  05:33 PM         9,755,560 saida amua sasa.m4a
+06/16/2025  01:00 AM        14,424,237 Saida Karoli - Baba Tajiri (Official Audio).mp3
+07/11/2025  10:51 PM        14,352,646 Sayona Boys Band (Musakati) - Maimu Fake (Official Audio).mp3
+06/19/2025  03:28 PM           509,211 Shetani.mp3
+05/06/2025  05:19 PM         9,925,786 Shiku+Wa+Huruma+by+Ken+wa+Maria+(OFFICIAL+VIDEO).m4a
+06/26/2025  11:01 PM           537,635 Simba wa Juda.mp3
+06/26/2025  10:56 PM         9,343,337 Simba wa Yuda.mp3
+07/02/2025  02:04 AM           369,404 Simba.mp3
+04/28/2025  04:51 AM         4,461,433 siri ya maisha mengele.mp3
+05/07/2025  11:04 PM           658,402 solo+guitar+??kamba+Benga+??.m4a
+06/24/2025  12:46 PM           322,383 Someone you loved.mp3
+05/29/2025  11:58 PM           727,803 stereo-love.mp3
+06/29/2025  01:40 PM        65,875,101 summer nostalgia - rihanna, avicii, justin bieber, kygo, selena gomez, alok, bastille, david guetta.mp3
+06/29/2025  01:41 PM        65,875,101 summer nostalgia - rihanna, avicii, justin bieber, kygo, selena gomez, alok, bastille, david guetta_2.mp3
+06/29/2025  02:27 PM           273,482 summer.mp3
+06/19/2025  11:52 AM         9,584,150 Super Mazembe - Kasongo.mp3
+07/02/2025  02:02 AM           388,839 susu nomau.mp3
+05/18/2025  06:28 AM         3,162,416 Sweet Love ft Diamond Platnumz OFFICIAL VIDEO.mp3
+05/27/2025  10:40 AM         6,434,409 Takeoff - Casper (Official Video).mp3
+07/08/2025  04:56 PM        12,637,342 TALA BOYS - Mukui wa Miti pt.1 (Official video).mp3
+06/26/2025  02:23 AM           239,120 Thina.m4a
+06/27/2025  10:42 PM           541,812 Thingitha (Drums) Sokola.mp3
+06/27/2025  10:40 PM           711,086 Thingitha bass kasyiima.mp3
+06/27/2025  10:37 PM           702,935 Thingitha rythm mukuu.mp3
+06/27/2025  10:34 PM           654,662 Thingitha solo.mp3
+04/30/2025  11:45 PM           244,219 This+was+extremely+superior,+best+of+kamba+benga.m4a
+05/15/2025  01:10 AM           243,731 time of my life.m4a
+06/24/2025  12:53 PM         5,944,770 Tom Odell - Another Love (Official Video).mp3
+05/07/2025  11:02 PM           973,626 Top+Kamba+Guitarist+??????Kitema+Tsunami+playing+his+best+Benga+strums,+The+best+of+Kamba+Guitar+Music.m4a
+05/17/2025  11:54 PM           166,902 Tujiangalie.mp3
+07/17/2025  02:21 AM         7,404,284 Tumbo usu - Katika Nduku (Visualizer) 4k Video.mp3
+07/11/2025  01:58 AM        12,046,138 Tunga Ndukowae by Kaewa Superstars (Official Video)  254713 501 701.mp3
+07/11/2025  02:04 AM           453,413 Tunga Ndukowae.mp3
+07/19/2025  05:47 AM         5,336,013 Tupatane (Instrumental).mp3
+05/19/2025  03:42 PM         7,513,588 Tuyingwa+Kombe+By+Karanga+Lazima+(Official+Video).m4a
+06/18/2025  02:12 AM           250,650 Uka toto.m4a
+06/11/2025  04:54 PM         5,096,883 UKAMBANI+--+DIANA+CHEMUTAI+CHELELE.m4a
+05/30/2025  04:21 PM         5,854,510 umau-ngwikie-ata.m4a
+06/04/2025  10:49 PM           449,861 Uninyunyizie Maji Official Video-[Reverse].mp3
+06/04/2025  10:38 PM         3,739,199 Uninyunyizie Maji Official Video.mp3
+06/04/2025  10:41 PM           576,920 Uninyunyizie Maji.mp3
+06/02/2025  12:52 PM           440,179 Utanipenda.m4a
+07/17/2025  03:47 PM           327,399 Vibaya.mp3
+06/21/2025  09:25 PM         5,363,598 VITAA & SLIMANE - Avant toi (Clip Officiel).mp3
+07/19/2025  11:16 PM         6,391,150 Wakadinali - Maproso Ft Suzanna Owiyo (Official Music Video).mp3
+06/21/2025  09:28 PM           424,574 Wapo 1-11.mp3
+06/24/2025  12:09 AM           243,809 wemdo wa ngoo.m4a
+05/28/2025  05:00 PM           243,809 wendo wa ngoo.m4a
+07/05/2025  01:54 AM         9,565,342 WOKAA KI - MISUUNI BOYZ BAND (OFFICIAL VIDEO).mp3
+07/05/2025  01:55 AM           349,968 WOKAA KI.mp3
+06/04/2025  10:57 PM         6,103,735 y2mate.com - AKO WAPI MPENZI  BY DIANA CHELELE MUSILA.mp3
+05/02/2025  10:10 PM         4,353,599 y2mate.com - ALEX KASAU KATOMBI  MUNDU NANDU OFFICIAL 4K VIDEO.mp3
+06/07/2025  11:55 AM         3,259,800 y2mate.com - BENSOUL  FORGET YOU ACOUSTIC SMS Skiza 8549274 to 811.mp3
+06/29/2025  12:22 AM         3,394,801 y2mate.com - Clean Bandit  Symphony feat Zara Larsson Instrumental.mp3
+06/02/2025  12:39 PM         3,378,919 y2mate.com - Darassa feat Mbosso  Looking For Love Visualiser.mp3
+05/13/2025  02:23 PM         3,614,230 y2mate.com - Diamond Platnumz  Ntampata Wapi Official Video HD.mp3
+05/15/2025  01:17 PM         3,884,231 y2mate.com - Diamond Platnumz  Sikomi Official Video.mp3
+05/29/2025  11:55 PM         4,042,220 y2mate.com - Edward Maya  Vika Jigulina  Stereo Love Official Music Video.mp3
+05/26/2025  07:34 PM         4,705,103 y2mate.com - Farruko  Pepas Official Video.mp3
+06/08/2025  10:46 AM         3,363,454 y2mate.com - Harmonize  Happy Birthday  Official Music Video.mp3
+04/28/2025  04:09 AM         4,891,095 y2mate.com - IKINYA OFFICIAL VIDEO MYELLO SONGS.mp3
+06/21/2025  12:02 AM         3,366,798 y2mate.com - Jaguar  Kipepeo Official Video Main Switch.mp3
+05/12/2025  07:26 PM        11,595,439 y2mate.com - Keka Tiwe  Barnabas Matundu Official Video.mp3
+05/20/2025  10:08 PM         9,005,626 y2mate.com - KELITU  MAIMAOFFICIAL 4K VIDEO.mp3
+05/01/2025  01:30 PM         5,822,031 y2mate.com - kelitu mbithe by ken wa maria official video.mp3
+04/30/2025  10:28 AM         7,482,165 y2mate.com - KINDU KII KYA YESU KIMUYO  BY  CHRIS NDONYE.mp3
+04/30/2025  10:06 AM         3,243,082 y2mate.com - Marioo feat Bien  Nairobi Visualiser.mp3
+06/11/2025  11:43 PM         4,300,519 y2mate.com - Marlaw  Rita.mp3
+05/12/2025  02:47 PM         3,103,484 y2mate.com - Mutoriah  áeta Official Video.mp3
+05/15/2025  01:16 AM         2,810,076 y2mate.com - Nyashinski  Fly.mp3
+05/31/2025  11:41 PM         6,402,158 y2mate.com - Rayvanny Ft Zuchu  I Miss You Official Music Video.mp3
+05/31/2025  10:56 PM         3,431,581 y2mate.com - Rayvanny Ft Zuchu  Number One Official Video.mp3
+05/17/2025  11:53 PM         3,551,118 y2mate.com - Sauti Sol  Tujiangalie ft Nyashinski Official Lyric Video SMS Skiza 1051931 to 811.mp3
+05/12/2025  04:06 PM         4,065,626 y2mate.com - SIFU BWANA  Khaligraph Jones Ft Nyashinski Official Song.mp3
+06/16/2025  01:27 AM         6,425,632 Z Anto  Kisiwa Cha Malavidavi  Official Video.mp3
+05/09/2025  01:21 PM        10,207,282 [OFFICIAL+VIDEO]+KIJANA+MUMO+-+KIUMO+NA+UOI+-+BEST+TOP+NEW+KAMBA+SONG.m4a
+             228 File(s)  1,451,551,042 bytes
+
+     Total Files Listed:
+             228 File(s)  1,451,551,042 bytes
+               2 Dir(s)   6,445,551,616 bytes free

@@ -1,0 +1,943 @@
+ Volume in drive C is Windows 10
+ Volume Serial Number is 4EE7-454F
+
+ Directory of C:\Users\User\Downloads
+
+10/02/2025  06:44 PM    <DIR>          .
+10/02/2025  06:44 PM    <DIR>          ..
+01/25/2025  10:42 AM        33,270,634 -TUK_VRS_18538297.apk
+11/08/2024  12:27 PM        24,001,830 1.0.5-packet-tracer---logical-and-physical-mode-exploration.pka
+02/01/2025  01:11 AM           197,905 1738361502754.jpg
+08/18/2025  05:59 PM           793,964 1755517101961 (1).jpg
+07/20/2025  06:44 PM        91,511,994 2 Player games _ the Challenge_7.7.3_APKPure.xapk
+03/10/2025  10:58 AM           129,240 2025-03-10T07-58_export.csv
+03/03/2025  12:46 AM         1,244,090 20250302173400__MG_1741.jpg
+03/03/2025  12:46 AM         1,532,806 20250302173643__MG_1743.jpg
+03/03/2025  12:46 AM         1,421,828 20250302173857__MG_1744.jpg
+03/03/2025  12:46 AM         1,326,509 20250302174200__MG_1747.jpg
+02/01/2025  01:07 AM           358,870 375792015_1338497190385251_6553637938934627939_n.jpg
+02/01/2025  01:06 AM            41,704 448681312_368403706258764_344060708427600461_n.jpg
+02/11/2025  11:33 PM             3,971 451224639_1663515474402048_2204528353583063947_n.jpg
+09/02/2024  12:59 AM         3,059,875 456280441_1666125030908466_736668830336280955_n.mp4
+02/16/2025  02:45 PM           307,757 512-removebg-preview.png
+02/16/2025  02:44 PM            50,951 512.jpg
+04/21/2025  07:47 PM           284,017 812641036-199-Sissy-Tasks.pdf
+08/30/2025  01:23 AM        14,752,006 @KyaloMunyao-q2v.mp3
+04/28/2025  05:36 AM           200,156 A bird's eye view photograph of a city at night, skyscrapers illuminated, top-down perspective.jpg
+04/28/2025  05:36 AM            65,875 A classic oil painting of a city at night, skyscrapers in intense jet black, soft dreamy atmosphere, rich textures, visible brushstrokes, hazy, soft light, pure black, deep shadows.jpg
+04/28/2025  05:36 AM           124,391 A low angle photograph of a city at night, skyscrapers split into distinct sections, bold areas, looking up, dramatic, divided sections.jpg
+05/25/2025  12:36 PM            39,345 A low-angle perspective image depicting God as powerful, bathed in warm golden hour light, just after sunrise or before sunset, creating a dramatic and soft lighting effect.jpg
+04/28/2025  05:36 AM            52,018 A photograph of a city at night, skyscrapers glowing with deep ultraviolet hues, soft focus, hazy background, vivid purples, high contrast.jpg
+04/28/2025  05:36 AM            91,432 A photograph of a city at night, skyscrapers softly lit with rich deep teal, diffused shadows, subtle illumination, luxurious and vibrant.jpg
+06/04/2025  02:04 AM             5,136 abelmutua.jpg
+02/06/2025  12:23 AM            59,978 Abstract. The. Art. of. Design. S01E02. Tinker. Hatfield. Footwear. Design. WEBRip. x264-RARBG EN.srt
+08/27/2024  05:24 AM         5,761,197 Abundance (1).mp3
+08/27/2024  05:24 AM         5,761,197 Abundance.mp3
+03/17/2024  03:14 PM    <DIR>          Acrossnow
+01/29/2025  09:32 AM           579,305 Acrossnow (1).png
+07/02/2024  02:11 AM           797,117 Africa Stock Footage - Sunset in Kenya Safari.mp4
+04/12/2025  12:50 AM         5,258,739 Akitondo EDM sr.mp3
+04/12/2025  01:05 AM       133,998,237 Akitondo EDM sr.mp4
+06/06/2025  01:08 AM       119,395,279 Ako wapi mpenzi EDM FR (1).mp4
+06/04/2025  11:35 PM         4,119,076 Ako wapi mpenzi EDM FR.mp3
+06/06/2025  12:47 AM        19,920,062 Ako wapi mpenzi EDM FR.mp4
+06/25/2025  02:42 AM         4,155,730 Ako wapi mpenzi Piano EDM.mp3
+09/02/2025  11:51 PM         8,265,070 ALEX KASAU KATOMBI-Ex- (OFFICIAL VIDEO).mp3
+09/17/2025  11:34 PM         5,416,888 ALEX KASAU KATOMBI-MYEI LYRICS VIDEO.mp3
+10/01/2025  04:22 AM           354,984 Alex Kasau kisinga-Aka (Official video)-[AudioTrimmer.com].mp3
+10/01/2025  04:18 AM         9,859,376 Alex Kasau kisinga-Aka (Official video).mp3
+06/29/2024  01:06 AM         3,816,621 Always Great (1).mp3
+06/29/2024  01:04 AM         3,275,181 Always Great.mp3
+09/08/2025  02:09 AM         6,863,875 Am sorry.m4a
+07/01/2024  04:19 AM         3,097,197 Amka Vijana.mp3
+07/02/2024  03:08 AM         3,732,949 Amka Vijana.mp4
+06/24/2025  08:53 PM        49,948,756 Another Love Afro (1).mp4
+06/24/2025  06:44 PM         4,367,433 Another Love Afro.mp3
+06/24/2025  08:42 PM       124,176,828 Another Love Afro.mp4
+06/24/2025  08:00 PM       124,572,897 Another Love EDM (1).mp4
+06/24/2025  07:02 PM       127,364,226 Another Love EDM TH YT.mp4
+06/24/2025  06:41 PM         4,815,737 Another Love EDM.mp3
+06/24/2025  07:27 PM        36,280,165 Another Love EDM.mp4
+06/24/2025  06:41 PM         4,192,440 Another Love FR.mp3
+06/24/2025  07:14 PM        43,426,369 Another Love Trap House Tik.mp4
+03/23/2025  08:51 PM           845,196 aquarius01.jpg
+03/23/2025  08:51 PM           936,011 aquarius02.jpg
+03/23/2025  08:51 PM           997,721 aquarius03.jpg
+03/23/2025  08:51 PM           973,438 aquarius04.jpg
+06/09/2025  02:03 AM           825,075 AquariusC1.jpg
+06/09/2025  02:03 AM           852,483 AquariusC2.jpg
+06/09/2025  02:03 AM           856,114 AquariusC3.jpg
+06/09/2025  02:03 AM           833,520 AquariusC4.jpg
+02/16/2025  02:46 PM           327,447 ars.png
+06/11/2025  02:53 AM        92,619,680 Aslay - Muhudumu EDM (1).mp4
+06/09/2025  11:47 PM         3,461,525 Aslay - Muhudumu EDM.mp3
+06/11/2025  02:34 AM        29,853,184 Aslay - Muhudumu EDM.mp4
+09/22/2025  11:43 PM            16,960 assignment.md
+08/12/2025  03:19 AM           267,839 assignment2-designer-schema.png
+08/12/2025  12:51 AM         1,318,940 Assignment2-printable-db.pdf
+08/12/2025  12:45 AM           220,793 assignment2.png
+02/07/2025  01:37 AM           222,183 asteroid.png
+02/03/2025  09:35 PM           228,676 asteroid.webp
+03/11/2025  10:24 PM            86,568 aunt.jpg
+07/03/2025  12:50 AM        19,994,674 Avant toi Afro (1).mp4
+07/02/2025  04:12 PM         5,258,111 Avant toi Afro.mp3
+07/03/2025  12:34 AM       140,284,953 Avant toi Afro.mp4
+06/25/2025  03:06 AM        32,298,348 Baba Tajiri EDM fr (1).mp4
+06/25/2025  02:28 AM         4,803,255 Baba Tajiri EDM fr.mp3
+06/25/2025  02:58 AM       136,101,543 Baba Tajiri EDM fr.mp4
+06/26/2025  04:50 PM       122,783,307 Baba Tajiri Electrohouse (1).mp4
+06/25/2025  02:37 AM         4,405,709 Baba Tajiri Electrohouse.mp3
+06/26/2025  04:27 PM        41,032,775 Baba Tajiri Electrohouse.mp4
+08/22/2025  10:40 PM            91,558 backID.jpg
+12/14/2024  07:53 PM         3,933,549 Bad boyz - Driller Kids Gethembe (1).mp3
+12/14/2024  07:53 PM         3,332,781 Bad boyz - Driller Kids Gethembe.mp3
+07/01/2024  04:18 AM         2,950,317 Baraka za Mungu.mp3
+08/24/2025  10:31 PM         7,979,813 Ben Mbatha (Kativui Mweene) - Kama Michael Jackson (Official video) Sms SKIZA 5801753 to 811.mp3
+09/07/2025  01:49 AM         9,106,422 Ben Mbatha (Kativui Mweene) - Katimba Kaa (Official video) Sms SKIZA 5801758 to 811.mp3
+09/07/2025  01:49 AM         6,210,407 Ben Mbatha (Kativui Mweene) - Nyamu Nga (Official video) Sms SKIZA 5801815 to 811 [aWPboZKf9ag].mp3
+03/20/2025  12:40 PM        23,778,609 Betrayal Ken (1).mp4
+03/20/2025  11:40 AM         5,257,197 Betrayal Ken.mp3
+03/20/2025  12:20 PM       125,918,410 Betrayal Ken.mp4
+10/02/2025  02:04 AM           256,555 Binti kiziwi (Lyrics) - Zanto ft. Pingu-[AudioTrimmer.com].mp3
+10/02/2025  02:03 AM         6,621,237 Binti kiziwi (Lyrics) - Zanto ft. Pingu.mp3
+08/04/2025  01:23 AM            36,037 blackie.jpeg
+03/28/2024  11:38 PM            15,540 Blacksnow Martin 8.jpg
+07/28/2025  05:03 PM         9,072,871 BlockMeet 2025 -104.jpg
+08/13/2025  01:09 AM         7,811,197 BlockMeet 2025 -44.jpg
+08/13/2025  01:10 AM         8,191,974 BlockMeet 2025 -64.jpg
+08/13/2025  01:12 AM         8,679,338 BlockMeet 2025 -91.jpg
+07/02/2024  03:32 AM         3,177,837 Brick by Brick (1).mp3
+07/02/2024  03:32 AM         5,761,197 Brick by Brick.mp3
+01/29/2025  09:30 AM            36,893 bsmartinnobg.png
+09/26/2025  12:32 AM         8,650,638 Bububa.mp3
+09/19/2024  12:27 PM    <DIR>          build-resume-final-resume1726737900699
+09/10/2025  01:50 AM           202,227 BUSINESS PLAN PROJECT.docx
+03/12/2025  08:57 AM         4,603,749 Bybit Kenya meetup-113.jpg
+03/12/2025  08:56 AM         8,453,861 Bybit Kenya meetup-91.jpg
+02/13/2025  09:34 AM             1,181 calc.py
+06/09/2025  02:02 AM           845,405 CapricornC1.jpg
+06/09/2025  02:02 AM           816,215 CapricornC2.jpg
+06/09/2025  02:02 AM           804,759 CapricornC3.jpg
+06/09/2025  02:02 AM           789,361 CapricornC4.jpg
+04/24/2025  02:33 AM        25,026,667 CAROL EDM (1).mp4
+04/24/2025  12:26 AM         5,422,763 CAROL EDM.mp3
+04/24/2025  12:40 AM       127,502,083 CAROL EDM.mp4
+04/23/2025  05:01 PM         6,152,905 Carol Maima.m4a
+05/24/2025  01:32 AM         4,962,387 chain chain edm.mp3
+05/24/2025  09:55 AM        25,051,273 Chain chain LV edm 2 (1).mp4
+05/24/2025  01:34 AM         3,063,253 Chain chain LV edm 2.mp3
+05/24/2025  01:58 AM        75,427,089 Chain chain LV edm 2.mp4
+06/01/2025  12:16 PM        40,480,030 champez bass (1).mp4
+06/01/2025  10:42 AM         4,146,663 champez bass.mp3
+06/01/2025  11:06 AM       127,417,238 champez bass.mp4
+01/29/2025  09:29 AM            10,216 channels4_profile.jpg
+06/30/2025  11:08 PM       113,284,460 Charles Kingi EDM 2nd remix (1).mp4
+06/29/2025  12:08 AM         3,707,217 Charles Kingi EDM 2nd remix.mp3
+06/30/2025  10:28 PM        56,352,027 Charles Kingi EDM 2nd remix.mp4
+07/01/2025  12:16 AM        22,554,908 Charles Kingi EDM remix (1).mp4
+06/30/2025  11:30 PM         4,755,054 Charles Kingi EDM remix.mp3
+07/01/2025  12:03 AM       112,771,403 Charles Kingi EDM remix.mp4
+04/19/2025  05:20 PM         2,355,051 ChatGPT Image Apr 19, 2025, 05_20_20 PM.png
+04/19/2025  05:20 PM         2,355,051 ChatGPT Image Apr 19, 2025, 05_20_22 PM.png
+04/02/2025  10:19 PM         2,332,511 ChatGPT Image Apr 2, 2025, 10_19_28 PM.png
+04/02/2025  11:29 PM               489 ChatGPT Image Apr 2, 2025, 11_29_05 PM.png
+04/03/2025  01:19 AM         3,143,926 ChatGPT Image Apr 3, 2025, 01_19_07 AM.png
+04/07/2025  11:29 PM         2,700,158 ChatGPT Image Apr 7, 2025, 11_29_28 PM.png
+07/28/2025  06:49 PM         1,966,977 ChatGPT Image Jul 28, 2025, 06_49_55 PM.png
+06/02/2025  02:45 PM         2,841,222 ChatGPT Image Jun 2, 2025, 02_45_16 PM.png
+06/02/2025  04:03 PM               489 ChatGPT Image Jun 2, 2025, 04_03_22 PM.png
+06/03/2025  03:26 PM         2,279,969 ChatGPT Image Jun 3, 2025, 03_26_29 PM.png
+05/15/2025  08:50 AM       119,575,556 cherono EDM (1).mp4
+05/15/2025  07:45 AM         4,087,087 cherono EDM.mp3
+05/15/2025  08:01 AM        39,494,760 cherono EDM.mp4
+03/09/2025  06:22 PM             5,607 chess.jpg
+03/09/2025  06:22 PM             5,191 chess1.jpg
+04/01/2025  03:36 PM         4,962,354 Chorus_ Maisha haya maisha hayaaaa.mp3
+04/03/2025  09:05 PM       117,203,538 Chorus_ Maisha haya maisha hayaaaa.mp4
+09/24/2025  12:32 AM         9,912,666 Chris Ndonye - Nthi Ino Ikathela (Official Music Video) SKIZA 6392411.mp3
+04/23/2025  05:03 PM         7,237,634 Christmas Vuusya Ungu.m4a
+05/11/2025  10:49 PM         4,948,933 citizen bass.mp3
+04/28/2025  05:35 AM            44,526 City skyscrapers at night, shrouded in thick fog. Low visibility, illuminated structures piercing the darkness.  High contrast between the bright lights and the foggy surroundings, emphasizing the towering silhouett.jpg
+04/28/2025  05:37 AM            84,974 Classic black and white photograph, city skyscrapers, high contrast, timeless and elegant, night cityscape, stark shadows, architectural details.jpg
+01/27/2025  03:09 PM            18,093 client-1-removebg-preview.png
+07/20/2025  05:01 AM    <DIR>          clone-astro (1)
+07/20/2025  05:01 AM            89,234 clone-astro (1).zip
+04/02/2025  11:44 PM            89,234 clone-astro.zip
+03/27/2025  12:13 PM           589,366 Clone-https___www.thehoroscope.co_.zip
+05/23/2025  12:35 PM           989,384 Code Africa Conference 2.0 - Guests - 2025-05-23-09-35-18.csv
+08/04/2025  01:45 AM            46,088 code4joseph.jpeg
+08/31/2025  09:49 PM         9,894,484 Collabo ya Sila na Muinde(Brothers).mp3
+06/12/2025  01:34 AM         1,537,139 community-img.png
+07/24/2025  11:07 PM    <DIR>          Compressed
+04/05/2025  12:05 PM           104,288 CompressJPEG.Online_img(512x512).jpg
+04/05/2025  12:07 PM           151,704 CompressJPEG.Online_img(512x512).png
+05/07/2025  01:49 AM            97,179 contacts.vcf
+08/04/2025  01:22 AM            29,315 cursor-ambassador.jpeg
+08/04/2025  01:42 AM           502,486 cursor.jpeg
+09/19/2025  08:14 AM             8,645 CV MARTIN KITONGA.docx
+09/26/2024  11:48 PM           282,672 DALLúE 2024-09-26 23.48.18 - Design a sleek, modern user interface for SecureFreel, a decentralized freelance platform. The main dashboard should show an overview of projects, wit.webp
+02/03/2025  09:31 PM           349,870 DALLúE 2025-02-03 21.31.16 - A sleek futuristic spaceship designed for a 2D video game, viewed from a top-down perspective. The ship has sharp angles and a streamlined shape. It f.webp
+06/29/2024  12:16 AM         5,761,197 Dance in the Rain (1).mp3
+06/29/2024  12:12 AM         4,185,261 Dance in the Rain.mp3
+07/01/2024  02:10 AM         5,761,197 Dance to the Beat.mp3
+08/11/2025  01:03 AM            11,491 Data-dicti-expedia-flight-booking.xlsx
+08/11/2025  12:40 AM            11,343 Data-dictionary-expedia-flight-booking Assignment 1.xlsx
+08/11/2025  12:14 AM             9,023 Data-dictionary-expedia-flight-booking.xlsx
+08/12/2025  12:32 AM             3,335 db-master.sql
+08/07/2025  05:07 AM        11,815,276 dear ex (1).mp4
+08/07/2025  05:12 AM        12,542,427 dear ex (2).mp4
+08/07/2025  08:33 AM       108,961,285 dear ex (3).mp4
+08/07/2025  04:53 AM         3,534,668 dear ex.mp3
+08/07/2025  05:00 AM        18,930,967 dear ex.mp4
+04/28/2025  05:35 AM           102,245 Delicate watercolor painting in intense jet black. City skyscrapers at dusk are illuminated against a night sky. Translucent washes, fluid brushstrokes, pure black, deep shadows.jpg
+06/12/2025  02:44 AM            72,049 derma1.jpg
+06/12/2025  02:44 AM            61,696 derma10.jpg
+06/12/2025  02:44 AM            63,422 derma11.jpg
+06/12/2025  02:44 AM            98,892 derma12.jpg
+06/12/2025  02:44 AM            77,891 derma13.jpg
+06/12/2025  02:44 AM            57,799 derma14.jpg
+06/12/2025  02:44 AM            63,837 derma15.jpg
+06/12/2025  02:44 AM           113,225 derma16.jpg
+06/12/2025  02:44 AM            79,582 derma17.jpg
+06/12/2025  02:44 AM            92,830 derma2.jpg
+06/12/2025  02:44 AM            63,142 derma3.jpg
+06/12/2025  02:44 AM            64,951 derma4.jpg
+06/12/2025  02:44 AM            64,018 derma5.jpg
+06/12/2025  02:44 AM            66,663 derma6.jpg
+06/12/2025  02:44 AM            66,691 derma7.jpg
+06/12/2025  02:44 AM            56,402 derma8.jpg
+06/12/2025  02:44 AM            62,824 derma9.jpg
+06/11/2025  02:35 AM           206,095 dermahub-landing (1).zip
+06/11/2025  01:19 AM           211,525 dermahub-landing.zip
+07/11/2024  01:54 AM           108,550 Designer.jpeg
+09/10/2024  01:29 AM               282 desktop.ini
+10/01/2025  04:23 AM         1,375,013 Dicky Mulwa - Ninakwendete-[AudioTrimmer.com].mp3
+10/01/2025  04:18 AM         7,174,197 Dicky Mulwa - Ninakwendete.mp3
+08/22/2025  10:45 PM    <DIR>          Documents
+06/09/2025  10:11 PM       134,600,426 Dodo EDM (1).mp4
+06/09/2025  09:10 PM         5,020,334 Dodo EDM.mp3
+06/09/2025  09:46 PM        38,817,966 Dodo EDM.mp4
+09/21/2025  10:46 PM           196,045 Dopamine 1.mp3
+09/21/2025  10:47 PM           622,735 Dopamine 2.mp3
+09/21/2025  10:40 PM         3,833,676 Dopamine [pdtqcaDpi1g].mp3
+04/03/2025  02:11 AM             5,964 download.jpeg
+09/23/2024  05:47 PM            44,668 dp.jpg
+09/23/2025  07:20 PM        15,303,712 Dr Patrick Mweu Musimba.mp3
+04/07/2025  11:42 PM         5,225,755 DR Remix.mp3
+04/10/2025  03:44 AM       118,442,892 DR Remix.mp4
+07/01/2024  01:38 AM         2,080,557 Dream of the Night.mp3
+06/20/2025  12:02 AM             5,450 dry-skin.jpeg
+11/06/2024  04:19 PM        12,550,144 DSC01169.JPG
+05/23/2025  02:38 PM         7,699,622 DSC_1767.jpg
+05/23/2025  02:39 PM        23,435,804 DSC_1778.jpg
+05/23/2025  02:39 PM        10,414,136 DSC_1801.jpg
+05/23/2025  02:39 PM        10,430,897 DSC_1815.jpg
+05/23/2025  02:39 PM         9,007,379 DSC_1834.jpg
+05/23/2025  02:39 PM         9,438,526 DSC_1842.jpg
+05/23/2025  02:40 PM        11,002,278 DSC_1855.jpg
+03/03/2025  10:26 AM         1,156,372 DSC_9749.jpg
+03/03/2025  10:26 AM           920,164 DSC_9802.jpg
+03/03/2025  10:25 AM         1,163,903 DSC_9916.jpg
+08/15/2025  01:52 AM         3,994,374 EAC A.mp3
+04/28/2025  05:35 AM            35,388 Eerie, creepy, high-resolution stock photo. Pure black and deep shadows depict city skyscrapers at dusk, illuminated by bright lights against a night sky. Commercial, professional quality, dark tones, unsettling det.jpg
+09/17/2025  11:34 PM        10,971,565 Eka Kuiya.mp3
+04/30/2025  11:03 AM        46,442,168 eka taake (1).mp4
+04/30/2025  10:34 AM         4,248,356 eka taake.mp3
+04/30/2025  10:53 AM       121,462,633 eka taake.mp4
+09/01/2025  08:31 PM        10,378,481 Ekai Moke by Ken wa Maria (OFFICIAL VIDEO).mp3
+09/24/2025  12:31 AM         7,587,977 EKAI NINUKE -KEVOH BRAVOH(OFFICIAL 4K VIDEO).mp3
+07/04/2024  04:49 AM         3,094,317 Electro Dreams.mp3
+09/09/2025  12:23 AM         7,449,423 Emali Town Choir - Pale Kale Yerusalem.mp3
+04/28/2025  05:36 AM            61,827 Epic scene, soft pastel colors, lens glow lighting futuristic city skyscrapers at night, massive scale, heroic elements.  Gentle, soothing tones, soft light, grand and awe-inspiring.jpg
+09/12/2024  01:59 AM           448,937 ethsaf.jfif
+09/12/2024  02:00 AM         1,300,127 ethsaf2.jfif
+10/01/2025  04:19 PM            56,230 ethsafar.jpeg
+10/01/2025  04:04 PM           857,322 ethsafari.jpeg
+10/01/2025  04:20 PM           248,735 ethsafari2.jpeg
+07/20/2025  06:38 PM       342,804,956 European Truck Simulator_3.5.5_APKPure.xapk
+07/20/2025  06:37 PM       516,256,769 Evony_ The King's Return_5.03.0_APKPure.xapk
+07/17/2025  02:05 AM             3,661 f2d6f039-4904-4384-ac71-e3f063028310.avif
+09/30/2025  09:44 PM           242,762 Fatimata-[AudioTrimmer.com].mp3
+09/30/2025  09:42 PM         9,689,475 Fatimata.mp3
+04/20/2025  05:38 PM        47,504,048 fdm_x64_setup.exe
+09/05/2025  01:48 PM            57,299 Fee schedule.pdf
+07/30/2025  11:02 PM            11,012 femboy.jpeg
+10/02/2025  06:44 PM                 0 files.txt
+05/25/2025  11:05 AM        90,679,060 fly th (1).mp4
+05/24/2025  10:13 PM         3,321,428 fly th.mp3
+05/25/2025  10:49 AM        26,417,686 fly th.mp4
+08/22/2025  10:42 PM           103,048 frontID (1).jpg
+06/04/2024  08:05 PM           103,048 frontID.jpg
+11/26/2024  01:48 AM           987,448 gemin101.jpg
+11/26/2024  01:48 AM           991,855 gemin102.jpg
+11/26/2024  01:48 AM         1,009,159 gemin103.jpg
+11/26/2024  01:48 AM         1,000,856 gemin104.jpg
+11/26/2024  01:58 AM         1,062,792 gemin201.jpg
+11/26/2024  01:59 AM           972,094 gemin202.jpg
+11/26/2024  01:59 AM           968,950 gemin203.jpg
+11/26/2024  01:59 AM           880,064 gemin204.jpg
+11/26/2024  02:12 AM           970,829 gemin301.jpg
+11/26/2024  02:12 AM           974,782 gemin302.jpg
+11/26/2024  02:12 AM         1,069,024 gemin303.jpg
+11/26/2024  02:12 AM           997,528 gemin304.jpg
+12/12/2024  07:28 PM           257,555 gemin403jpeg.jpeg
+12/12/2024  07:29 PM           141,716 gemin404jpeg.jpeg
+02/03/2025  09:11 PM           647,895 gemin601.jpg
+02/03/2025  09:11 PM           634,411 gemin602.jpg
+02/03/2025  09:11 PM           640,379 gemin603.jpg
+02/03/2025  09:11 PM           645,030 gemin604.jpg
+02/08/2025  12:36 PM           740,852 gemin701.jpg
+02/08/2025  12:36 PM           568,952 gemin702.jpg
+02/08/2025  12:36 PM           755,505 gemin703.jpg
+02/08/2025  12:36 PM           655,469 gemin704.jpg
+02/08/2025  12:43 PM           772,254 gemin801.jpg
+02/08/2025  12:43 PM           805,623 gemin802.jpg
+02/08/2025  12:43 PM           830,189 gemin803.jpg
+02/08/2025  12:43 PM           743,699 gemin804.jpg
+06/16/2025  02:03 AM         4,287,508 Gemini_Generated_Image_2175rc2175rc2175.png
+03/13/2025  10:43 AM           321,630 general_horo01.jpg
+03/13/2025  10:42 AM           549,393 general_horo02.jpg
+03/13/2025  10:43 AM         1,204,240 general_horo03.jpg
+03/13/2025  10:42 AM           575,379 general_horo04.jpg
+03/13/2025  10:43 AM           602,485 general_horo05.jpg
+03/13/2025  10:43 AM           237,445 general_horo06.jpg
+03/13/2025  10:42 AM           792,065 general_horo07.jpg
+03/13/2025  10:43 AM           678,558 general_horo08.jpg
+03/13/2025  10:42 AM           395,681 general_horo09.jpg
+07/26/2024  11:50 PM        11,128,531 GIMS - Le prix … payer (Clip Officiel).mp4
+07/26/2024  11:49 PM         7,841,956 GIMS - MAMA (Official Lyrics Video).mp4
+04/17/2025  03:37 PM               206 github-recovery-codes (1).txt
+03/01/2025  10:53 PM               206 github-recovery-codes.txt
+04/28/2025  05:36 AM            96,294 Glowing bioluminescent city skyscrapers in rich deep teal, vibrant glow, luxurious and natural light effects, looming in the dark night, piercing lights, steel and glass silhouettes reflecting city bustle, dynamic c.jpg
+08/07/2025  04:30 AM        27,250,693 Go off (1).mp4
+08/06/2025  09:25 PM         3,635,082 Go off.mp3
+08/06/2025  11:49 PM        19,327,652 Go off.mp4
+09/08/2025  12:00 AM             8,383 GREENPOINT Problem Statement (MOBILE DEV).docx
+09/25/2025  02:56 AM         1,641,469 grok-video-07a48d45-ead6-44ca-ade8-adbf5f263676-0.mp4
+09/25/2025  02:48 AM         2,055,356 grok-video-13473508-ba7a-401a-afc4-a228a1afe0a0-1.mp4
+09/25/2025  02:54 AM         1,534,410 grok-video-13473508-ba7a-401a-afc4-a228a1afe0a0-3.mp4
+09/25/2025  02:54 AM         2,659,588 grok-video-13473508-ba7a-401a-afc4-a228a1afe0a0-4.mp4
+09/25/2025  02:54 AM         1,258,456 grok-video-7d7c21f8-cccc-48f7-a236-454175f533b9-3.mp4
+09/25/2025  02:54 AM         1,490,365 grok-video-7d7c21f8-cccc-48f7-a236-454175f533b9-4.mp4
+09/25/2025  02:48 AM         1,821,891 grok-video-7d7c21f8-cccc-48f7-a236-454175f533b9-5.mp4
+09/25/2025  02:55 AM         2,057,069 grok-video-8f742dae-fb89-4cea-937f-cbe0ad0faece-0.mp4
+09/25/2025  02:55 AM         2,293,852 grok-video-8f742dae-fb89-4cea-937f-cbe0ad0faece-1.mp4
+09/25/2025  02:55 AM         1,128,841 grok-video-8f742dae-fb89-4cea-937f-cbe0ad0faece-2.mp4
+09/25/2025  02:55 AM         1,972,722 grok-video-8f742dae-fb89-4cea-937f-cbe0ad0faece-4.mp4
+09/25/2025  02:55 AM         1,454,786 grok-video-8f742dae-fb89-4cea-937f-cbe0ad0faece-5.mp4
+09/10/2025  02:15 AM           597,147 grok-video-cd23286c-e3f1-47ae-9fec-210c048c0ce3.mp4
+04/29/2025  02:49 AM       240,084,339 GTA_4_Mobile_Edition_1_1.0.apk
+06/11/2025  04:23 AM        78,865,609 Gundu edm3 (1).mp4
+06/11/2025  03:52 AM         3,272,269 Gundu edm3.mp3
+06/11/2025  04:03 AM        23,789,626 Gundu edm3.mp4
+07/02/2025  12:18 AM           418,179 h2xef.png
+10/01/2025  05:49 AM           340,691 hacknight.jpeg
+04/23/2025  04:53 PM         6,039,651 Harusi ya Mada.m4a
+06/11/2025  03:25 AM        24,282,523 Hasara Roho TEDM (1).mp4
+06/11/2025  12:57 AM         4,921,159 Hasara Roho TEDM.mp3
+06/11/2025  03:19 AM       113,628,253 Hasara Roho TEDM.mp4
+06/22/2025  09:07 PM       112,850,204 Hatumo TH (1).mp4
+06/22/2025  08:41 PM         4,161,030 Hatumo TH.mp3
+06/22/2025  08:50 PM        33,219,163 Hatumo TH.mp4
+05/22/2025  12:50 AM        58,438,965 hayawani th (1).mp4
+05/20/2025  10:48 PM         2,572,788 hayawani th.mp3
+05/22/2025  12:17 AM        27,740,857 hayawani th.mp4
+04/28/2025  05:37 AM           120,311 High-resolution photograph, warm city skyscrapers, reds oranges yellows, night cityscape, commercial style, professional quality, dynamic lighting, detailed textures.jpg
+04/05/2025  11:23 PM           204,800 horizon-export.zip
+04/05/2025  10:50 PM    <DIR>          horizons-export-b9f1cac2-14b6-41f8-a8c3-83d887386a16
+09/22/2025  10:27 PM           426,341 IBL23305 MOBILE APPLICATIONS DEVELOPMENT ASSIGNMENT.pdf
+09/26/2024  10:59 PM            19,616 ideathon.avif
+10/25/2024  01:51 AM    <DIR>          IDM.Trial.Reset.v1.0.0
+07/10/2025  02:33 AM         6,773,804 if_you_see_her_instrumental_demo.wav
+04/27/2025  04:39 AM         5,087,004 Ika nesa.mp3
+04/29/2025  03:35 PM        29,966,051 ikinya remix (1).mp4
+04/29/2025  02:42 AM         4,877,221 ikinya remix.mp3
+04/29/2025  02:52 PM       125,483,044 ikinya remix.mp4
+04/03/2025  02:03 AM           313,630 image (1).jpg
+04/03/2025  02:26 AM           171,793 image (2).jpg
+04/11/2024  05:48 PM            81,416 image.jpg
+04/28/2025  11:54 PM            35,648 imageedit_1_4776838967.png
+04/03/2025  02:15 AM             8,813 images (1).jpeg
+04/03/2025  02:14 AM             5,369 images.jpeg
+03/03/2025  10:29 AM         1,052,976 IMG_20230415_144039.jpg
+11/16/2024  12:31 PM         1,125,103 IMG_20230415_144113.jpg
+05/12/2025  01:10 AM           540,567 IMG_20231010_150656.jpg
+07/04/2024  05:22 AM         3,419,181 In the Sun City.mp3
+04/28/2025  05:36 AM           116,558 Intense dramatic lighting, warm terracotta and cool teal City skyscrapers at night, high contrast.  Earthy and cool tones create tension, showcasing the stark contrast between the warm lights and the cool night sky.jpg
+04/28/2025  05:37 AM            49,278 Intense jet black photograph City skyscrapers, towering structures, illuminated by bright lights piercing the darkness.  Deep shadows, pure black, dynamic contrast between light and shadow, emphasizing the city's no.jpg
+06/11/2025  04:58 PM             1,393 invite.ics
+07/02/2024  03:35 AM         5,761,197 Island Vibes (1).mp3
+07/02/2024  03:35 AM         3,269,997 Island Vibes.mp3
+09/17/2025  11:44 PM         8,202,424 Ivutavutilya 2 [CyUlmqli3mI].mp3
+06/29/2024  12:55 AM         5,120,109 Jambo Rafiki (1).mp3
+06/29/2024  12:51 AM         4,181,229 Jambo Rafiki.mp3
+08/31/2025  09:50 PM        10,635,526 Jeff Maithya (Karanga Lazima) - Rozzie (Official Video).mp3
+12/14/2024  07:39 PM         1,475,757 Jiba (1).mp3
+12/14/2024  07:38 PM         3,579,309 Jiba.mp3
+08/29/2025  02:18 AM         9,540,264 John Muasa (Maudah) - Jane Nduku.mp3
+07/16/2024  03:19 AM         3,105,261 Jua La Afrika (1).mp3
+07/16/2024  03:19 AM         2,883,501 Jua La Afrika.mp3
+06/01/2025  08:01 AM       126,160,593 Kalaptop EDM 1 (1).mp4
+06/01/2025  07:16 AM         4,075,769 Kalaptop EDM 1.mp3
+06/01/2025  07:35 AM        33,546,026 Kalaptop EDM 1.mp4
+05/06/2025  08:37 PM        18,734,431 kalondu ka Ngai (1).mp4
+05/06/2025  08:13 PM         4,944,869 kalondu ka Ngai.mp3
+05/06/2025  08:25 PM       125,182,294 kalondu ka Ngai.mp4
+04/26/2025  10:22 AM        29,501,749 kaluki katombi EDMremix (1).mp4
+04/26/2025  09:33 AM         5,396,590 kaluki katombi EDMremix.mp3
+04/26/2025  09:50 AM       124,886,193 kaluki katombi EDMremix.mp4
+04/15/2025  02:57 PM       127,623,311 Kamain SwitchEDM2 (1).mp4
+04/15/2025  12:27 PM         5,427,541 Kamain SwitchEDM2.mp3
+04/15/2025  02:20 PM        17,064,644 Kamain SwitchEDM2.mp4
+06/24/2025  12:06 AM        64,770,385 Kamjesh bass (1).mp4
+06/22/2025  11:30 AM         4,726,017 Kamjesh bass.mp3
+06/23/2025  05:37 PM        24,151,024 Kamjesh bass.mp4
+09/19/2025  11:13 AM         6,544,124 kana lydia.mp3
+09/05/2025  12:23 AM         7,135,327 Kana Mueni.mp3
+09/29/2025  11:40 PM         1,861,431 KandaHeritage_compData.json
+10/02/2025  02:32 PM         1,259,657 Kanungo-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+10/02/2025  02:06 AM         1,108,564 Kanungo-[AudioTrimmer.com].mp3
+10/02/2025  02:04 AM        16,951,934 Kanungo.mp3
+05/01/2025  01:40 AM        30,621,969 Katika EDM (1).mp4
+05/01/2025  01:18 AM         4,938,130 Katika EDM.mp3
+05/01/2025  01:26 AM       117,157,874 Katika EDM.mp4
+03/06/2025  12:22 PM         4,945,581 Katuku.mp3
+10/02/2025  04:00 PM        63,919,206 Kavisa Kakongo (Remix) (1).mp4
+09/25/2025  02:48 AM         2,697,781 Kavisa Kakongo (Remix).mp3
+10/02/2025  03:43 PM        31,715,459 Kavisa Kakongo (Remix).mp4
+04/23/2025  01:45 PM       122,701,088 Kawano EDM (1).mp4
+04/22/2025  01:43 PM         5,389,246 Kawano EDM.mp3
+04/23/2025  01:37 PM        38,229,518 Kawano EDM.mp4
+05/13/2025  09:53 AM       115,096,708 Keka Tiwe EDM1 (1).mp4
+05/13/2025  09:22 AM         3,808,232 Keka Tiwe EDM1.mp3
+05/13/2025  09:44 AM        32,304,538 Keka Tiwe EDM1.mp4
+03/30/2025  08:10 AM         5,470,346 Kelitu (1).mp3
+03/30/2025  02:47 PM        41,889,405 Kelitu (1).mp4
+03/30/2025  02:57 PM        38,492,659 Kelitu (2).mp4
+06/11/2025  03:35 AM       124,129,098 Kelitu EDM 2 (1).mp4
+06/11/2025  03:38 AM        21,423,215 Kelitu EDM 2 (2).mp4
+06/11/2025  01:24 AM         4,559,196 Kelitu EDM 2.mp3
+06/11/2025  03:21 AM        35,084,651 Kelitu EDM 2.mp4
+06/18/2025  11:52 AM        50,095,742 Kelitu Kaseo EDM (1).mp4
+06/18/2025  12:09 PM        16,696,191 Kelitu Kaseo EDM (2).mp4
+06/18/2025  02:37 AM         4,418,688 Kelitu Kaseo EDM.mp3
+06/18/2025  11:37 AM        50,096,181 Kelitu Kaseo EDM.mp4
+03/30/2025  08:10 AM         5,471,592 Kelitu.mp3
+03/30/2025  02:38 PM       127,256,752 Kelitu.mp4
+06/29/2025  07:31 PM       126,224,304 kilunda kiyisi mbesa edm (1).mp4
+06/29/2025  12:04 AM         5,208,688 kilunda kiyisi mbesa edm.mp3
+06/29/2025  06:26 PM        37,551,438 kilunda kiyisi mbesa edm.mp4
+05/27/2025  09:40 PM        37,806,410 kilunda kiyisi mbesa TH (1).mp4
+05/25/2025  12:10 PM         5,064,150 kilunda kiyisi mbesa TH.mp3
+05/27/2025  09:31 PM       127,047,385 kilunda kiyisi mbesa TH.mp4
+03/27/2025  11:39 PM        23,383,045 Kindu wa King (1).mp4
+03/28/2025  12:29 PM        37,929,385 Kindu wa King (2).mp4
+03/27/2025  11:23 PM         4,604,954 Kindu wa King.mp3
+03/27/2025  11:33 PM       108,814,853 Kindu wa King.mp4
+09/22/2025  07:54 PM        12,067,454 Kinyambu - Katika Rumba (Official Video).mp3
+09/04/2025  02:04 AM        11,523,271 KINYAMBU BOYS BAND - NZOKOLO NIO MUNAA.mp3
+06/09/2025  11:50 PM         3,976,385 Kinza Katangi EDM RT.mp3
+06/29/2025  04:11 PM        81,322,472 Kipepeo EDM (1).mp4
+06/28/2025  11:55 PM         4,502,743 Kipepeo EDM.mp3
+06/29/2025  03:59 PM        27,987,577 Kipepeo EDM.mp4
+06/24/2025  03:19 AM       109,261,499 Kisiwa cha M Violin (1).mp4
+06/24/2025  02:33 AM         3,737,215 Kisiwa cha M Violin.mp3
+06/24/2025  03:10 AM        29,818,480 Kisiwa cha M Violin.mp4
+04/18/2025  10:29 PM        28,920,938 Kitheka Nikitu EDM (1).mp4
+04/17/2025  03:32 PM         5,082,724 Kitheka Nikitu EDM.mp3
+04/18/2025  10:59 AM       119,807,474 Kitheka Nikitu EDM.mp4
+05/05/2025  12:23 PM        33,756,702 Kivuthya Piano (1).mp4
+05/05/2025  02:37 AM         4,153,462 Kivuthya Piano.mp3
+05/05/2025  07:44 AM       127,362,299 Kivuthya Piano.mp4
+04/15/2025  10:15 AM         5,133,497 KK Mukamba (1).mp3
+04/20/2025  08:27 PM       120,807,319 KK Mukamba (1).mp4
+04/15/2025  10:14 AM         5,133,192 KK Mukamba.mp3
+04/20/2025  08:24 PM        16,225,348 KK Mukamba.mp4
+05/01/2025  04:59 PM        44,304,853 kkkym rmix  (1).mp4
+05/01/2025  01:15 PM         4,109,644 kkkym rmix .mp3
+05/01/2025  02:12 PM       121,665,257 kkkym rmix .mp4
+05/31/2025  01:18 AM        20,611,776 Kuku Danger EDM (1).mp4
+05/30/2025  11:56 PM         4,950,263 Kuku Danger EDM.mp3
+05/31/2025  01:08 AM       117,211,949 Kuku Danger EDM.mp4
+05/10/2025  03:44 PM        65,560,999 Kusonga ou musumaa edm (1).mp4
+05/10/2025  04:01 PM        30,282,271 Kusonga ou musumaa edm (2).mp4
+05/08/2025  02:59 AM         5,207,245 Kusonga ou musumaa edm.mp3
+05/10/2025  03:40 PM        72,507,328 Kusonga ou musumaa edm.mp4
+07/03/2025  01:42 AM        73,519,285 Kwaheri B(Remix) (1).mp4
+07/03/2025  01:12 AM         2,837,582 Kwaheri B(Remix).mp3
+07/03/2025  01:19 AM        30,170,943 Kwaheri B(Remix).mp4
+07/02/2025  04:12 PM         4,385,415 Kwaheri S  EDM.mp3
+05/07/2025  09:23 PM        32,815,129 Kwenda TH (1).mp4
+05/07/2025  08:57 PM         3,992,182 Kwenda TH.mp3
+05/07/2025  09:06 PM        82,240,116 Kwenda TH.mp4
+06/29/2025  04:56 PM        25,463,899 Kwetu Pazuri EDM2 (1).mp4
+06/29/2025  02:51 PM         4,930,966 Kwetu Pazuri EDM2.mp3
+06/29/2025  04:40 PM       128,950,518 Kwetu Pazuri EDM2.mp4
+07/03/2025  02:24 AM        28,537,394 Kwetu Pazuri TH (1).mp4
+07/02/2025  04:14 PM         4,661,352 Kwetu Pazuri TH.mp3
+07/03/2025  02:16 AM       130,382,023 Kwetu Pazuri TH.mp4
+05/09/2025  01:50 PM        20,203,806 kwi kyathi TH (1).mp4
+05/08/2025  03:01 AM         5,248,503 kwi kyathi TH.mp3
+05/09/2025  01:45 PM       123,489,508 kwi kyathi TH.mp4
+06/29/2025  05:23 PM        64,630,137 kwoosa uvoo edm (1) (1).mp4
+06/29/2025  12:03 AM         2,680,496 kwoosa uvoo edm (1).mp3
+06/29/2025  05:12 PM        20,222,730 kwoosa uvoo edm (1).mp4
+05/25/2025  12:09 PM         2,680,496 kwoosa uvoo edm.mp3
+05/25/2025  12:45 PM        20,706,317 kwoosa uvoo edm.mp4
+03/19/2025  11:54 PM           841,746 leo01.jpg
+03/19/2025  11:54 PM           882,840 leo02.jpg
+03/19/2025  11:54 PM           767,950 leo03.jpg
+03/19/2025  11:54 PM           854,707 leo04.jpg
+05/25/2025  12:29 PM           813,121 Leonardo_Phoenix_09_An_elegantly_shattered_arrow_punctures_thr_1.jpg
+02/03/2025  09:16 PM           731,230 Leonardo_Phoenix_09_A_mesmerizing_cosmic_panorama_a_galaxy_spi_1.jpg
+02/03/2025  06:00 PM           331,815 Leonardo_Phoenix_09_A_sleek_futuristic_starship_gleams_in_the_0.jpg
+02/03/2025  06:00 PM           307,410 Leonardo_Phoenix_09_A_sleek_futuristic_starship_gleams_in_the_1.jpg
+02/03/2025  05:59 PM           391,974 Leonardo_Phoenix_09_A_sleek_futuristic_starship_gleams_in_the_2.jpg
+02/03/2025  05:59 PM           300,758 Leonardo_Phoenix_09_A_sleek_futuristic_starship_gleams_in_the_3.jpg
+04/28/2025  05:23 AM           720,775 Leonardo_Phoenix_09_Draw_a_mesmerizing_figure_worthy_of_a_phon_2.jpg
+04/19/2025  10:36 PM        54,487,358 Lilikana Remix (1).mp4
+04/19/2025  10:24 PM         2,233,320 Lilikana Remix.mp3
+04/19/2025  10:28 PM        49,057,739 Lilikana Remix.mp4
+02/25/2025  02:59 AM            73,167 logo1-removebg-preview.png
+02/25/2025  02:57 AM            23,144 logo1.png
+02/25/2025  02:50 AM            90,080 logo2.png
+04/28/2025  05:36 AM            55,229 Long exposure photograph, dreamy atmosphere City skyscrapers at night, with soft light and motion trails. Hazy, soft light, capturing light trails and a dreamy atmosphere, emphasizing the city's lights against the n.jpg
+06/03/2025  05:10 PM       118,748,332 Looking for love EDM (1).mp4
+06/03/2025  04:03 PM         5,076,490 Looking for love EDM.mp3
+06/03/2025  04:27 PM        29,245,516 Looking for love EDM.mp4
+10/29/2024  07:31 PM           170,007 lorry.jpeg
+06/09/2025  09:18 PM        27,681,741 Lost and found FR (1).mp4
+06/08/2025  11:33 PM         3,948,606 Lost and found FR.mp3
+06/09/2025  09:00 PM       101,765,802 Lost and found FR.mp4
+07/01/2024  02:02 AM         2,863,917 Lost in Your Eyes.mp3
+04/28/2025  05:36 AM           125,325 Low angle perspective, dramatic view of illuminated city skyscrapers, looking up, piercing lights, steel and glass silhouettes reflecting city bustle, breathtaking cityscape at dusk, dynamic contrast between shadows.jpg
+04/02/2025  11:52 AM        30,464,877 m.n.ngevu (1).mp4
+04/02/2025  11:23 AM         3,397,130 m.n.ngevu.mp3
+04/02/2025  11:40 AM        78,789,479 m.n.ngevu.mp4
+05/31/2025  12:00 AM       125,683,897 Ma cherie PIANO  (1).mp4
+05/30/2025  10:36 PM         4,885,560 Ma cherie PIANO .mp3
+05/30/2025  10:44 PM        31,102,320 Ma cherie PIANO .mp4
+09/22/2025  07:50 PM         9,836,806 MAIMA - JENNIFER WAKITENGE (Official video).mp3
+08/31/2025  01:12 AM        12,055,542 MAIMA - NINGUKA TUKETHANIE (Official video).mp3
+08/20/2025  04:35 PM         9,154,697 MAIMA - NINGUTHAMA KITHUNGO (Official video).mp3
+08/31/2025  01:13 AM        10,320,803 MAIMA - STIMU SYAKWA (Official video).mp3
+08/22/2025  02:01 AM        13,176,509 MAIMA Alphone Kioko - Sama Safaris (Official video).mp3
+05/15/2025  01:46 AM       126,915,545 MAIMA NDI MUTHUKUMI dance hall (1).mp4
+05/15/2025  12:41 AM         4,647,974 MAIMA NDI MUTHUKUMI dance hall.mp3
+05/15/2025  12:55 AM        25,470,567 MAIMA NDI MUTHUKUMI dance hall.mp4
+04/29/2025  08:57 AM         3,942,656 Maisha chance .mp3
+04/29/2025  04:40 PM       119,394,321 Maisha chance .mp4
+04/11/2025  02:28 AM               930 Maisha_Haya_Lyrics.srt
+07/01/2024  04:16 AM         4,033,197 Malaika Wangu.mp3
+09/21/2025  10:52 PM           200,673 Marathon Runner 1.mp3
+09/21/2025  10:54 PM           441,878 Marathon Runner 2.mp3
+09/21/2025  10:39 PM         3,210,675 Marathon Runner [Z4IxFd7Cz6E].mp3
+07/13/2025  02:55 AM            97,903 Martha Awakening Journal.pdf
+07/13/2025  02:55 AM             2,226 martha_awakening_journal.md
+04/05/2025  12:04 PM           172,943 matatu (1).png
+10/29/2024  03:10 PM           202,586 matatu.jpeg
+04/05/2025  11:57 AM           577,577 matatu.png
+04/01/2025  11:22 AM        39,864,981 Mbaka Mangala (1).mp4
+04/01/2025  06:05 PM         4,186,640 Mbaka Mangala Kinyambu.mp3
+04/01/2025  10:37 AM         5,255,026 Mbaka Mangala.mp3
+04/01/2025  10:50 AM       122,919,824 Mbaka Mangala.mp4
+09/19/2025  11:09 AM         7,636,251 Mbathi sya Wanakatitu.mp3
+09/08/2025  02:06 AM         4,768,823 Mbiti wa Kinzilo.m4a
+04/15/2025  08:59 AM        28,433,991 mbose kwa ndindi (1).mp4
+04/15/2025  08:34 AM         3,618,784 mbose kwa ndindi.mp3
+04/15/2025  08:58 AM        87,445,648 mbose kwa ndindi.mp4
+08/20/2025  11:09 PM            16,571 Melanin Glow AI
+08/16/2025  05:16 PM            38,802 melanin-glow-ai.zip
+05/12/2025  01:26 AM        64,176,858 mercy ka kanyangi edmtrial (1).mp4
+05/12/2025  12:10 AM         4,503,994 mercy ka kanyangi edmtrial.mp3
+05/12/2025  12:22 AM        28,317,577 mercy ka kanyangi edmtrial.mp4
+09/21/2025  10:54 PM         9,798,248 merged-audio-2-files (1).mp3
+09/21/2025  10:59 PM         7,009,624 merged-audio-2-files (2).mp3
+09/21/2025  10:54 PM         9,798,248 merged-audio-2-files.mp3
+05/18/2025  08:17 PM       123,188,581 miao ya nzovi edm (1).mp4
+05/18/2025  07:44 PM         4,306,588 miao ya nzovi edm.mp3
+05/18/2025  07:56 PM        34,181,922 miao ya nzovi edm.mp4
+09/18/2024  10:55 PM           501,480 MidnightPool_s40v6-C3-00.jar
+05/19/2025  03:07 PM         4,940,362 minimal pressure edm (1).mp3
+05/19/2025  03:33 PM        95,642,165 minimal pressure edm (1).mp4
+05/19/2025  03:00 PM         3,879,399 minimal pressure edm.mp3
+05/19/2025  03:15 PM        32,835,831 minimal pressure edm.mp4
+08/18/2025  06:01 PM            16,189 mirry-ndeetu.jpg
+09/09/2025  12:36 AM        54,247,434 Mitaboni town choir Pt.1 FULL Album [cLOVpsKPt98].mp3
+06/18/2025  12:51 AM        69,098,889 Mrs MJ TH (1).mp4
+06/18/2025  12:28 AM         2,879,748 Mrs MJ TH.mp3
+06/18/2025  12:37 AM        20,519,011 Mrs MJ TH.mp4
+06/28/2025  04:00 PM            25,489 msqr.jpg
+08/31/2024  09:30 PM           117,099 muema.jpeg
+08/24/2025  10:25 PM        11,481,893 MUKOVA KIND'A-MISUUNI BAND.mp3
+05/24/2025  10:14 PM         4,288,880 mukuru headline hitters TH.mp3
+09/10/2025  12:29 AM         9,028,055 Mukuyuni ft kakongo kavisa.mp3
+03/21/2025  07:28 PM        26,082,667 Mumbi wa Nditiku (1).mp4
+03/21/2025  07:11 PM         5,185,197 Mumbi wa Nditiku.mp3
+03/21/2025  07:20 PM       122,110,577 Mumbi wa Nditiku.mp4
+05/05/2025  01:22 PM         4,561,454 Mundu Nandu EDm (1).mp3
+05/11/2025  11:28 PM        16,392,686 Mundu Nandu EDm (1).mp4
+05/11/2025  11:37 PM       115,858,906 Mundu Nandu EDm (2).mp4
+05/04/2025  09:29 AM         4,561,454 Mundu Nandu EDm.mp3
+05/11/2025  11:25 PM        16,290,238 Mundu Nandu EDm.mp4
+04/20/2025  06:04 PM         9,114,460 Munyongolitu Sanita.m4a
+09/30/2025  03:01 PM    <DIR>          Music
+09/30/2025  03:00 PM    <DIR>          Musical
+06/05/2025  03:40 AM       122,395,353 Mutoriah  áeta edm (1) (1).mp4
+06/04/2025  01:31 AM         4,522,804 Mutoriah  áeta edm (1).mp3
+06/05/2025  03:00 AM        30,372,297 Mutoriah  áeta edm (1).mp4
+06/04/2025  01:30 AM         4,377,827 Mutoriah  áeta edm.mp3
+05/08/2025  02:36 PM        37,407,183 Mutwawa Afro (1).mp4
+05/08/2025  02:06 PM         5,062,257 Mutwawa Afro.mp3
+05/08/2025  02:21 PM        99,045,938 Mutwawa Afro.mp4
+03/28/2025  12:27 AM        40,575,150 Mwendwa Susana (1).mp4
+03/26/2025  10:13 AM         5,347,386 Mwendwa Susana.mp3
+03/28/2025  12:22 AM       133,474,940 Mwendwa Susana.mp4
+05/27/2025  11:35 AM       121,203,965 My Darling Afro FR (1).mp4
+05/27/2025  09:35 AM         4,508,164 My Darling Afro FR.mp3
+05/27/2025  11:08 AM        25,990,205 My Darling Afro FR.mp4
+02/09/2025  01:17 PM    <DIR>          Nairobi
+08/08/2024  04:52 AM         4,728,429 Nairobi Ya Maisha.mp3
+09/10/2025  02:01 AM            25,260 Nairobi_Fresh_Juices_Business_Plan.markdown
+09/10/2025  02:05 AM            21,844 Nairobi_Fresh_Juices_Business_Plan_Martin Kitonga.docx
+06/11/2025  12:34 AM           104,754 natural remedies01.jpg
+06/11/2025  12:34 AM            58,324 natural remedies02.jpg
+06/11/2025  12:34 AM            92,647 natural remedies03.jpg
+09/26/2025  12:23 AM         8,784,176 NDUKEW'A KYOA THANO OFFICIAL AUDIO BY  SANITA WOTE BOYS BAND.mp3
+06/09/2025  11:39 PM        25,921,743 NFY Acoustics (1).mp4
+06/09/2025  08:51 PM         3,934,124 NFY Acoustics.mp3
+06/09/2025  11:34 PM       128,601,177 NFY Acoustics.mp4
+05/29/2025  12:08 AM       123,052,872 Ngai e vinya edm (1).mp4
+05/30/2025  01:54 PM        22,611,304 Ngai e vinya edm (2).mp4
+05/30/2025  02:01 PM        14,240,986 Ngai e vinya edm (3).mp4
+05/25/2025  12:25 PM         4,594,342 Ngai e vinya edm.mp3
+05/28/2025  11:10 PM        21,450,196 Ngai e vinya edm.mp4
+05/04/2025  12:19 AM        27,060,676 ngakola gitaa edm (1).mp4
+05/03/2025  05:26 AM         4,885,475 ngakola gitaa edm.mp3
+05/04/2025  12:01 AM       128,448,603 ngakola gitaa edm.mp4
+05/16/2025  12:41 PM       124,554,800 Ngavisaa ni nau edm (1).mp4
+05/16/2025  12:07 PM         4,110,276 Ngavisaa ni nau edm.mp3
+05/16/2025  12:19 PM        41,056,395 Ngavisaa ni nau edm.mp4
+04/20/2025  09:53 PM         6,305,857 Ngavisaa ni nau.mp3
+04/05/2025  11:06 AM        35,307,778 Ngombo remix (1).mp4
+04/05/2025  10:22 AM         5,417,930 Ngombo remix.mp3
+04/05/2025  10:57 AM       130,765,497 Ngombo remix.mp4
+03/26/2025  10:58 AM        17,497,775 Ni Wega Sudu (1).mp4
+03/26/2025  10:34 AM         5,203,182 Ni Wega Sudu.mp3
+03/26/2025  10:47 AM       121,522,530 Ni Wega Sudu.mp4
+07/06/2024  03:42 AM         4,223,277 Nia yangu Kwako.mp3
+03/08/2025  05:35 PM       104,821,959 Nienjoy (1) (1).mp4
+03/08/2025  04:22 PM         5,062,509 Nienjoy (1).mp3
+03/08/2025  04:54 PM        19,688,497 Nienjoy (1).mp4
+03/08/2025  04:22 PM         4,936,941 Nienjoy.mp3
+08/10/2025  09:25 PM        21,858,216 Niiwa ninoete BASS (1).mp4
+08/10/2025  10:29 PM        30,288,350 Niiwa ninoete BASS (2).mp4
+08/09/2025  11:37 PM         5,093,186 Niiwa ninoete BASS.mp3
+08/10/2025  09:18 PM       128,380,629 Niiwa ninoete BASS.mp4
+08/10/2025  08:22 PM        17,901,785 Niiwa ninoete EDM (1).mp4
+08/10/2025  08:33 PM         4,853,124 Niiwa ninoete EDM (2).mp4
+08/10/2025  08:44 PM       127,659,068 Niiwa ninoete EDM (3).mp4
+08/09/2025  11:37 PM         4,294,729 Niiwa ninoete EDM.mp3
+08/10/2025  08:17 PM        25,390,562 Niiwa ninoete EDM.mp4
+09/19/2025  11:11 AM         5,447,200 Nililikana Ngaia [oQAibs_uqOY].mp3
+04/19/2025  10:47 PM         5,391,989 Ninguka Tukethanie Rmx.mp3
+09/27/2025  02:32 AM        31,465,472 node-v22.20.0-x64.msi
+05/12/2025  05:40 PM       114,899,524 nokia edm (1).mp4
+05/12/2025  05:10 PM         4,751,039 nokia edm.mp3
+05/12/2025  05:23 PM        30,469,367 nokia edm.mp4
+06/29/2025  06:11 PM        43,191,004 Nosie Kamuchina Afro (1).mp4
+06/29/2025  02:55 PM         5,346,864 Nosie Kamuchina Afro.mp3
+06/29/2025  05:40 PM       126,753,827 Nosie Kamuchina Afro.mp4
+04/27/2025  10:34 PM        30,884,364 Ntheete Ukamba EDM FRemix (1).mp4
+04/27/2025  01:13 AM         5,416,209 Ntheete Ukamba EDM FRemix.mp3
+04/27/2025  05:03 PM       128,061,038 Ntheete Ukamba EDM FRemix.mp4
+06/01/2025  09:31 AM        33,757,697 Number one EDM (1).mp4
+06/01/2025  08:37 AM         3,941,613 Number one EDM.mp3
+06/01/2025  09:00 AM        97,929,968 Number one EDM.mp4
+08/17/2025  06:50 AM         4,157,368 Nyashinski - TAI CHI (Official Music Video).mp3
+06/20/2025  12:08 AM             7,061 oily-skin.jpeg
+04/02/2025  11:32 PM    <DIR>          Overview_2025-03-04_1743452610_blacksnow_martin
+04/02/2025  11:23 PM             1,081 Overview_2025-03-04_1743452610_blacksnow_martin.zip
+05/29/2025  11:44 AM        19,716,714 Pepas Afro (1).mp4
+05/29/2025  09:06 AM         4,449,757 Pepas Afro.mp3
+05/29/2025  09:52 AM       112,785,472 Pepas Afro.mp4
+03/26/2025  11:03 PM         1,321,514 Photo_1742759900966.jpg
+03/26/2025  11:03 PM           943,588 Photo_1742760153630.jpg
+03/26/2025  11:03 PM           835,128 Photo_1742760713277.jpg
+04/29/2025  11:43 PM           955,541 Photo_1742760713592 (1).jpg
+08/18/2025  11:53 PM           247,669 Photo_1742760713592-removebg-preview.png
+03/26/2025  11:04 PM           955,541 Photo_1742760713592.jpg
+04/29/2025  11:45 PM           394,407 Photo_1742760713592__1_-removebg-preview.png
+03/24/2025  11:21 PM           678,600 pisces01.jpg
+03/24/2025  11:21 PM           684,434 pisces02.jpg
+03/24/2025  11:21 PM           749,517 pisces03.jpg
+03/24/2025  11:21 PM           661,571 pisces04.jpg
+06/09/2025  02:04 AM           850,064 PiscesC1.jpg
+06/09/2025  02:04 AM           839,452 PiscesC2.jpg
+06/09/2025  02:04 AM           823,653 PiscesC3.jpg
+06/09/2025  02:04 AM           856,535 PiscesC4.jpg
+08/03/2025  03:23 PM            89,941 poi.jpg
+02/16/2025  10:55 AM         5,058,477 POLICE (1).mp3
+02/25/2025  04:56 AM       162,069,465 POLICE (1).mp4
+02/25/2025  05:07 AM        20,857,282 POLICE (2).mp4
+02/16/2025  10:55 AM           438,576 Police Challenge by Dr Brian Manthi.mp3
+02/16/2025  10:54 AM         5,057,901 POLICE.mp3
+02/16/2025  10:55 AM         5,617,344 POLICE.mp4
+05/28/2025  12:06 AM           879,449 poster.jpg
+08/21/2025  03:52 AM    <DIR>          Programs
+01/30/2025  04:40 PM            20,403 propcontrolwhite-removebg-preview.png
+07/27/2025  10:03 PM         5,613,119 Quavo - She For Keeps ft. Nicki Minaj (Filtered Instrumental).mp3
+07/20/2025  06:37 PM       107,986,851 Real Racing 3_13.5.1_APKPure.apk
+04/05/2025  11:57 PM         5,397,354 Regina FR.mp3
+04/06/2025  01:54 AM        72,583,042 Regina FR.mp4
+07/01/2024  02:16 AM         4,681,197 Rise Up Today (1).mp3
+07/01/2024  02:15 AM         5,761,197 Rise Up Today.mp3
+06/24/2025  09:28 PM       126,864,956 Rita SV EDM (1).mp4
+06/24/2025  09:06 PM         3,932,096 Rita SV EDM.mp3
+06/24/2025  09:13 PM        38,717,906 Rita SV EDM.mp4
+06/18/2025  02:01 AM       116,721,377 Rita SV Piano (1).mp4
+06/18/2025  01:30 AM         4,221,425 Rita SV Piano.mp3
+06/18/2025  01:45 AM        38,516,071 Rita SV Piano.mp4
+04/17/2025  04:14 PM        46,490,718 Rozzie Wiwakwa (1).mp4
+04/15/2025  12:58 PM         5,424,750 Rozzie Wiwakwa.mp3
+04/16/2025  09:13 PM       127,112,432 Rozzie Wiwakwa.mp4
+04/02/2025  01:19 PM        35,149,645 safari ya emali edm (1).mp4
+04/02/2025  10:09 AM         5,447,266 safari ya emali edm.mp3
+04/02/2025  12:15 PM       133,068,844 safari ya emali edm.mp4
+07/31/2025  12:28 AM        12,135,164 SAFARI YA WATHI  BY KAEWA SUPERSTARS (4k VIDEO) mpesabooking 0713501701.mp3
+06/09/2025  02:01 AM           857,618 SagittariusC1.jpg
+06/09/2025  02:01 AM           788,240 SagittariusC2.jpg
+06/09/2025  02:01 AM           826,332 SagittariusC3.jpg
+06/09/2025  02:01 AM           788,829 SagittariusC4.jpg
+08/13/2025  01:29 AM             3,334 sample-data.sql
+08/24/2024  03:18 AM         2,897,213 SAM_0466.jpg
+07/01/2024  04:23 AM         3,029,229 Sauti Yetu.mp3
+06/20/2025  01:17 AM           523,216 sb_doing_skincare_routine.jpg
+06/20/2025  01:17 AM           500,118 sb_doing_skincare_routine2.jpg
+06/20/2025  01:17 AM           527,992 sb_doing_skincare_routine3.jpg
+06/20/2025  01:17 AM           527,327 sb_doing_skincare_routine4.jpg
+09/22/2025  11:44 PM           106,140 SCNI-01292-2021.pdf
+03/23/2025  09:00 PM           845,307 scorpio01.jpg
+09/24/2025  06:36 PM           330,702 Screenshot 2025-09-24 183650.png
+09/24/2025  06:37 PM           265,583 Screenshot 2025-09-24 183716.png
+05/25/2025  12:36 PM            91,770 Sculptural clay artwork depicting an arrow piercing money; strong, hard light creates harsh shadows on modeled, textured shapes.jpg
+06/20/2025  12:09 AM             3,535 sensitive-skin.jpeg
+04/25/2025  11:08 PM        97,843,343 Serah wiwakwa MF (1).mp4
+04/25/2025  11:18 PM        31,720,849 Serah wiwakwa MF (2).mp4
+04/25/2025  10:42 PM         4,075,948 Serah wiwakwa MF.mp3
+04/25/2025  10:53 PM       118,141,514 Serah wiwakwa MF.mp4
+07/03/2025  12:09 AM       124,883,363 Shetani  REggae (1).mp4
+07/02/2025  04:11 PM         5,030,309 Shetani  REggae.mp3
+07/02/2025  11:33 PM        27,871,034 Shetani  REggae.mp4
+05/07/2025  10:11 PM        69,821,650 shiko wa huruma gpt (1).mp4
+05/07/2025  08:30 PM         4,472,462 shiko wa huruma gpt.mp3
+05/07/2025  09:51 PM        29,738,200 shiko wa huruma gpt.mp4
+04/28/2025  01:39 AM        18,581,461 show masaku refined (1).mp4
+04/28/2025  12:53 AM         4,612,941 show masaku refined.mp3
+04/28/2025  01:32 AM       124,567,625 show masaku refined.mp4
+05/20/2025  02:42 PM       124,039,684 Sifu bwana edm (1).mp4
+05/17/2025  12:47 AM         4,462,975 Sifu bwana edm.mp3
+05/20/2025  02:26 PM        23,019,415 Sifu bwana edm.mp4
+05/23/2025  11:40 PM        23,163,901 sikomi edm (1).mp4
+05/23/2025  11:51 PM        57,981,374 sikomi edm (2).mp4
+05/22/2025  12:12 AM         2,360,350 sikomi edm.mp3
+05/22/2025  01:49 AM        63,129,818 sikomi edm.mp4
+07/04/2025  11:57 PM           125,397 sila.jpg
+04/28/2025  05:37 AM            37,522 Silhouetted skyscrapers, rich deep teal, backlighting, cinematic composition, night cityscape, steel and glass structures, dynamic contrast between light and shadow, modern metropolis.jpg
+06/18/2025  12:52 PM       106,164,074 Sina makosa TV Afro B (1).mp4
+06/18/2025  12:20 PM         4,027,585 Sina makosa TV Afro B.mp3
+06/18/2025  12:35 PM        31,856,747 Sina makosa TV Afro B.mp4
+05/02/2025  06:26 PM       124,875,272 siri ya maisha FR (1).mp4
+05/02/2025  05:14 PM         4,557,347 siri ya maisha FR.mp3
+05/02/2025  05:36 PM        43,450,083 siri ya maisha FR.mp4
+07/30/2025  07:36 PM           449,373 Snapchat for Web 2025-7-30 at 7_36_24 PM.png
+02/04/2025  05:36 AM           341,784 space-background.webp
+02/03/2025  09:28 PM           415,619 spacebg.jpg
+02/03/2025  06:02 PM           233,393 spaceship for space shooter game.png
+02/07/2025  01:36 AM           243,265 spaceship.png
+02/03/2025  09:32 PM           272,248 spaceship.webp
+06/01/2025  10:41 AM         3,605,309 stereo-love fr.mp3
+02/28/2025  12:31 AM        34,469,150 Stimu Syakwa (1).mp4
+02/27/2025  11:57 PM         4,321,197 Stimu Syakwa.mp3
+02/28/2025  12:10 AM        39,885,899 Stimu Syakwa.mp4
+09/23/2025  03:01 PM             3,931 stored-procedures (1).sql
+08/12/2025  12:41 AM             3,931 stored-procedures.sql
+06/21/2025  08:42 PM           401,550 str.png
+04/28/2025  05:36 AM           100,259 Strong hard light, low angle perspective of city skyscrapers, looking up, dramatic, direct harsh shadows, illuminated by bright lights piercing the darkness, steel and glass silhouettes reflecting city bustle, breat.jpg
+05/04/2025  11:54 AM    <DIR>          Suno
+04/28/2025  05:35 AM            93,170 Surreal infrared photograph, extreme macro close-up, long exposure City skyscrapers at night, illuminated by bright lights piercing the darkness.  Infrared tones, otherworldly appearance, small subject detail, motio.jpg
+08/30/2025  01:26 AM         5,517,825 Suzanna  Sauti Sol  Brendan Ross Saxophone Version.mp3
+05/25/2025  11:54 AM       123,300,941 Sweet love edm (1).mp4
+05/25/2025  12:02 PM        33,429,802 Sweet love edm (2).mp4
+05/20/2025  10:49 PM         4,732,155 Sweet love edm.mp3
+05/25/2025  12:45 AM       123,118,178 Sweet love edm.mp4
+07/05/2025  01:28 AM        42,806,641 Sya Nzeve EDM (1).mp4
+07/04/2025  11:58 PM         4,502,757 Sya Nzeve EDM.mp3
+07/05/2025  01:06 AM        85,993,809 Sya Nzeve EDM.mp4
+03/25/2025  04:11 AM        19,945,273 Syindu sya Mutongoi (1).mp4
+03/25/2025  02:51 AM         5,428,846 Syindu sya Mutongoi.mp3
+03/25/2025  03:31 AM       126,003,372 Syindu sya Mutongoi.mp4
+07/31/2025  08:10 PM       126,050,950 SYOKA UKE edm (1).mp4
+07/31/2025  06:11 PM         4,855,982 SYOKA UKE edm.mp3
+07/31/2025  06:46 PM        32,454,073 SYOKA UKE edm.mp4
+02/03/2025  03:26 PM           651,245 taaft.com-picasso-simple-image-maker-by-daniel2023-1738585600.png
+06/11/2024  07:48 PM     1,474,297,856 tails-amd64-6.3.img
+09/03/2025  01:06 AM         4,995,585 Tano Tena (Instrumental)- Sauti Sol feat Nviiri the Storyteller & Bensoul  Remake by kay paulsney.mp3
+03/23/2025  08:46 PM           623,893 taurus01.jpg
+03/23/2025  08:46 PM           563,071 taurus02.jpg
+03/23/2025  08:46 PM           615,762 taurus03.jpg
+03/23/2025  08:46 PM           584,798 taurus04.jpg
+03/23/2025  11:34 PM        18,947,031 Team Mafisi (1).mp4
+03/23/2025  11:18 PM         5,304,429 Team Mafisi.mp3
+03/23/2025  11:27 PM       135,785,843 Team Mafisi.mp4
+08/14/2025  07:48 PM    <DIR>          Telegram Desktop
+09/05/2025  12:38 AM         7,170,435 Telesia By Peter MUAMBI Kyanganga Boys Band.mp3
+07/30/2025  09:39 AM           113,529 Template Sissy Budget.xlsx
+03/31/2025  09:39 PM        38,352,355 Tendelya FR (1).mp4
+03/31/2025  08:50 PM         5,398,640 Tendelya FR.mp3
+03/31/2025  09:11 PM       109,959,105 Tendelya FR.mp4
+09/30/2025  12:37 AM         1,408,136 The Architect of Riches _ PDF _ Mind _ Thought.html
+09/30/2025  12:37 AM    <DIR>          The Architect of Riches _ PDF _ Mind _ Thought_files
+08/07/2025  05:40 AM         9,850,314 Thina EDM (1).mp4
+08/07/2025  06:09 AM       126,703,016 Thina EDM (2).mp4
+07/11/2025  05:11 AM         4,990,047 Thina EDM R2.mp3
+08/09/2025  11:35 PM         4,696,380 Thina EDM R3.mp3
+08/07/2025  05:18 AM         4,694,330 Thina EDM.mp3
+08/07/2025  05:31 AM        40,463,239 Thina EDM.mp4
+08/09/2025  11:58 PM         9,213,268 Thingitha rythm EDM (1).mp4
+08/10/2025  12:13 AM        30,608,859 Thingitha rythm EDM (2).mp4
+08/10/2025  12:21 AM        25,721,283 Thingitha rythm EDM (3).mp4
+08/09/2025  11:36 PM         3,905,617 Thingitha rythm EDM.mp3
+08/09/2025  11:56 PM       121,071,877 Thingitha rythm EDM.mp4
+08/10/2025  01:06 AM       127,166,385 Thingitha rythm EDM2 (1).mp4
+08/09/2025  11:38 PM         4,107,057 Thingitha rythm EDM2.mp3
+08/10/2025  12:34 AM        42,402,040 Thingitha rythm EDM2.mp4
+08/10/2025  11:07 PM        20,212,706 Thingitha solo EDM2 (1).mp4
+08/10/2025  11:42 PM       127,068,393 Thingitha solo EDM2 (2).mp4
+08/09/2025  11:37 PM         4,534,634 Thingitha solo EDM2.mp3
+08/10/2025  10:46 PM        34,580,131 Thingitha solo EDM2.mp4
+08/08/2024  04:42 AM           584,300 thisissand-Thu Aug 08 2024 04_42_40 GMT+0300.jfif
+08/08/2024  11:46 PM           988,861 thisissand-Thu Aug 08 2024 23_46_35 GMT+0300.jfif
+05/24/2025  10:14 PM         3,500,339 time of my life th.mp3
+07/02/2024  03:25 AM         4,523,949 Trap House Symphony (1).mp3
+07/02/2024  03:23 AM         2,611,629 Trap House Symphony.mp3
+06/26/2025  01:11 AM        76,274,798 Tujiangalie EDM (1) (1).mp4
+06/26/2025  01:49 AM        77,116,287 Tujiangalie EDM (1) (2).mp4
+06/26/2025  12:44 AM         2,938,015 Tujiangalie EDM (1).mp3
+05/25/2025  12:16 AM        75,669,891 Tujiangalie EDM (1).mp4
+05/24/2025  08:56 PM         2,818,234 Tujiangalie EDM.mp3
+05/25/2025  12:02 AM        32,376,361 Tujiangalie EDM.mp4
+04/21/2025  07:53 PM        56,414,499 TUKILYEI BENGA FR (1).mp4
+04/21/2025  07:20 PM         5,419,693 TUKILYEI BENGA FR.mp3
+04/21/2025  07:50 PM       124,395,739 TUKILYEI BENGA FR.mp4
+10/28/2024  05:26 PM    <DIR>          TUKVRS 1.0
+07/20/2025  06:36 PM        87,678,825 Turbo DismountT_1.43.0_APKPure.apk
+04/22/2025  12:43 PM       127,450,987 Twakona Tukatumbia EDM (1).mp4
+04/22/2025  11:56 AM         5,402,972 Twakona Tukatumbia EDM.mp3
+04/22/2025  12:13 PM        27,126,174 Twakona Tukatumbia EDM.mp4
+06/18/2025  06:14 PM        28,397,116 Twiikaniata bass (1).mp4
+06/18/2025  02:43 PM         5,038,951 Twiikaniata bass.mp3
+06/18/2025  03:40 PM       132,298,938 Twiikaniata bass.mp4
+05/04/2025  11:55 AM     6,278,520,832 ubuntu-25.04-desktop-amd64.iso
+08/22/2025  11:45 PM        10,889,436 Uka Imelder By Alphonce Kioko (Maima) (Official video).mp3
+06/24/2025  02:59 AM        35,110,779 UKAMBANI EDM (1) (1).mp4
+06/24/2025  01:09 AM         4,239,080 UKAMBANI EDM (1).mp3
+06/24/2025  02:02 AM       133,395,749 UKAMBANI EDM (1).mp4
+06/12/2025  01:25 AM         4,239,080 UKAMBANI EDM.mp3
+03/06/2025  12:40 PM        34,714,683 Ukangumbuka (1).mp4
+03/06/2025  12:12 PM         4,586,157 Ukangumbuka.mp3
+03/06/2025  12:26 PM       112,386,797 Ukangumbuka.mp4
+06/29/2024  12:43 AM         4,806,189 Under the Tanzanian Sky (1).mp3
+06/29/2024  12:42 AM         3,333,357 Under the Tanzanian Sky.mp3
+04/29/2025  11:50 PM           908,069 Untitled design.png
+07/31/2024  06:32 PM             6,479 Untitled_logo_1_free-file.jpg
+09/23/2025  07:20 PM        10,400,424 utao.mp3
+05/04/2025  10:25 AM        28,904,069 utonyi wa maima (1).mp4
+04/29/2025  01:16 AM        28,391,012 utonyi wa maima edm (1).mp4
+04/28/2025  11:46 PM         3,651,876 utonyi wa maima edm.mp3
+04/29/2025  01:11 AM        93,199,934 utonyi wa maima edm.mp4
+05/04/2025  09:41 AM         4,637,716 utonyi wa maima.mp3
+05/04/2025  09:51 AM       120,894,807 utonyi wa maima.mp4
+04/03/2025  03:41 PM        29,958,937 Vaa Mbee EDM (1).mp4
+04/03/2025  11:32 AM         5,303,546 Vaa Mbee EDM.mp3
+04/03/2025  12:02 PM       124,732,174 Vaa Mbee EDM.mp4
+03/29/2025  02:51 AM        96,745,847 Vasita SR (1).mp4
+03/29/2025  03:33 AM        37,714,364 Vasita SR (2).mp4
+03/29/2025  02:21 AM         5,251,630 Vasita SR.mp3
+03/27/2025  12:51 PM         2,666,078 Vasita SR.mp4
+08/20/2025  03:55 PM    <DIR>          Video
+05/07/2025  07:36 PM         1,180,438 videoplayback (1).m4a
+04/20/2025  05:54 PM         9,114,460 videoplayback (1).mp4a
+05/07/2025  07:36 PM         1,180,438 videoplayback (2).m4a
+04/25/2025  11:44 PM         5,356,599 videoplayback.m4a
+04/20/2025  05:51 PM         5,735,502 videoplayback.mp4a
+06/30/2025  10:28 PM         2,489,891 Viola viola (1).mp3
+06/02/2025  05:22 PM         2,489,891 Viola viola.mp3
+09/04/2025  02:04 AM         8,146,579 VUUSYA UNGU - BLACK SPOT (OFFICIAL VIDEO).mp3
+09/30/2025  09:46 PM           364,388 VUUSYA UNGU - MBAKA YAKWA (OFFICIAL VIDEO)-[AudioTrimmer.com].mp3
+09/30/2025  09:39 PM         8,673,835 VUUSYA UNGU - MBAKA YAKWA (OFFICIAL VIDEO).mp3
+08/22/2025  11:44 PM        11,821,067 Vuusya Ungu Ndalani  Boys - Livoti Sya Mercy (Official Video).mp3
+05/17/2025  08:39 PM        29,254,484 wakati ule wa nuhu edm (1).mp4
+05/17/2025  09:08 PM       108,474,020 wakati ule wa nuhu edm (2).mp4
+05/17/2025  12:35 AM         3,932,844 wakati ule wa nuhu edm.mp3
+05/17/2025  08:30 PM        29,728,770 wakati ule wa nuhu edm.mp4
+02/19/2025  10:24 PM    <DIR>          Wallpapers
+04/27/2025  03:01 AM        29,940,556 Wamwendya (1).mp4
+04/27/2025  02:04 AM         4,336,463 Wamwendya.mp3
+04/27/2025  02:33 AM        99,955,270 Wamwendya.mp4
+06/23/2025  02:23 PM        29,654,347 Wapo Afro (1).mp4
+06/23/2025  01:56 PM         4,824,895 Wapo Afro.mp3
+06/23/2025  02:14 PM       124,841,714 Wapo Afro.mp4
+06/24/2025  04:39 AM       129,269,033 Wapo EDM (1).mp4
+06/24/2025  04:03 AM         5,095,374 Wapo EDM.mp3
+06/24/2025  04:13 AM        32,261,939 Wapo EDM.mp4
+03/26/2025  11:04 PM           401,661 Watermark_1742761329809.png
+03/26/2025  11:04 PM         1,066,181 Watermark_1742761690048.jpg
+03/26/2025  11:06 PM           403,121 Watermark_1742761979452.png
+03/26/2025  11:07 PM         1,036,227 Watermark_1742762142191.jpg
+06/29/2025  10:32 PM           195,032 waves_of_emotion_sheet_music.png
+03/24/2025  01:18 PM        73,021,481 wda sturdy.mp4
+04/02/2025  09:00 AM           100,515 web3 terms.jpg
+07/29/2025  01:47 AM             7,464 web3_astrology_app.html
+08/09/2024  12:24 AM            53,901 webcam-toy-photo2.jpg
+06/24/2025  04:00 AM        34,094,212 wendo wa ngoo EDM2 (1).mp4
+06/24/2025  03:35 AM         3,742,774 wendo wa ngoo EDM2.mp3
+06/24/2025  03:46 AM       127,832,774 wendo wa ngoo EDM2.mp4
+10/29/2024  02:02 AM    <DIR>          wetransfer_arbitrum-2_2024-09-04_1750
+04/09/2025  04:13 PM         1,142,787 WhatsApp Audio 2025-04-09 at 16.12.55_1d0bc3da.dat.unknown
+05/17/2024  04:42 PM           400,246 WhatsApp Image 2024-05-10 at 22.49.01.jpeg
+05/17/2024  04:42 PM           395,447 WhatsApp Image 2024-05-10 at 22.49.17.jpeg
+05/17/2024  04:43 PM           457,420 WhatsApp Image 2024-05-10 at 22.49.24.jpeg
+05/17/2024  04:43 PM           477,370 WhatsApp Image 2024-05-10 at 22.49.35.jpeg
+05/17/2024  04:43 PM           471,340 WhatsApp Image 2024-05-10 at 22.49.36.jpeg
+06/04/2024  08:00 PM         1,328,950 WhatsApp Image 2024-06-04 at 19.58.42.jpeg
+06/08/2024  03:59 PM           101,515 WhatsApp Image 2024-06-07 at 13.23.43.jpeg
+06/08/2024  04:00 PM            88,899 WhatsApp Image 2024-06-07 at 13.23.45 (1).jpeg
+06/08/2024  04:00 PM            68,379 WhatsApp Image 2024-06-07 at 13.23.45.jpeg
+10/11/2024  03:53 PM            81,461 WhatsApp Image 2024-10-11 at 15.53.57_8c7f43cb.jpg
+08/04/2025  01:43 AM           448,297 winners.jpeg
+08/28/2025  08:24 PM         7,685,779 WORLD TOUR BY KAEWA SUPERSTARS  (VIDEO)For Booking & Mpesa 0713501701.mp3
+05/28/2025  08:09 PM       132,286,434 Xmass EDM SR (1).mp4
+05/05/2025  07:16 PM         5,237,358 Xmass EDM SR.mp3
+05/27/2025  10:01 PM        20,796,510 Xmass EDM SR.mp4
+09/13/2025  12:46 PM         1,998,771 XSCORE_V2.zip
+09/23/2024  01:55 AM         5,242,599 y2mate.com - 2Pac Takeoff Pop Smoke  GANG ft Nipsey Hussle Young Dolph Wiz Khalifa  2022.mp3
+04/25/2025  11:36 PM         5,068,310 y2mate.com - Alex Kasau Katombi  KALUKI OFFICIAL 4K VIDEO.mp3
+04/25/2025  11:38 PM         5,777,727 y2mate.com - ALEX KASAU KATOMBIKWI KYATHIOFFICIAL 4K VIDEO.mp3
+04/25/2025  11:41 PM         6,554,713 y2mate.com - ALEX KASAU KATOMBIMAISHAOFFCIAL 4K VIDEO.mp3
+07/13/2024  03:38 AM         3,518,517 y2mate.com - Arhbo Music from the FIFA World Cup Qatar 2022 Official Soundtrack.mp3
+04/25/2025  11:37 PM         8,823,813 y2mate.com - Asanda Mutua Katuku Mombasa by Ken wa Maria OFFICIAL VIDEO.mp3
+04/26/2025  12:08 AM         7,991,239 y2mate.com - Nthi Ino Nditei  Maima Official Video Dial 811380 to get Skiza.mp3
+09/23/2024  01:55 AM         3,037,028 y2mate.com - Takeoff  Quavo Ft Future  Patek Prod By 3LAKE.mp3
+02/25/2025  01:34 AM            28,780 Yellow Blue White Modern Computer Store Logo.png
+03/25/2025  10:33 AM           247,803 Youtube 1000 Subscribers Achievement Instagram Posts.png
+04/11/2025  12:27 AM         5,774,392 Zawadi Zawadi Mamaa _ Blacksnow Martin.mp3
+04/04/2025  07:44 PM         5,774,392 Zawadi, Zawadi, mamaaa,.mp3
+11/03/2024  08:59 AM           130,467 _7e2d6dcd-cbd1-4c80-8d5c-c405d49df7d1.jpeg
+06/03/2025  07:34 PM        30,418,584 _Baila Violin (1).mp4
+06/03/2025  06:54 PM         2,911,070 _Baila Violin.mp3
+06/03/2025  07:25 PM        72,287,386 _Baila Violin.mp4
+06/24/2025  04:40 AM         4,975,446 _Kasongo CHilled.mp3
+07/30/2025  09:38 AM               165 ~$Template Sissy Budget.xlsx
+             915 File(s) 30,744,620,429 bytes
+              21 Dir(s)  13,229,768,704 bytes free

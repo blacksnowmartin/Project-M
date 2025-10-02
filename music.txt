@@ -1,0 +1,310 @@
+ Volume in drive C is Windows 10
+ Volume Serial Number is 4EE7-454F
+
+ Directory of C:\Users\User\Music
+
+10/03/2025  12:20 AM    <DIR>          .
+10/03/2025  12:20 AM    <DIR>          ..
+08/08/2025  01:24 AM        11,178,455 ALEX KASAU KATOMBI-AHADI (OFFICIAL 4K VIDEO).mp3
+08/09/2025  11:28 PM         8,663,804 ALEX KASAU KATOMBI-ASYAI(OFFICIAL AUDIO).mp3
+08/01/2025  07:06 PM         6,122,747 ALEX+KASAU+KATOMBI-KALIVU(OFFICIAL+VIDEO).m4a
+09/30/2025  03:01 PM    <DIR>          AudioT
+08/09/2025  02:38 AM         1,775,627 CHEZA TINA by KATITU RYTHM GUITAR kamba benga music.mp3
+07/31/2025  08:36 PM         4,811,265 Darasa _ Harmonize - Mazoea (Instrumental).mp3
+08/05/2025  06:49 AM        11,373,433 Dear ex-Mwalili junior (official audio).mp3
+07/29/2025  10:40 PM         6,149,152 EFFUGA BBI BY JOSE CHAMELEONE.mp3
+08/09/2025  11:30 PM         1,106,057 EMILY CHEPCHUMBA kale song.mp3
+08/05/2025  06:53 AM        13,540,133 ETE BILL-Mwalili Junior (official audio)..mp3
+08/14/2025  12:54 PM         8,390,458 Ev. John Kay - Mundu Wa Kana (Official video).mp3
+08/03/2025  12:58 AM         3,789,982 Fari Athman - Nitajipenda (Offiicial Audio).mp3
+08/03/2025  03:18 PM         3,686,445 Jabidii ft Mama Jabidii - Miel Matin (official Video) skiza dial 811415#.mp3
+08/07/2025  11:59 PM         8,369,142 JOHN MBAKA - KILA WAVANDA  (Official Music Video) SMS SKIZA 5294874 TO 811.mp3
+08/01/2025  07:21 PM           230,991 kilinga.m4a
+08/04/2025  10:27 AM         4,514,096 Kina - Can We Kiss Forever_ (Lyrics) ft. Adriana Proenza.mp3
+07/26/2025  11:37 PM         9,156,577 Kisasi Boys Band - Stella (Lyrics).mp3
+07/26/2025  11:35 PM           357,492 Kisululu na muoma mbaki.mp3
+08/05/2025  11:54 PM         5,227,552 Lil Uzi Vert, Quavo _ Travis Scott - Go Off [Instrumental].mp3
+08/14/2025  12:48 PM        28,947,154 Lucky Syndrome Meditation  INSTANT RESULTS Using the Law of Assumption  Self Concept Affirmations.mp3
+08/22/2025  02:01 AM        13,176,509 MAIMA Alphone Kioko - Sama Safaris (Official video).mp3
+08/23/2025  10:52 PM         6,138,143 MAIMA+-+ONA+TIUNDU+(Official+video).m4a
+08/03/2025  03:14 PM         6,159,810 Mama Jabidii ft Jabidii - Ler (Official visualizer).mp3
+07/26/2025  11:30 PM         9,474,435 MBAKI MBAKI - KISULULU NA MUOMA  OFFICIAL VIDEO [SMS SKIZA 69313949 to 811.mp3
+08/09/2025  02:31 AM         3,886,530 Muia wa kalii, solo guitar cover, by Solosita. Kitambaa mweene.mp3
+10/03/2025  12:20 AM                 0 music.txt
+07/28/2025  02:11 PM         8,215,960 Mutulani - Nakoma Ilovi (Official Video).mp3
+08/09/2025  11:27 PM        12,323,872 Mutulani - Nakoma Ilovi (Official Video)_2.mp3
+07/29/2025  10:37 PM         6,388,016 NAPENDWA OFFICIAL SONG BY JACKSON MUTINDA.mp3
+08/05/2025  08:53 PM         8,930,879 Neteelete.mp3
+08/20/2025  04:46 PM        10,067,519 Nindi kwakya By Karanga Lazima (Official Video).mp3
+08/17/2025  09:24 PM         4,832,581 NYASHINSKI - SHOWMAN (Official Music Video).mp3
+09/30/2025  03:05 PM    <DIR>          Playlists
+07/27/2025  10:02 PM         5,613,119 Quavo - She For Keeps ft. Nicki Minaj (Filtered Instrumental).mp3
+07/27/2025  10:06 PM         4,441,998 Quavo _ Takeoff - Nothing Changed ( Official Instrumental ) BEST.mp3
+07/28/2025  03:35 PM        13,088,110 REST IN PEACE BRO-SILA MUTINDA.mp3
+07/31/2025  08:32 PM         9,917,054 RITA MOMBASA(OFFICIAL AUDIO)-KEVOH BRAVOH@kenya stars band @kevoh bravoh official.mp3
+07/24/2025  07:40 PM           385,007 saida amua sasa pt 2].m4a
+07/24/2025  07:43 PM           918,134 saida pt3.m4a
+08/22/2025  02:05 AM         5,764,212 Sauti Sol- Feel My Love(Karaoke Version).mp3
+08/09/2025  12:51 AM         8,511,457 Solosita Mweene - Doreen Ka Tz.mp3
+07/26/2025  11:49 PM           374,419 stella kisasi.mp3
+07/31/2025  12:31 AM        11,407,915 UNYANYA FAKE (OFFICIAL 4K VIDEO).mp3
+08/09/2025  11:25 PM         7,459,454 Vuusya Uungu   Safari ya matuu.mp3
+08/03/2025  01:06 AM        18,579,467 WARAKA WA AMANI ESTER.mp3
+08/01/2025  07:04 PM         8,239,555 youtube+video+#dIi_eNVWVRk.m4a
+08/09/2025  12:49 AM         4,299,683 Zuchu - Sukari Karaoke Version.mp3
+              45 File(s)    325,984,400 bytes
+
+ Directory of C:\Users\User\Music\AudioT
+
+09/30/2025  03:01 PM    <DIR>          .
+09/30/2025  03:01 PM    <DIR>          ..
+08/30/2025  01:31 AM           333,668 @KyaloMunyao-q2v-[AudioTrimmer.com].mp3
+08/08/2025  01:28 AM           374,419 ALEX KASAU KATOMBI-AHADI (OFFICIAL 4K VIDEO)-[AudioTrimmer.com].mp3
+08/11/2025  01:38 AM           561,247 ALEX KASAU KATOMBI-ASYAI(OFFICIAL AUDIO)-[AudioTrimmer.com].mp3
+09/03/2025  01:14 AM           450,906 ALEX KASAU KATOMBI-Ex- (OFFICIAL VIDEO)-[AudioTrimmer.com].mp3
+09/17/2025  11:35 PM         1,007,627 ALEX KASAU KATOMBI-MYEI LYRICS VIDEO-[AudioTrimmer.com].mp3
+05/18/2025  07:35 AM           275,983 ALEX+KASAU+KATOMBI-Ex-+(OFFICIAL+VIDEO)-[AudioTrimmer.com]-[AudioTrimmer.com].m4a
+05/18/2025  07:29 AM           299,233 ALEX+KASAU+KATOMBI-Ex-+(OFFICIAL+VIDEO)-[AudioTrimmer.com].m4a
+08/01/2025  07:53 PM           253,596 ALEX+KASAU+KATOMBI-KALIVU(OFFICIAL+VIDEO)-[AudioTrimmer.com].m4a
+05/07/2025  08:51 PM           371,406 ALEX+KASAU+KATOMBI-KWENDA(OFFICIAL+AUDIO)-[AudioTrimmer.com].m4a
+09/08/2025  02:19 AM           253,696 Am sorry-[AudioTrimmer.com].m4a
+07/20/2025  05:08 AM             1,899 audiotracks.js
+08/24/2025  10:40 PM           472,848 Ben Mbatha (Kativui Mweene) - Kama Michael Jackson (Official video) Sms SKIZA 5801753 to 811-[AudioTrimmer.com].mp3
+09/07/2025  01:55 AM           286,648 Ben Mbatha (Kativui Mweene) - Katimba Kaa (Official video) Sms SKIZA 5801758 to 811-[AudioTrimmer.com].mp3
+09/07/2025  01:50 AM           246,903 Ben Mbatha (Kativui Mweene) - Nyamu Nga (Official video) Sms SKIZA 5801815 to 811 [aWPboZKf9ag]-[AudioTrimmer.com].mp3
+05/05/2025  05:41 PM           258,165 Ben+Mbatha+(Kativui+Mweene)++-+Ni+Tofauti+(Official+video)-[AudioTrimmer.com].m4a
+06/19/2025  01:11 AM           247,312 Ben+Mbatha+(Kativui+Mweene)+-+Kamjesh+(Official+video)+Sms+SKIZA+5801754+to+811-[AudioTrimmer.com].m4a
+05/02/2025  02:08 PM           243,944 Ben+Mbatha+(Kativui+Mweene)+-+Kivuthya+(Official+video)-[AudioTrimmer.com].m4a
+05/03/2025  06:02 AM           189,069 Ben+Mbatha+(Kativui+Mweene)+-+Mulise+Itini+(Official+video)+Sms+SKIZA+5801788+to+811-[AudioTrimmer.com].m4a
+05/02/2025  10:33 PM           349,708 Ben+Mbatha+(Kativui+Mweene)+-+Ndina+Raha+(Official+video)+Sms+SKIZA+5801796+to+811-[AudioTrimmer.com].m4a
+05/02/2025  10:13 PM           190,601 Ben+Mbatha+(Kativui+Mweene)+-+Ngakola+Ngitaa+(Official+video)+Sms+SKIZA+5801798+to+811-[AudioTrimmer.com].m4a
+05/10/2025  03:15 PM           389,590 Ben+Mbatha+(Kativui+Mweene)+-+Penzi+(Official+video)+Sms+SKIZA+5801818+to+811-[AudioTrimmer.com].m4a
+05/03/2025  05:42 AM           187,569 Ben+Mbatha+(Kativui+Mweene)+-+Programme+Xmas+(Official+video)+Sms+SKIZA+5801820+to+811-[AudioTrimmer.com].m4a
+06/08/2025  11:23 PM           433,978 Bien - Lost & Found (Official Audio)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/08/2025  11:21 PM           386,331 Bien - Lost & Found (Official Audio)-[AudioTrimmer.com].mp3
+09/26/2025  12:33 AM           378,808 Bububa-[AudioTrimmer.com].mp3
+07/20/2025  05:29 AM           516,935 bundle.min.js
+04/24/2025  12:08 AM           241,004 Carol Maima-[AudioTrimmer.com].m4a
+05/29/2025  11:50 PM           767,273 champez-[AudioTrimmer.com].m4a
+05/01/2025  04:20 PM           413,382 Cherono+I+miss+You+by++Ken+Wa+Maria+++(Official+video)-[AudioTrimmer.com].m4a
+09/24/2025  04:35 PM           351,850 Chris Ndonye - Nthi Ino Ikathela (Official Music Video) SKIZA 6392411-[AudioTrimmer.com].mp3
+05/22/2025  12:48 AM           155,249 Chris+Kaiga+-+CHAIN+CHAIN+(Official+Music+Video)-[AudioTrimmer.com].m4a
+04/23/2025  05:45 PM           179,415 Christmas Vuusya Ungu-[AudioTrimmer.com] (1).m4a
+04/23/2025  05:07 PM           519,289 Christmas Vuusya Ungu-[AudioTrimmer.com].m4a
+09/01/2025  12:59 AM           674,723 Collabo ya Sila na Muinde(Brothers)-[AudioTrimmer.com] (1).mp3
+09/01/2025  12:57 AM           359,999 Collabo ya Sila na Muinde(Brothers)-[AudioTrimmer.com].mp3
+09/01/2025  01:02 AM         1,663,614 collabo-ya-sila-na-muindebrothers-audiotrimmercom_T35yDu6R.mp3
+07/31/2025  08:41 PM         1,369,371 Darasa _ Harmonize - Mazoea (Instrumental)-[AudioTrimmer.com].mp3
+08/05/2025  07:00 AM         1,269,688 Dear ex-Mwalili junior (official audio)-[AudioTrimmer.com].mp3
+07/06/2025  02:35 AM           566,262 Desh Desh (Official Music Video)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+07/06/2025  02:33 AM           453,413 Desh Desh (Official Music Video)-[AudioTrimmer.com].mp3
+06/09/2025  08:47 PM           410,155 Dodo-[AudioTrimmer.com].mp3
+06/26/2025  02:25 AM         2,203,758 Download J Balvin Willy William Mi Gente Official Video by Sky - Listen MP3 320 KBPS & WAV for FREE on Audio.com-[AudioTrimmer.com].mp3
+09/23/2025  07:26 PM           513,599 Dr Patrick Mweu Musimba-[AudioTrimmer.com].mp3
+07/29/2025  10:43 PM           850,893 EFFUGA BBI BY JOSE CHAMELEONE-[AudioTrimmer.com].mp3
+09/17/2025  11:36 PM           366,896 Eka Kuiya-[AudioTrimmer.com].mp3
+09/01/2025  08:33 PM         1,316,081 Ekai Moke by Ken wa Maria (OFFICIAL VIDEO)-[AudioTrimmer.com].mp3
+09/24/2025  04:36 PM           618,925 EKAI NINUKE -KEVOH BRAVOH(OFFICIAL 4K VIDEO)-[AudioTrimmer.com].mp3
+09/09/2025  12:38 AM           633,972 Emali Town Choir - Pale Kale Yerusalem-[AudioTrimmer.com].mp3
+08/05/2025  07:12 AM           717,355 ETE BILL-Mwalili Junior (official audio).-[AudioTrimmer.com].mp3
+06/29/2025  02:39 PM           302,321 facebook by nyaiika m.mutisya(OFFICIAL VIDEO )-[AudioTrimmer.com].mp3
+08/03/2025  01:12 AM           354,984 Fari Athman - Nitajipenda (Offiicial Audio)-[AudioTrimmer.com].mp3
+07/20/2025  05:08 AM            30,912 features.js
+05/06/2025  05:06 PM           214,858 Freddie+Googz+Twiikaniata+by+Ken+wa+Maria+(OFFICIAL+VIDEO)-[AudioTrimmer.com].m4a
+05/28/2025  05:19 PM           475,356 Fundamentals by Ken wa Maria (OFFICIAL VIDEO)-[AudioTrimmer.com].mp3
+06/09/2025  09:53 PM           859,670 Gundu-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/09/2025  09:24 PM         1,082,234 Gundu-[AudioTrimmer.com].mp3
+06/08/2025  10:50 AM         2,048,973 happy birthay-[AudioTrimmer.com].mp3
+07/02/2025  02:51 AM           899,794 Harmonize - Mtaje (Official Audio)-[AudioTrimmer.com].mp3
+07/17/2025  03:46 PM           415,170 Harmonize - Vibaya (Official Audio)-[AudioTrimmer.com].mp3
+06/21/2025  06:28 PM           470,341 Harmonize - Wapo (Official Audio)-[AudioTrimmer.com].mp3
+04/24/2025  12:22 AM           343,191 Harusi ya Mada-[AudioTrimmer.com].m4a
+05/15/2025  01:28 AM           267,533 hayawani-[AudioTrimmer.com]-[AudioTrimmer.com].m4a
+05/15/2025  01:26 AM           306,886 hayawani-[AudioTrimmer.com].m4a
+04/30/2025  09:07 AM           599,413 hulaballoo-[AudioTrimmer.com].m4a
+05/31/2025  11:47 PM           398,245 i miss you-[AudioTrimmer.com].mp3
+05/31/2025  11:53 PM           365,644 i miss you-[AudioTrimmer.com]_2.mp3
+07/20/2025  05:08 AM         4,504,586 index.js
+09/17/2025  11:49 PM           344,406 Ivutavutilya 2 [CyUlmqli3mI]-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+09/17/2025  11:46 PM           241,446 Ivutavutilya 2 [CyUlmqli3mI]-[AudioTrimmer.com].mp3
+08/03/2025  03:37 PM         1,434,861 Jabidii ft Mama Jabidii - Miel Matin (official Video) skiza dial 811415#-[AudioTrimmer.com].mp3
+09/01/2025  12:56 AM           366,896 Jeff Maithya (Karanga Lazima) - Rozzie (Official Video)-[AudioTrimmer.com].mp3
+08/08/2025  01:31 AM           383,823 JOHN MBAKA - KILA WAVANDA  (Official Music Video) SMS SKIZA 5294874 TO 811-[AudioTrimmer.com].mp3
+08/29/2025  02:20 AM           623,941 John Muasa (Maudah) - Jane Nduku-[AudioTrimmer.com].mp3
+04/28/2025  03:58 AM           257,401 JOHN+MBAKA+-+KILA+WAVANDA++(Official+Music+Video)+SMS+SKIZA+5294874+TO+811-[AudioTrimmer.com].m4a
+07/20/2025  08:31 PM         1,415,853 Jonas Blue - Rise ft. Jack & Jack Official Instrumental-[AudioTrimmer.com].mp3
+06/21/2025  12:36 AM           677,857 Juacali feat Sana - kwaheri (Official Video)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/21/2025  12:32 AM           914,213 Juacali feat Sana - kwaheri (Official Video)-[AudioTrimmer.com].mp3
+06/01/2025  06:32 AM           234,354 Kalaptop+Pole+by+Ken+wa+Maria+(OFFICIAL+AUDIO)-[AudioTrimmer.com].m4a
+09/19/2025  11:40 AM           782,556 kana lydia-[AudioTrimmer.com].mp3
+09/05/2025  12:47 AM           376,927 Kana Mueni-[AudioTrimmer.com].mp3
+05/10/2025  11:33 AM           459,826 Katika+Viumbe+Vyote,+Barabara+13+-+Kwa+Viumbe+Vyote-[AudioTrimmer.com].m4a
+05/11/2025  03:05 PM           307,923 Katika+Viumbe+Vyote,+Barabara+13+-+Wakati+Ule+wa+Nuhu-[AudioTrimmer.com]-[AudioTrimmer.com].m4a
+05/11/2025  01:00 PM           438,226 Katika+Viumbe+Vyote,+Barabara+13+-+Wakati+Ule+wa+Nuhu-[AudioTrimmer.com].m4a
+04/22/2025  11:27 AM           247,150 Kawano Katombi-[AudioTrimmer.com].mp3
+06/18/2025  01:45 AM           775,173 Kelitu Kaseo-[AudioTrimmer.com].mp3
+05/19/2025  03:23 PM           260,244 kenya nchi yangu-[AudioTrimmer.com].m4a
+06/24/2025  12:54 AM           393,227 KEVIN KYALOH - SYOKA UKE (OFFICIAL VIDEO) SMS SKIZA 8545030 to 811-[AudioTrimmer.com].mp3
+05/24/2025  01:24 AM           292,701 kilunda kiyisi mbesa-[AudioTrimmer.com].m4a
+08/04/2025  07:58 PM         1,159,973 Kina - Can We Kiss Forever_ (Lyrics) ft. Adriana Proenza-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+08/04/2025  10:47 AM         1,448,366 Kina - Can We Kiss Forever_ (Lyrics) ft. Adriana Proenza-[AudioTrimmer.com].mp3
+09/22/2025  07:55 PM           426,455 Kinyambu - Katika Rumba (Official Video)-[AudioTrimmer.com].mp3
+09/04/2025  02:06 AM           369,404 KINYAMBU BOYS BAND - NZOKOLO NIO MUNAA-[AudioTrimmer.com].mp3
+07/02/2025  02:57 AM           350,253 KITHUNGUDI BY SANITA WOTE OFFICIAL AUDIO-[AudioTrimmer.com].mp3
+05/25/2025  12:39 AM           503,300 Kuku+Danger+-+Uthaithi+wa+Kivindu+(Official+Visualizer)-[AudioTrimmer.com].m4a
+05/11/2025  08:51 PM           219,558 kungulu+kwangala+(Official+cover+video)+by+kasheshe+parody+++kangaroo+Tv-[AudioTrimmer.com]-[AudioTrimmer.com].m4a
+05/11/2025  08:50 PM           254,005 kungulu+kwangala+(Official+cover+video)+by+kasheshe+parody+++kangaroo+Tv-[AudioTrimmer.com].m4a
+06/22/2025  02:40 PM           530,527 Kwetu Pazuri-[AudioTrimmer.com].mp3
+05/24/2025  01:20 AM           249,265 kwoosa uvoo -[AudioTrimmer.com].m4a
+06/17/2025  12:45 AM         1,274,076 Les Wanyika - Sina Makosa-[AudioTrimmer.com].mp3
+06/24/2025  12:45 PM           433,978 Lewis Capaldi - Someone You Loved-[AudioTrimmer.com].mp3
+07/20/2025  08:40 PM         1,204,486 Lil Nas X, Jack Harlow - INDUSTRY BABY (Instrumental)-[AudioTrimmer.com].mp3
+08/06/2025  08:11 PM         1,442,096 Lil Uzi Vert, Quavo _ Travis Scott - Go Off [Instrumental]-[AudioTrimmer.com].mp3
+05/30/2025  04:51 PM           407,020 Ma cherie-[AudioTrimmer.com].mp3
+08/04/2025  09:36 AM           699,174 MADAMS_ Exposing Kenya's Child Sex Trade - BBC Africa Eye Documentary-[AudioTrimmer.com].mp3
+09/22/2025  08:01 PM           366,896 MAIMA - JENNIFER WAKITENGE (Official video)-[AudioTrimmer.com].mp3
+08/31/2025  01:14 AM           374,419 MAIMA - NINGUKA TUKETHANIE (Official video)-[AudioTrimmer.com].mp3
+08/20/2025  04:48 PM           304,829 MAIMA - NINGUTHAMA KITHUNGO (Official video)-[AudioTrimmer.com].mp3
+08/31/2025  01:16 AM           362,507 MAIMA - STIMU SYAKWA (Official video)-[AudioTrimmer.com].mp3
+08/22/2025  02:04 AM           544,946 MAIMA Alphone Kioko - Sama Safaris (Official video)-[AudioTrimmer.com].mp3
+05/09/2025  10:39 PM           189,286 MAIMA+-+BADO+NIKINENE+(Official+video)-[AudioTrimmer.com].m4a
+06/04/2025  12:43 AM           252,909 MAIMA+-+KINZE+KATANGI+(Official+video)-[AudioTrimmer.com].m4a
+05/13/2025  04:53 PM           190,542 MAIMA+-+MAIMA+NDIMUTHUKUMI+(Official+video)-[AudioTrimmer.com].m4a
+08/23/2025  11:43 PM           362,211 MAIMA+-+ONA+TIUNDU+(Official+video)-[AudioTrimmer.com].m4a
+04/28/2025  03:43 AM           389,662 MAIMA+-+UTONYI+WA+MAIMA+(Official+video)-[AudioTrimmer.com].m4a
+05/20/2025  10:21 PM           351,286 MAIMA+-+WIMUSEO+NGAI+(Official+video)-[AudioTrimmer.com].m4a
+08/03/2025  03:34 PM           589,459 Mama Jabidii ft Jabidii - Ler (Official visualizer)-[AudioTrimmer.com].mp3
+08/03/2025  03:36 PM         1,288,496 Mama Jabidii ft Jabidii - Ler (Official visualizer)-[AudioTrimmer.com]_2.mp3
+06/05/2025  08:09 PM           910,465 MARIETTA-[AudioTrimmer.com].m4a
+07/11/2025  10:28 PM           259,062 Mavenzi Ma Anita Official Audio By Kijana Musyoki-[AudioTrimmer.com].mp3
+09/20/2025  11:58 PM           331,160 Mbathi sya Wanakatitu-[AudioTrimmer.com].mp3
+04/28/2025  04:36 AM           245,060 MBESA+-+Sms+Skiza+5290044+to+811+Justus+Myello+(Official+Lyrics+Videoc2019)-[AudioTrimmer.com].m4a
+06/17/2025  12:51 AM         1,043,990 Mbilia Bel - Nakei Nairobi (El Alambre) [Clip Officiel]-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/17/2025  12:41 AM           918,602 Mbilia Bel - Nakei Nairobi (El Alambre) [Clip Officiel]-[AudioTrimmer.com].mp3
+09/08/2025  02:23 AM           294,903 Mbiti wa Kinzilo-[AudioTrimmer.com]-[AudioTrimmer.com].m4a
+09/08/2025  02:21 AM           240,754 Mbiti wa Kinzilo-[AudioTrimmer.com].m4a
+07/17/2025  03:43 PM           472,848 Mbosso - Pawa (Official Music Video)-[AudioTrimmer.com].mp3
+06/19/2025  12:41 PM           448,398 Mbosso Ft Costa Titch & Alfa Kat - Shetani (Official Music Video)-[AudioTrimmer.com].mp3
+05/18/2025  12:06 AM           374,419 Mbwe Mbwe Official Music Video-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+05/18/2025  12:03 AM           276,826 Mbwe Mbwe Official Music Video-[AudioTrimmer.com].mp3
+09/21/2025  11:05 PM           702,765 merged-audio-2-files (2)-[AudioTrimmer.com].mp3
+05/16/2025  01:20 PM           369,614 Miao Ya Nzovi official video-[AudioTrimmer.com].mp3
+05/12/2025  02:17 PM           228,761 minimal-pressure-[AudioTrimmer.com].mp3
+07/04/2025  02:37 AM           376,927 Misuuni Super Jazz - Syindu Sya Nzeve (Official video)-[AudioTrimmer.com].mp3
+09/09/2025  12:49 AM           379,746 Mitaboni town choir Pt.1 FULL Album [cLOVpsKPt98]-[AudioTrimmer.com].mp3
+05/16/2025  09:48 AM           758,189 mkuru-[AudioTrimmer.com].m4a
+05/01/2025  01:01 PM           247,219 Mr.Kampango_Mercy+Ka+Kanyangi+(Official+Video+part+2)+Sms+Skiza+8541611+to+811-[AudioTrimmer.com].m4a
+06/13/2025  09:22 PM           179,269 MRS.MJ+BY+KAEWA+SUPERSTARS(4K+VIDEO)--+REACH+US+VIA+..0713501701-[AudioTrimmer.com].m4a
+08/24/2025  10:39 PM           516,107 MUKOVA KIND'A-MISUUNI BAND-[AudioTrimmer.com].mp3
+09/10/2025  12:33 AM         1,423,288 Mukuyuni ft kakongo kavisa-[AudioTrimmer.com].mp3
+04/20/2025  06:07 PM           227,453 Munyongolitu Sanita-[AudioTrimmer.com].m4a
+05/12/2025  02:50 PM           357,074 Mutoriah  áeta Official Video-[AudioTrimmer.com].mp3
+07/15/2025  08:26 PM           242,135 Mutoriah - Nakuombea (Official Video)-[AudioTrimmer.com].mp3
+07/15/2025  08:29 PM         1,054,021 Mutoriah - Nakuombea (Official Video)-[AudioTrimmer.com]_2.mp3
+07/28/2025  05:12 PM           262,197 Mutulani - Nakoma Ilovi (Official Video)-[AudioTrimmer.com].mp3
+05/08/2025  01:34 PM           229,696 mutwawa kakai kilonzo-[AudioTrimmer.com].m4a
+07/15/2025  08:23 PM           586,951 MWENDWA - ELYX B DAN (Official Music Video)  -SMS SKIZA 5813719 TO 811-[AudioTrimmer.com].mp3
+05/05/2025  06:17 PM           232,645 Mwendwa Maria AudioTrimmer.com].m4a
+07/29/2025  10:41 PM         1,300,408 NAPENDWA OFFICIAL SONG BY JACKSON MUTINDA-[AudioTrimmer.com].mp3
+04/30/2025  10:19 AM           389,690 NDEKE+YA+MUTHANGA+-NGAI+EKAA+TAKE+(+SATANI+EWITE+KISšNGULI)+(Official+4K+Video)+SKIZA+6912719+TO+811-[AudioTrimmer.com].m4a
+05/06/2025  07:16 AM           309,038 ndoloto-[AudioTrimmer.com].m4a
+09/26/2025  12:32 AM           376,927 NDUKEW'A KYOA THANO OFFICIAL AUDIO BY  SANITA WOTE BOYS BAND-[AudioTrimmer.com].mp3
+08/06/2025  08:12 PM           422,066 Neteelete-[AudioTrimmer.com].mp3
+05/24/2025  08:29 PM           373,321 Ngai+evinya+ketha+niokwo+-+kinyambu+boys+band+(official+audio)-[AudioTrimmer.com].m4a
+05/16/2025  10:38 AM           310,506 ngavisaa ni nau-[AudioTrimmer.com].m4a
+04/20/2025  09:56 PM                 0 Ngavisaa ni nau-[AudioTrimmer.com].mp3
+04/23/2025  12:40 AM           788,408 Ngulawa Ki-[AudioTrimmer.com].mp3
+09/19/2025  11:45 AM           901,712 Nililikana Ngaia [oQAibs_uqOY]-[AudioTrimmer.com].mp3
+08/20/2025  04:49 PM           491,657 Nindi kwakya By Karanga Lazima (Official Video)-[AudioTrimmer.com].mp3
+06/13/2025  09:57 PM           381,315 Nosie Kamuchina by Ken wa Maria (OFFICIAL AUDIO)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/13/2025  09:50 PM           335,549 Nosie Kamuchina by Ken wa Maria (OFFICIAL AUDIO)-[AudioTrimmer.com].mp3
+04/22/2025  02:50 PM           243,989 Ntheete Ukamba-[AudioTrimmer.com].m4a
+04/22/2025  02:48 PM                 0 Ntheete Ukamba-[AudioTrimmer.com].mp3
+08/17/2025  09:47 PM           471,595 NYASHINSKI - SHOWMAN (Official Music Video)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+08/17/2025  09:29 PM           415,170 NYASHINSKI - SHOWMAN (Official Music Video)-[AudioTrimmer.com].mp3
+08/17/2025  09:46 PM           435,859 Nyashinski - TAI CHI (Official Music Video)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+08/17/2025  06:58 AM           534,915 Nyashinski - TAI CHI (Official Music Video)-[AudioTrimmer.com].mp3
+05/26/2025  07:42 PM         1,144,927 Pepas Official Video-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+05/26/2025  07:36 PM           671,798 Pepas Official Video-[AudioTrimmer.com].mp3
+04/30/2025  08:24 AM           971,480 Premier+Full+Episode+-++Pete+S1+Episode+1+-+Maisha+Magic+East-[AudioTrimmer.com].m4a
+07/27/2025  10:05 PM         1,058,409 Quavo - She For Keeps ft. Nicki Minaj (Filtered Instrumental)-[AudioTrimmer.com].mp3
+07/27/2025  10:08 PM         1,369,998 Quavo _ Takeoff - Nothing Changed ( Official Instrumental ) BEST-[AudioTrimmer.com].mp3
+05/31/2025  10:39 PM           276,617 Rayvanny - I love you (Official Music Video) SMS SKIZA 8548826 to 811-[AudioTrimmer.com].mp3
+07/28/2025  04:27 PM           448,398 REST IN PEACE BRO-SILA MUTINDA-[AudioTrimmer.com].mp3
+07/28/2025  05:09 PM           565,008 REST IN PEACE BRO-SILA MUTINDA-[AudioTrimmer.com]_2.mp3
+07/31/2025  08:34 PM           717,355 RITA MOMBASA(OFFICIAL AUDIO)-KEVOH BRAVOH@kenya stars band @kevoh bravoh official-[AudioTrimmer.com].mp3
+06/22/2025  02:42 PM           981,296 Rose Muhando Hatumo-[AudioTrimmer.com].mp3
+07/31/2025  12:34 AM           261,570 SAFARI YA WATHI  BY KAEWA SUPERSTARS (4k VIDEO) mpesabooking 0713501701-[AudioTrimmer.com].mp3
+07/24/2025  07:40 PM           385,007 saida amua sasa-[AudioTrimmer.com] (2).m4a
+05/06/2025  08:09 PM           248,618 saida amua sasa-[AudioTrimmer.com].m4a
+06/16/2025  01:02 AM         1,009,773 Saida Karoli - Baba Tajiri (Official Audio)-[AudioTrimmer.com].mp3
+07/07/2025  08:10 PM           213,597 Shabiki KK(official video)-[AudioTrimmer.com].mp3
+05/06/2025  05:21 PM           394,468 Shiku+Wa+Huruma+by+Ken+wa+Maria+(OFFICIAL+VIDEO)-[AudioTrimmer.com].m4a
+04/28/2025  04:53 AM           225,417 siri ya maisha mengele-[AudioTrimmer.com].mp3
+08/09/2025  12:54 AM           436,486 Solosita Mweene - Doreen Ka Tz-[AudioTrimmer.com].mp3
+05/29/2025  11:59 PM           984,430 stereo-love-[AudioTrimmer.com].mp3
+06/29/2025  02:36 PM           512,346 summer-[AudioTrimmer.com].mp3
+06/19/2025  12:15 PM           314,233 Super Mazembe - Kasongo-[AudioTrimmer.com].mp3
+08/30/2025  01:31 AM         1,442,096 Suzanna  Sauti Sol  Brendan Ross Saxophone Version-[AudioTrimmer.com] (1).mp3
+08/30/2025  01:30 AM         1,442,096 Suzanna  Sauti Sol  Brendan Ross Saxophone Version-[AudioTrimmer.com].mp3
+05/18/2025  06:32 AM           273,482 Sweet Love ft Diamond Platnumz OFFICIAL VIDEO-[AudioTrimmer.com].mp3
+05/27/2025  10:59 AM         5,796,186 Takeoff - Casper (Official Video)-[AudioTrimmer.com].mp3
+09/03/2025  01:15 AM           478,491 Tano Tena (Instrumental)- Sauti Sol feat Nviiri the Storyteller & Bensoul  Remake by kay paulsney-[AudioTrimmer.com].mp3
+09/05/2025  12:46 AM           400,750 Telesia By Peter MUAMBI Kyanganga Boys Band-[AudioTrimmer.com].mp3
+06/24/2025  12:58 PM           575,039 Tom Odell - Another Love (Official Video)-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/24/2025  12:54 PM           506,076 Tom Odell - Another Love (Official Video)-[AudioTrimmer.com].mp3
+07/17/2025  02:26 AM           319,248 Tumbo usu - Katika Nduku (Visualizer) 4k Video-[AudioTrimmer.com].mp3
+07/19/2025  06:07 AM           676,604 Tupatane (Instrumental)-[AudioTrimmer.com].mp3
+05/19/2025  03:47 PM           371,629 Tuyingwa+Kombe+By+Karanga+Lazima+(Official+Video)-[AudioTrimmer.com].m4a
+08/22/2025  11:54 PM           343,072 Uka Imelder By Alphonce Kioko (Maima) (Official video)-[AudioTrimmer.com].mp3
+06/12/2025  12:40 AM           211,512 UKAMBANI+--+DIANA+CHEMUTAI+CHELELE-[AudioTrimmer.com].m4a
+05/30/2025  04:36 PM           366,279 umau-ngwikie-ata-[AudioTrimmer.com].m4a
+06/05/2025  11:50 AM           519,869 Uninyunyizie Maji Official Video-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/05/2025  12:02 PM           875,343 Uninyunyizie Maji Official Video-[AudioTrimmer.com]-[AudioTrimmer.com]_2.mp3
+06/04/2025  10:40 PM           449,443 Uninyunyizie Maji Official Video-[AudioTrimmer.com].mp3
+07/31/2025  12:32 AM           638,987 UNYANYA FAKE (OFFICIAL 4K VIDEO)-[AudioTrimmer.com].mp3
+06/02/2025  12:53 PM           382,888 Utanipenda-[AudioTrimmer.com].m4a
+09/23/2025  07:22 PM           643,376 utao-[AudioTrimmer.com].mp3
+06/21/2025  09:27 PM           338,057 VITAA & SLIMANE - Avant toi (Clip Officiel)-[AudioTrimmer.com].mp3
+09/04/2025  02:06 AM           513,599 VUUSYA UNGU - BLACK SPOT (OFFICIAL VIDEO)-[AudioTrimmer.com].mp3
+08/22/2025  11:57 PM           412,662 Vuusya Ungu Ndalani  Boys - Livoti Sya Mercy (Official Video)-[AudioTrimmer.com].mp3
+08/03/2025  01:17 AM           486,014 WARAKA WA AMANI ESTER-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+08/03/2025  01:13 AM           645,257 WARAKA WA AMANI ESTER-[AudioTrimmer.com].mp3
+08/29/2025  02:20 AM           717,355 WORLD TOUR BY KAEWA SUPERSTARS  (VIDEO)For Booking & Mpesa 0713501701-[AudioTrimmer.com].mp3
+04/26/2025  12:21 AM           257,599 y2mate.com - Alex Kasau Katombi  KALUKI OFFICIAL 4K VIDEO-[AudioTrimmer.com].mp3
+05/04/2025  09:19 AM           241,717 y2mate.com - ALEX KASAU KATOMBI  MUNDU NANDU OFFICIAL 4K VIDEO-[AudioTrimmer.com].mp3
+04/26/2025  12:32 AM           346,209 y2mate.com - ALEX KASAU KATOMBIKWI KYATHIOFFICIAL 4K VIDEO-[AudioTrimmer.com].mp3
+04/28/2025  02:49 AM           353,732 y2mate.com - ALEX KASAU KATOMBIMAISHAOFFCIAL 4K VIDEO-[AudioTrimmer.com].mp3
+04/25/2025  11:44 PM           273,484 y2mate.com - Asanda Mutua Katuku Mombasa by Ken wa Maria OFFICIAL VIDEO-[AudioTrimmer.com].mp3
+06/07/2025  11:59 AM           462,817 y2mate.com - BENSOUL  FORGET YOU ACOUSTIC SMS Skiza 8549274 to 811-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+06/07/2025  11:57 AM           225,417 y2mate.com - BENSOUL  FORGET YOU ACOUSTIC SMS Skiza 8549274 to 811-[AudioTrimmer.com].mp3
+06/02/2025  12:45 PM           385,495 y2mate.com - Darassa feat Mbosso  Looking For Love Visualiser-[AudioTrimmer.com].mp3
+05/15/2025  01:19 PM           313,606 y2mate.com - Diamond Platnumz  Sikomi Official Video-[AudioTrimmer.com].mp3
+04/28/2025  04:13 AM           247,150 y2mate.com - IKINYA OFFICIAL VIDEO MYELLO SONGS-[AudioTrimmer.com].mp3
+06/21/2025  12:05 AM           644,630 y2mate.com - Jaguar  Kipepeo Official Video Main Switch-[AudioTrimmer.com].mp3
+05/12/2025  07:30 PM           593,641 y2mate.com - Keka Tiwe  Barnabas Matundu Official Video-[AudioTrimmer.com].mp3
+05/20/2025  10:11 PM           357,076 y2mate.com - KELITU  MAIMAOFFICIAL 4K VIDEO-[AudioTrimmer.com].mp3
+05/01/2025  01:33 PM           241,719 y2mate.com - kelitu mbithe by ken wa maria official video-[AudioTrimmer.com].mp3
+04/30/2025  10:29 AM           337,432 y2mate.com - KINDU KII KYA YESU KIMUYO  BY  CHRIS NDONYE-[AudioTrimmer.com].mp3
+04/30/2025  10:11 AM           449,443 y2mate.com - Magdalena-[AudioTrimmer.com].mp3
+04/30/2025  10:07 AM           225,417 y2mate.com - Marioo feat Bien  Nairobi Visualiser-[AudioTrimmer.com].mp3
+06/11/2025  11:49 PM           940,127 y2mate.com - Marlaw  Rita-[AudioTrimmer.com].mp3
+06/12/2025  12:01 AM           257,599 y2mate.com - Marlaw  Rita-[AudioTrimmer.com]_2.mp3
+05/15/2025  01:19 AM           356,865 y2mate.com - Nyashinski  Fly slow-[AudioTrimmer.com]-[AudioTrimmer.com].mp3
+05/15/2025  01:17 AM           209,534 y2mate.com - Nyashinski  Fly-[AudioTrimmer.com].mp3
+05/31/2025  10:57 PM           177,769 y2mate.com - Rayvanny Ft Zuchu  Number One Official Video-[AudioTrimmer.com].mp3
+05/12/2025  04:09 PM           385,495 y2mate.com - SIFU BWANA  Khaligraph Jones Ft Nyashinski Official Song-[AudioTrimmer.com].mp3
+06/16/2025  01:30 AM           794,468 Z Anto  Kisiwa Cha Malavidavi  Official Video-[AudioTrimmer.com].mp3
+08/09/2025  12:51 AM         1,274,076 Zuchu - Sukari Karaoke Version-[AudioTrimmer.com].mp3
+05/09/2025  01:27 PM           264,888 [OFFICIAL+VIDEO]+KIJANA+MUMO+-+KIUMO+NA+UOI+-+BEST+TOP+NEW+KAMBA+SONG-[AudioTrimmer.com].m4a
+             239 File(s)    133,593,469 bytes
+
+ Directory of C:\Users\User\Music\Playlists
+
+09/30/2025  03:05 PM    <DIR>          .
+09/30/2025  03:05 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+     Total Files Listed:
+             284 File(s)    459,577,869 bytes
+               8 Dir(s)   6,446,030,848 bytes free
