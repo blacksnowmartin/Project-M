@@ -1,0 +1,42 @@
+We wanna create an online piano like the one in https://www.musicca.com/piano.... sort of a mock up of that ... to be able tunes online for fun 
+1. Features to Implement:
+   - Interactive piano keyboard (88 keys like a real piano)
+   - Play notes using mouse clicks and keyboard (computer keys mapped to piano keys)
+   - Display which keys are currently pressed/highlighted
+   - Volume control and note sustain pedal toggle
+   - Visual feedback: show note name on key press
+   - Option to switch between simple (1-2 octaves) and full keyboard
+   - Responsive design for different screen sizes (desktop, tablet, mobile)
+   - Select instrument sounds (e.g., piano, organ, synth) if possible
+   - Save and share played tunes (record & playback)
+   - Dark/Light mode toggle
+
+2. Tech Stack:
+   - Frontend: React or Vanilla JS with HTML/CSS (focus on accessibility and performance)
+   - Sound: Web Audio API for accurate synthesis or sample playback
+   - Optional: Use libraries like Tone.js for easier audio handling, but understand basics
+   - Hosting: Deploy as a static site (Netlify, Vercel, or GitHub Pages)
+
+3. Steps to Build:
+   a. Design keyboard layout and responsive UI wireframe (Figma/pen-and-paper mockup)
+   b. Build interactive UI: render keys, handle input events, highlight keys
+   c. Integrate audio: play notes on key press, handle audio overlap/sustain
+   d. Map computer keyboard to piano keys (display overlay or reference chart)
+   e. Implement advanced features: octave shift, pedal, instrument, recorder
+   f. Polishing: responsive CSS, accessibility (keyboard navigation & ARIA)
+   g. Testing: cross-browser, mobile, edge cases (quick key presses, multi-touch)
+   h. Launch MVP, gather feedback, iterate
+
+4. Stretch Goals:
+   - MIDI keyboard support via Web MIDI API
+   - Sheet music view/learning mode
+   - User accounts to save compositions
+   - Backend for saving recordings to cloud (optional)
+
+5. Milestones:
+   - [ ] Interactive piano keyboard UI
+   - [ ] Basic note playback with Web Audio API
+   - [ ] Keyboard input mapping
+   - [ ] Responsive design & touch support
+   - [ ] Recording & playback features
+   - [ ] Polish & deployment
