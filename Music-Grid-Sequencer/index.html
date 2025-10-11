@@ -3,322 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melody Sequencer</title>
+    <title>Modern Melody Sequencer</title>
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="icon" type="image/svg+xml" href="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/music_note/default/48px.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Firebase-related global variables from the environment
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-        
-        // Log all Firebase messages to console for debugging
-        setLogLevel('Debug');
+    // Firebase env
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+    const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+    setLogLevel('Debug');
+    // Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-        let userId = '';
-        let isAuthReady = false;
+    // DOM refs
+    const sequencerContainer = document.getElementById('sequencer');
+    const playButton = document.getElementById('play-btn');
+    const saveButton = document.getElementById('save-btn');
+    const loadButton = document.getElementById('load-btn');
+    const stopButton = document.getElementById('stop-btn');
+    const tempoSlider = document.getElementById('tempo');
+    const statusMessage = document.getElementById('status-message');
+    const userIdDisplay = document.getElementById('user-id-display');
+    const loadingIndicator = document.getElementById('loading-indicator');
 
-        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-        const sequencerContainer = document.getElementById('sequencer');
-        const playButton = document.getElementById('play-btn');
-        const saveButton = document.getElementById('save-btn');
-        const loadButton = document.getElementById('load-btn');
-        const stopButton = document.getElementById('stop-btn');
-        const tempoSlider = document.getElementById('tempo');
-        const statusMessage = document.getElementById('status-message');
-        const userIdDisplay = document.getElementById('user-id-display');
-        const loadingIndicator = document.getElementById('loading-indicator');
+    // Sound + grid
+    const notes = ["C5", "B4", "A4", "G4", "F4", "E4", "D4", "C4"]; // high to low
+    const noteLabels = ["C", "B", "A", "G", "F", "E", "D", "C"];
+    const numSteps = 16;
+    let grid = Array.from({length: notes.length}, () => Array(numSteps).fill(false));
 
-        const notes = ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5"];
-        const numSteps = 16;
-        const grid = [];
+    // Visual improved color palette
+    const highlightColor = 'bg-yellow-300';
+    const noteOnColor = 'bg-indigo-500';
+    const noteOffColor = 'bg-white';
 
-        // Authentication and Firestore setup
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                userId = user.uid;
-                userIdDisplay.textContent = `Your User ID: ${userId}`;
-                isAuthReady = true;
-                // Once authenticated, start listening to data
-                listenToData();
-            } else {
-                // If no user, sign in anonymously or with custom token
+    // User state
+    let userId = '';
+    let isAuthReady = false;
+
+    // Smoother synth
+    const synth = new Tone.PolySynth(Tone.Synth, {
+        envelope: { attack: 0.04, release: 0.2 },
+        volume: -8,
+    }).toDestination();
+
+    // UI State
+    let currentStep = 0;
+    let loop = null;
+
+    /** Utility */
+    function showMessage(message, error) {
+        statusMessage.textContent = message;
+        statusMessage.classList.remove('hidden');
+        if (error) {
+          statusMessage.classList.add('text-red-600');
+        } else {
+          statusMessage.classList.remove('text-red-600');
+        }
+        setTimeout(() => {
+            statusMessage.classList.add('hidden');
+        }, 2500);
+    }
+
+    /** Auth + Data */
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            userId = user.uid;
+            userIdDisplay.innerHTML = `<span class="font-mono bg-gray-50 px-2 py-0.5 rounded border text-gray-600">${userId.slice(0,10)}...</span>`;
+            isAuthReady = true;
+            listenToData();
+        } else {
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+                console.error("Firebase Auth Error:", error);
+                showMessage('Authentication error', true);
+            }
+        }
+    });
+
+    function listenToData() {
+        const patternRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
+        onSnapshot(patternRef, (docSnap) => {
+            if (docSnap.exists() && isAuthReady) {
                 try {
-                    if (initialAuthToken) {
-                        await signInWithCustomToken(auth, initialAuthToken);
-                    } else {
-                        await signInAnonymously(auth);
-                    }
-                } catch (error) {
-                    console.error("Firebase Auth Error:", error);
-                }
-            }
-        });
-
-        const listenToData = () => {
-            const userDocRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
-            onSnapshot(userDocRef, (docSnap) => {
-                if (docSnap.exists() && isAuthReady) {
-                    try {
-                        const data = docSnap.data();
-                        if (data && data.notes) {
-                            const parsedNotes = JSON.parse(data.notes);
-                            if (parsedNotes.length === notes.length && parsedNotes[0].length === numSteps) {
-                                parsedNotes.forEach((row, rowIndex) => {
-                                    row.forEach((value, colIndex) => {
-                                        grid[rowIndex][colIndex] = value;
-                                        const cell = sequencerContainer.children[rowIndex].children[colIndex];
-                                        if (cell) {
-                                            cell.classList.toggle('bg-blue-500', value);
-                                            cell.classList.toggle('bg-gray-200', !value);
-                                        }
-                                    });
-                                });
-                                showMessage("Pattern loaded successfully!");
-                            }
-                        }
-                    } catch (e) {
-                        console.error("Error parsing Firestore data:", e);
-                    }
-                }
-            }, (error) => {
-                console.error("Error fetching Firestore data:", error);
-            });
-        };
-
-        // Create the sequencer grid
-        const createGrid = () => {
-            sequencerContainer.innerHTML = '';
-            for (let i = 0; i < notes.length; i++) {
-                const row = document.createElement('div');
-                row.className = 'flex justify-center';
-                const rowData = [];
-                for (let j = 0; j < numSteps; j++) {
-                    const cell = document.createElement('div');
-                    cell.className = 'w-8 h-8 md:w-10 md:h-10 border border-gray-300 m-0.5 rounded-sm transition-colors cursor-pointer bg-gray-200 hover:bg-gray-300';
-                    cell.dataset.row = i;
-                    cell.dataset.col = j;
-                    cell.addEventListener('click', () => {
-                        const isNoteOn = !grid[i][j];
-                        grid[i][j] = isNoteOn;
-                        cell.classList.toggle('bg-blue-500', isNoteOn);
-                        cell.classList.toggle('bg-gray-200', !isNoteOn);
-                    });
-                    row.appendChild(cell);
-                    rowData.push(false);
-                }
-                sequencerContainer.appendChild(row);
-                grid.push(rowData);
-            }
-        };
-
-        let currentStep = 0;
-        let loop = null;
-
-        const showMessage = (message) => {
-            statusMessage.textContent = message;
-            statusMessage.classList.remove('hidden');
-            setTimeout(() => {
-                statusMessage.classList.add('hidden');
-            }, 3000);
-        };
-
-        // Play/Stop logic
-        const startPlayback = () => {
-            if (loop) return; // Prevent multiple loops
-            Tone.Transport.start();
-            loop = new Tone.Loop(time => {
-                const step = currentStep % numSteps;
-                // Highlight the current step
-                document.querySelectorAll('.sequencer-cell-highlight').forEach(el => el.classList.remove('bg-yellow-300', 'sequencer-cell-highlight'));
-                
-                const currentColumn = document.querySelectorAll(`[data-col="${step}"]`);
-                currentColumn.forEach(cell => {
-                    cell.classList.add('bg-yellow-300', 'sequencer-cell-highlight');
-                });
-                
-                // Play notes
-                notes.forEach((note, noteIndex) => {
-                    if (grid[noteIndex][step]) {
-                        synth.triggerAttackRelease(note, "8n", time);
-                    }
-                });
-                currentStep++;
-            }, "8n").start(0);
-            
-            playButton.textContent = 'Playing...';
-            playButton.disabled = true;
-            stopButton.disabled = false;
-        };
-
-        const stopPlayback = () => {
-            Tone.Transport.stop();
-            if (loop) {
-                loop.dispose();
-                loop = null;
-            }
-            currentStep = 0;
-            playButton.textContent = 'Play';
-            playButton.disabled = false;
-            stopButton.disabled = true;
-            document.querySelectorAll('.sequencer-cell-highlight').forEach(el => el.classList.remove('bg-yellow-300', 'sequencer-cell-highlight'));
-        };
-
-        // Button Event Listeners
-        playButton.addEventListener('click', startPlayback);
-        stopButton.addEventListener('click', stopPlayback);
-
-        // Save pattern to Firestore
-        saveButton.addEventListener('click', async () => {
-            if (!isAuthReady) {
-                showMessage("Authentication not ready. Please wait.");
-                return;
-            }
-            loadingIndicator.classList.remove('hidden');
-            try {
-                const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
-                const serializedNotes = JSON.stringify(grid);
-                await setDoc(docRef, {
-                    notes: serializedNotes,
-                    timestamp: Tone.now(),
-                    tempo: Tone.Transport.bpm.value
-                });
-                showMessage("Pattern saved successfully!");
-            } catch (e) {
-                console.error("Error saving document:", e);
-                showMessage("Error saving pattern. Check console.");
-            } finally {
-                loadingIndicator.classList.add('hidden');
-            }
-        });
-
-        // Load pattern from Firestore
-        loadButton.addEventListener('click', async () => {
-            if (!isAuthReady) {
-                showMessage("Authentication not ready. Please wait.");
-                return;
-            }
-            loadingIndicator.classList.remove('hidden');
-            try {
-                const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
-                const docSnap = await getDoc(docRef);
-                if (docSnap.exists()) {
                     const data = docSnap.data();
                     if (data && data.notes) {
                         const parsedNotes = JSON.parse(data.notes);
-                        if (parsedNotes.length === notes.length && parsedNotes[0].length === numSteps) {
-                            // Update the grid and UI
-                            parsedNotes.forEach((row, rowIndex) => {
-                                row.forEach((value, colIndex) => {
-                                    grid[rowIndex][colIndex] = value;
-                                    const cell = sequencerContainer.children[rowIndex].children[colIndex];
-                                    if (cell) {
-                                        cell.classList.toggle('bg-blue-500', value);
-                                        cell.classList.toggle('bg-gray-200', !value);
-                                    }
-                                });
-                            });
-                            // Update Tempo
-                            if (data.tempo) {
-                                tempoSlider.value = data.tempo;
-                                Tone.Transport.bpm.value = data.tempo;
-                            }
-                            showMessage("Pattern loaded successfully!");
-                        } else {
-                            showMessage("Data structure mismatch. Cannot load.");
+                        if (
+                            Array.isArray(parsedNotes)
+                            && parsedNotes.length === notes.length
+                            && parsedNotes[0].length === numSteps
+                        ) {
+                            setGrid(parsedNotes, true);
                         }
                     }
-                } else {
-                    showMessage("No saved pattern found.");
-                }
-            } catch (e) {
-                console.error("Error loading document:", e);
-                showMessage("Error loading pattern. Check console.");
-            } finally {
-                loadingIndicator.classList.add('hidden');
+                } catch(e) { console.error("Error parsing Firestore data", e);}
             }
+        }, err => {
+            showMessage("Sync error", true);
+            console.error(err);
         });
+    }
 
-        // Clear button logic
-        document.getElementById('clear-btn').addEventListener('click', () => {
-            stopPlayback();
-            grid.forEach(row => row.fill(false));
-            document.querySelectorAll('#sequencer div div').forEach(cell => {
-                cell.classList.remove('bg-blue-500');
-                cell.classList.add('bg-gray-200');
+    // Grid Aesthetic Enhancement
+    function createGrid() {
+        sequencerContainer.innerHTML = '';
+        for (let i = 0; i < notes.length; i++) {
+            const row = document.createElement('div');
+            row.className = 'flex items-center mb-1';
+
+            // Note label on left
+            const label = document.createElement('span');
+            label.textContent = noteLabels[i];
+            label.className = 'w-5 mr-2 text-center text-gray-500 text-xs md:text-base font-semibold font-mono';
+            row.appendChild(label);
+
+            for (let j = 0; j < numSteps; j++) {
+                const cell = document.createElement('div');
+                cell.className = `sequencer-cell w-7 h-7 md:w-9 md:h-9 border border-gray-300 mx-0.5 rounded-full shadow-sm cursor-pointer transition-all duration-200 ${noteOffColor} hover:bg-indigo-100 hover:shadow-md`;
+                cell.tabIndex = 0;
+                cell.setAttribute('role', 'button');
+                cell.setAttribute('aria-label', `${noteLabels[i]} step ${j+1}`);
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                cell.addEventListener('click', () => toggleCell(i, j, cell));
+                cell.addEventListener('keydown', (evt) => {
+                  if(evt.key === " " || evt.key === "Enter") {
+                    evt.preventDefault();
+                    toggleCell(i, j, cell);
+                  }
+                });
+                row.appendChild(cell);
+            }
+            sequencerContainer.appendChild(row);
+        }
+    }
+
+    function toggleCell(i, j, cell) {
+        grid[i][j] = !grid[i][j];
+        cell.classList.toggle(noteOnColor, grid[i][j]);
+        cell.classList.toggle(noteOffColor, !grid[i][j]);
+        cell.classList.toggle('ring-2', grid[i][j]);
+        cell.classList.toggle('ring-indigo-400', grid[i][j]);
+    }
+
+    /** Update grid and UI */
+    function setGrid(newGrid, triggerUI = false) {
+      grid = newGrid.map(row => [...row]);
+      for (let i = 0; i < notes.length; i++) {
+        for (let j = 0; j < numSteps; j++) {
+          const cell = sequencerContainer.children[i].children[j+1]; // first is label
+          if (cell) {
+              cell.classList.toggle(noteOnColor, grid[i][j]);
+              cell.classList.toggle(noteOffColor, !grid[i][j]);
+              cell.classList.toggle('ring-2', grid[i][j]);
+              cell.classList.toggle('ring-indigo-400', grid[i][j]);
+          }
+        }
+      }
+      if (triggerUI) {
+        showMessage("Pattern loaded 🎶");
+      }
+    }
+
+    /** PLAY/PULSE */
+    function highlightStep(stepIdx) {
+      // Remove highlight
+      for (let i = 0; i < notes.length; i++) {
+        for (let j = 0; j < numSteps; j++) {
+          const cell = sequencerContainer.children[i].children[j+1];
+          cell.classList.remove(highlightColor, "scale-110");
+        }
+      }
+      for (let i = 0; i < notes.length; i++) {
+        const cell = sequencerContainer.children[i].children[stepIdx+1];
+        if (cell) {
+          cell.classList.add(highlightColor, "scale-110");
+        }
+      }
+    }
+
+    function clearHighlight() {
+      for (let i = 0; i < notes.length; i++) {
+        for (let j = 0; j < numSteps; j++) {
+          const cell = sequencerContainer.children[i].children[j+1];
+          cell.classList.remove(highlightColor, "scale-110");
+        }
+      }
+    }
+
+    function startPlayback() {
+        if (loop) return;
+        Tone.Transport.start();
+        loop = new Tone.Loop(time => {
+            const step = currentStep % numSteps;
+            highlightStep(step);
+            notes.forEach((note, nidx) => {
+                if (grid[nidx][step]) {
+                    synth.triggerAttackRelease(note, '8n', time);
+                }
             });
-            showMessage("Grid cleared.");
-        });
+            currentStep++;
+        }, "8n").start(0);
 
-        // Tempo slider logic
-        tempoSlider.addEventListener('input', (e) => {
-            Tone.Transport.bpm.value = e.target.value;
-            document.getElementById('tempo-display').textContent = `${e.target.value} BPM`;
+        playButton.innerHTML = `<svg class="w-4 h-4 mr-1 animate-pulse inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"></polygon></svg> Playing`;
+        playButton.disabled = true;
+        stopButton.disabled = false;
+    }
+
+    function stopPlayback() {
+        Tone.Transport.stop();
+        if (loop) {
+            loop.dispose();
+            loop = null;
+        }
+        currentStep = 0;
+        clearHighlight();
+        playButton.innerHTML = `<svg class="w-4 h-4 mr-1 inline" fill="currentColor" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"></polygon></svg> Play`;
+        playButton.disabled = false;
+        stopButton.disabled = true;
+    }
+
+    // Save to Firestore
+    saveButton.addEventListener('click', async () => {
+      if (!isAuthReady) return showMessage("Auth not ready!", true);
+      loadingIndicator.classList.remove('hidden');
+      try {
+        const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
+        await setDoc(docRef, {
+          notes: JSON.stringify(grid),
+          timestamp: Date.now(),
+          tempo: Tone.Transport.bpm.value,
         });
-        
-        // Initial setup
-        window.onload = () => {
-            createGrid();
-            Tone.start();
-            Tone.Transport.bpm.value = tempoSlider.value;
-            stopButton.disabled = true;
-            document.getElementById('tempo-display').textContent = `${tempoSlider.value} BPM`;
-        };
+        showMessage("Saved!", false);
+      } catch (e) {
+        showMessage("Save error", true);
+        console.error(e);
+      }
+      loadingIndicator.classList.add('hidden');
+    });
+
+    // Load from Firestore
+    loadButton.addEventListener('click', async () => {
+      if (!isAuthReady) return showMessage("Auth not ready!", true);
+      loadingIndicator.classList.remove('hidden');
+      try {
+        const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          if (data && data.notes) {
+            const parsedNotes = JSON.parse(data.notes);
+            if (parsedNotes.length === notes.length && parsedNotes[0].length === numSteps) {
+              setGrid(parsedNotes, true);
+              // Set tempo
+              if (data.tempo) {
+                tempoSlider.value = data.tempo;
+                Tone.Transport.bpm.value = data.tempo;
+                document.getElementById('tempo-display').textContent = `${data.tempo} BPM`;
+              }
+              showMessage("Loaded!", false);
+            } else {
+              showMessage("Bad pattern shape.", true);
+            }
+          }
+        } else showMessage("No pattern found", true);
+      } catch(e) {
+        showMessage("Error loading", true);
+        console.error(e);
+      }
+      loadingIndicator.classList.add('hidden');
+    });
+
+    // Clear
+    document.getElementById('clear-btn').addEventListener('click', () => {
+        stopPlayback();
+        grid = Array.from({length: notes.length}, () => Array(numSteps).fill(false));
+        setGrid(grid);
+        showMessage("Grid cleared");
+    });
+
+    // Tempo
+    tempoSlider.addEventListener('input', (e) => {
+        Tone.Transport.bpm.value = +e.target.value;
+        document.getElementById('tempo-display').textContent = `${e.target.value} BPM`;
+    });
+
+    // Controls
+    playButton.addEventListener('click', startPlayback);
+    stopButton.addEventListener('click', stopPlayback);
+
+    // Keyboard convenient shortcuts ('Space': play/stop, 'c': clear)
+    document.addEventListener('keydown', evt => {
+        if (document.activeElement !== document.body) return;
+        if (evt.code === 'Space') {
+            evt.preventDefault();
+            if (!loop) startPlayback(); else stopPlayback();
+        } else if (evt.key.toLowerCase() === 'c') {
+            document.getElementById('clear-btn').click();
+        }
+    });
+
+    // Onload
+    window.onload = () => {
+      createGrid();
+      Tone.start();
+      Tone.Transport.bpm.value = tempoSlider.value;
+      stopButton.disabled = true;
+      playButton.disabled = false;
+      document.getElementById('tempo-display').textContent = `${tempoSlider.value} BPM`;
+    };
+
     </script>
     <style>
-        .sequencer-cell-highlight {
-            transition: background-color 0.1s ease-in-out;
-        }
+      .sequencer-cell-highlight {
+          transition: background-color 0.1s cubic-bezier(.4,.4,.2,1), transform 0.1s;
+      }
+      /* Scrollbar for grid if needed on small devices */
+      #sequencer {
+        scrollbar-color: #b4b4b4 #f5f5f5;
+      }
+      #sequencer::-webkit-scrollbar {
+        height: 4px; background: #f5f5f5;
+      }
+      #sequencer::-webkit-scrollbar-thumb {
+        background: #bbb; border-radius: 3px;
+      }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen font-sans p-4">
-    <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full flex flex-col items-center space-y-6">
-        <div class="text-center">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Melody Sequencer</h1>
-            <p class="mt-2 text-md text-gray-500">Click on the grid to create a beat. Save it for later!</p>
-            <div id="user-id-display" class="mt-2 text-xs text-gray-400">Loading user ID...</div>
-        </div>
-        
-        <!-- Sequencer Grid -->
-        <div id="sequencer" class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
-            <!-- Grid will be generated by JavaScript -->
-        </div>
-
-        <!-- Controls -->
-        <div class="flex flex-wrap justify-center gap-2 md:gap-4 mt-4 w-full">
-            <button id="play-btn" class="px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-md hover:bg-green-600 transition-transform transform hover:scale-105">Play</button>
-            <button id="stop-btn" class="px-6 py-3 bg-red-500 text-white font-bold rounded-full shadow-md hover:bg-red-600 transition-transform transform hover:scale-105">Stop</button>
-            <button id="clear-btn" class="px-6 py-3 bg-gray-500 text-white font-bold rounded-full shadow-md hover:bg-gray-600 transition-transform transform hover:scale-105">Clear</button>
-            <button id="save-btn" class="px-6 py-3 bg-indigo-500 text-white font-bold rounded-full shadow-md hover:bg-indigo-600 transition-transform transform hover:scale-105">Save</button>
-            <button id="load-btn" class="px-6 py-3 bg-purple-500 text-white font-bold rounded-full shadow-md hover:bg-purple-600 transition-transform transform hover:scale-105">Load</button>
-        </div>
-
-        <!-- Tempo Slider -->
-        <div class="w-full max-w-xs text-center space-y-2">
-            <label for="tempo" class="text-sm font-semibold text-gray-700">Tempo: <span id="tempo-display">120 BPM</span></label>
-            <input type="range" id="tempo" min="60" max="240" value="120" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
-        </div>
-
-        <!-- Status Message and Loading -->
-        <div class="relative w-full text-center h-8">
-            <div id="status-message" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden"></div>
-            <div id="loading-indicator" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden">
-                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Processing...
-            </div>
-        </div>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100 flex items-center justify-center min-h-screen font-sans">
+  <main class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-6 md:p-10 max-w-5xl w-full flex flex-col items-center space-y-7 border border-indigo-100">
+    <header class="text-center space-y-1">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-800 drop-shadow">Melody Sequencer</h1>
+      <p class="mt-1 text-base md:text-lg text-gray-500">Create, play, and save your melody patterns!</p>
+      <div id="user-id-display" class="mt-2 text-xs text-gray-400 font-mono select-all">Loading user ID...</div>
+    </header>
+    <!-- Sequencer Grid -->
+    <section id="sequencer" class="bg-white py-5 px-0 md:px-6 rounded-xl shadow-inner border-2 border-indigo-100 overflow-auto" style="min-width: min(677px, 98vw)">
+      <!-- Grid is built here -->
+    </section>
+    <!-- Controls Row -->
+    <nav aria-label="Controls" class="flex flex-wrap justify-center gap-2 md:gap-4 w-full">
+      <button id="play-btn" class="flex items-center px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600 focus:ring-2 ring-green-400 transition-all transition-transform hover:scale-105 outline-none" aria-label="Play">
+        <svg class="w-4 h-4 mr-1 inline" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg> Play
+      </button>
+      <button id="stop-btn" class="flex items-center px-6 py-3 bg-red-500 text-white font-bold rounded-full shadow-lg hover:bg-red-600 focus:ring-2 ring-red-400 transition-all hover:scale-105 outline-none" aria-label="Stop">
+        <svg class="w-4 h-4 mr-1 inline" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg> Stop
+      </button>
+      <button id="clear-btn" class="flex items-center px-6 py-3 bg-gray-400 text-white font-bold rounded-full shadow-lg hover:bg-gray-500 focus:ring-2 ring-gray-400 transition-all hover:scale-105 outline-none" aria-label="Clear">
+        <svg class="w-4 h-4 mr-1 inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        Clear
+      </button>
+      <button id="save-btn" class="flex items-center px-6 py-3 bg-indigo-600 text-white font-bold rounded-full shadow-lg hover:bg-indigo-700 focus:ring-2 ring-indigo-400 transition-all hover:scale-105 outline-none" aria-label="Save">
+        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V7a2 2 0 012-2h2l2-2h4l2 2h2a2 2 0 012 2v12a2 2 0 01-2 2z"></path></svg>
+        Save
+      </button>
+      <button id="load-btn" class="flex items-center px-6 py-3 bg-purple-600 text-white font-bold rounded-full shadow-lg hover:bg-purple-700 focus:ring-2 ring-purple-400 transition-all hover:scale-105 outline-none" aria-label="Load">
+        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 19V6m0 13l-6-6m6 6l6-6"></path></svg>
+        Load
+      </button>
+    </nav>
+    <!-- Tempo Slider/Display -->
+    <div class="w-full max-w-xs text-center space-y-2">
+      <label for="tempo" class="text-sm md:text-base font-semibold text-gray-700 select-none">Tempo: <span id="tempo-display" class="align-text-bottom">120 BPM</span></label>
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-gray-400">60</span>
+        <input type="range" id="tempo" min="60" max="240" value="120"
+          class="w-full h-2 bg-gray-300 rounded-lg appearance-none accent-indigo-500 focus:accent-indigo-700 cursor-pointer border border-indigo-100 transition-all">
+        <span class="text-xs text-gray-400">240</span>
+      </div>
     </div>
+    <!-- Status Message / Loading -->
+    <div class="relative w-full text-center h-8">
+      <div id="status-message" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden"></div>
+      <div id="loading-indicator" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden">
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Processing...
+      </div>
+    </div>
+    <footer class="pt-4 text-xs text-gray-400 text-center select-none">© Melody Sequencer • Built with <span class="text-indigo-400">Tone.js + Firebase</span></footer>
+  </main>
 </body>
 </html>
