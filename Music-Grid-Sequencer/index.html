@@ -9,20 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-    import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-    // Firebase env
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-    const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-    setLogLevel('Debug');
-    // Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const auth = getAuth(app);
 
     // DOM refs
     const sequencerContainer = document.getElementById('sequencer');
@@ -32,8 +18,6 @@
     const stopButton = document.getElementById('stop-btn');
     const tempoSlider = document.getElementById('tempo');
     const statusMessage = document.getElementById('status-message');
-    const userIdDisplay = document.getElementById('user-id-display');
-    const loadingIndicator = document.getElementById('loading-indicator');
 
     // Sound + grid
     const notes = ["C5", "B4", "A4", "G4", "F4", "E4", "D4", "C4"]; // high to low
@@ -46,9 +30,7 @@
     const noteOnColor = 'bg-indigo-500';
     const noteOffColor = 'bg-white';
 
-    // User state
-    let userId = '';
-    let isAuthReady = false;
+    // User state - removed Firebase auth state
 
     // Smoother synth
     const synth = new Tone.PolySynth(Tone.Synth, {
@@ -74,49 +56,45 @@
         }, 2500);
     }
 
-    /** Auth + Data */
-    onAuthStateChanged(auth, async (user) => {
-        if (user) {
-            userId = user.uid;
-            userIdDisplay.innerHTML = `<span class="font-mono bg-gray-50 px-2 py-0.5 rounded border text-gray-600">${userId.slice(0,10)}...</span>`;
-            isAuthReady = true;
-            listenToData();
-        } else {
-            try {
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-            } catch (error) {
-                console.error("Firebase Auth Error:", error);
-                showMessage('Authentication error', true);
-            }
+    /** LocalStorage Functions */
+    function savePattern() {
+        try {
+            const patternData = {
+                notes: grid,
+                tempo: Tone.Transport.bpm.value,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('melodyPattern', JSON.stringify(patternData));
+            showMessage("Pattern saved locally!", false);
+        } catch (error) {
+            console.error("Save error:", error);
+            showMessage("Save error", true);
         }
-    });
+    }
 
-    function listenToData() {
-        const patternRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
-        onSnapshot(patternRef, (docSnap) => {
-            if (docSnap.exists() && isAuthReady) {
-                try {
-                    const data = docSnap.data();
-                    if (data && data.notes) {
-                        const parsedNotes = JSON.parse(data.notes);
-                        if (
-                            Array.isArray(parsedNotes)
-                            && parsedNotes.length === notes.length
-                            && parsedNotes[0].length === numSteps
-                        ) {
-                            setGrid(parsedNotes, true);
-                        }
+    function loadPattern() {
+        try {
+            const savedData = localStorage.getItem('melodyPattern');
+            if (savedData) {
+                const patternData = JSON.parse(savedData);
+                if (patternData.notes && patternData.notes.length === notes.length && patternData.notes[0].length === numSteps) {
+                    setGrid(patternData.notes, true);
+                    if (patternData.tempo) {
+                        tempoSlider.value = patternData.tempo;
+                        Tone.Transport.bpm.value = patternData.tempo;
+                        document.getElementById('tempo-display').textContent = `${patternData.tempo} BPM`;
                     }
-                } catch(e) { console.error("Error parsing Firestore data", e);}
+                    showMessage("Pattern loaded!", false);
+                } else {
+                    showMessage("Invalid pattern format", true);
+                }
+            } else {
+                showMessage("No saved pattern found", true);
             }
-        }, err => {
-            showMessage("Sync error", true);
-            console.error(err);
-        });
+        } catch (error) {
+            console.error("Load error:", error);
+            showMessage("Load error", true);
+        }
     }
 
     // Grid Aesthetic Enhancement
@@ -238,56 +216,11 @@
         stopButton.disabled = true;
     }
 
-    // Save to Firestore
-    saveButton.addEventListener('click', async () => {
-      if (!isAuthReady) return showMessage("Auth not ready!", true);
-      loadingIndicator.classList.remove('hidden');
-      try {
-        const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
-        await setDoc(docRef, {
-          notes: JSON.stringify(grid),
-          timestamp: Date.now(),
-          tempo: Tone.Transport.bpm.value,
-        });
-        showMessage("Saved!", false);
-      } catch (e) {
-        showMessage("Save error", true);
-        console.error(e);
-      }
-      loadingIndicator.classList.add('hidden');
-    });
+    // Save to localStorage
+    saveButton.addEventListener('click', savePattern);
 
-    // Load from Firestore
-    loadButton.addEventListener('click', async () => {
-      if (!isAuthReady) return showMessage("Auth not ready!", true);
-      loadingIndicator.classList.remove('hidden');
-      try {
-        const docRef = doc(db, 'artifacts', appId, 'users', userId, 'music_patterns', 'pattern1');
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          if (data && data.notes) {
-            const parsedNotes = JSON.parse(data.notes);
-            if (parsedNotes.length === notes.length && parsedNotes[0].length === numSteps) {
-              setGrid(parsedNotes, true);
-              // Set tempo
-              if (data.tempo) {
-                tempoSlider.value = data.tempo;
-                Tone.Transport.bpm.value = data.tempo;
-                document.getElementById('tempo-display').textContent = `${data.tempo} BPM`;
-              }
-              showMessage("Loaded!", false);
-            } else {
-              showMessage("Bad pattern shape.", true);
-            }
-          }
-        } else showMessage("No pattern found", true);
-      } catch(e) {
-        showMessage("Error loading", true);
-        console.error(e);
-      }
-      loadingIndicator.classList.add('hidden');
-    });
+    // Load from localStorage
+    loadButton.addEventListener('click', loadPattern);
 
     // Clear
     document.getElementById('clear-btn').addEventListener('click', () => {
@@ -350,7 +283,6 @@
     <header class="text-center space-y-1">
       <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-800 drop-shadow">Melody Sequencer</h1>
       <p class="mt-1 text-base md:text-lg text-gray-500">Create, play, and save your melody patterns!</p>
-      <div id="user-id-display" class="mt-2 text-xs text-gray-400 font-mono select-all">Loading user ID...</div>
     </header>
     <!-- Sequencer Grid -->
     <section id="sequencer" class="bg-white py-5 px-0 md:px-6 rounded-xl shadow-inner border-2 border-indigo-100 overflow-auto" style="min-width: min(677px, 98vw)">
@@ -387,18 +319,11 @@
         <span class="text-xs text-gray-400">240</span>
       </div>
     </div>
-    <!-- Status Message / Loading -->
+    <!-- Status Message -->
     <div class="relative w-full text-center h-8">
       <div id="status-message" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden"></div>
-      <div id="loading-indicator" class="absolute inset-0 flex items-center justify-center text-sm font-medium text-gray-700 hidden">
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        Processing...
-      </div>
     </div>
-    <footer class="pt-4 text-xs text-gray-400 text-center select-none">© Melody Sequencer • Built with <span class="text-indigo-400">Tone.js + Firebase</span></footer>
+    <footer class="pt-4 text-xs text-gray-400 text-center select-none">© Melody Sequencer • Built with <span class="text-indigo-400">Tone.js + LocalStorage</span></footer>
   </main>
 </body>
 </html>
