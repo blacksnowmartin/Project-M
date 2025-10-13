@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Piano - Play & Record Music</title>
+    <meta name="theme-color" content="#1f2937">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'><path d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z'/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <style>
+        .piano-key {
+            transition: all 0.1s ease;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .piano-key:active,
+        .piano-key.pressed {
+            transform: translateY(2px);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .white-key {
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #d1d5db;
+        }
+        
+        .white-key:hover {
+            background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        
+        .white-key.pressed {
+            background: linear-gradient(to bottom, #e5e7eb 0%, #d1d5db 100%);
+        }
+        
+        .black-key {
+            background: linear-gradient(to bottom, #374151 0%, #1f2937 100%);
+            border: 1px solid #111827;
+            z-index: 2;
+        }
+        
+        .black-key:hover {
+            background: linear-gradient(to bottom, #4b5563 0%, #374151 100%);
+        }
+        
+        .black-key.pressed {
+            background: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
+        }
+        
+        .dark .white-key {
+            background: linear-gradient(to bottom, #f9fafb 0%, #f3f4f6 100%);
+            border-color: #9ca3af;
+        }
+        
+        .dark .white-key:hover {
+            background: linear-gradient(to bottom, #e5e7eb 0%, #d1d5db 100%);
+        }
+        
+        .dark .black-key {
+            background: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
+            border-color: #000000;
+        }
+        
+        .dark .black-key:hover {
+            background: linear-gradient(to bottom, #374151 0%, #1f2937 100%);
+        }
+        
+        .keyboard-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            z-index: 10;
+            max-width: 200px;
+        }
+        
+        .recording-indicator {
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .piano-container {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #6b7280 #f3f4f6;
+        }
+        
+        .piano-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .piano-container::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 4px;
+        }
+        
+        .piano-container::-webkit-scrollbar-thumb {
+            background: #6b7280;
+            border-radius: 4px;
+        }
+        
+        .piano-container::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white dark:bg-gray-800 shadow-lg border-b border-gray-200 dark:border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center space-x-4">
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">🎹 Online Piano</h1>
+                        <div class="hidden sm:block text-sm text-gray-500 dark:text-gray-400">
+                            Play, Record & Share Music
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <svg class="w-5 h-5 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path id="sun-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                <path id="moon-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col items-center justify-center p-4 space-y-6">
+            <!-- Controls Panel -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-4xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <!-- Volume Control -->
+                    <div class="flex flex-col space-y-2">
+                        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Volume</label>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.7" 
+                               class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+                        <span id="volume-display" class="text-xs text-gray-500 dark:text-gray-400">70%</span>
+                    </div>
+
+                    <!-- Octave Control -->
+                    <div class="flex flex-col space-y-2">
+                        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Octave</label>
+                        <div class="flex items-center space-x-2">
+                            <button id="octave-down" class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">-</button>
+                            <span id="octave-display" class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded min-w-[3rem] text-center">4</span>
+                            <button id="octave-up" class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Instrument Selection -->
+                    <div class="flex flex-col space-y-2">
+                        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Instrument</label>
+                        <select id="instrument-select" class="px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-sm">
+                            <option value="piano">Piano</option>
+                            <option value="organ">Organ</option>
+                            <option value="synth">Synth</option>
+                            <option value="strings">Strings</option>
+                        </select>
+                    </div>
+
+                    <!-- Sustain Pedal -->
+                    <div class="flex flex-col space-y-2">
+                        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">Sustain</label>
+                        <button id="sustain-pedal" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                            <span id="sustain-text">Off</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recording Controls -->
+                <div class="flex justify-center space-x-4 mb-6">
+                    <button id="record-btn" class="flex items-center px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg font-medium transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        Record
+                    </button>
+                    <button id="play-btn" class="flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors" disabled>
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                        Play
+                    </button>
+                    <button id="stop-btn" class="flex items-center px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors" disabled>
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="6" y="6" width="12" height="12"/>
+                        </svg>
+                        Stop
+                    </button>
+                    <button id="clear-btn" class="flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg font-medium transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Status Display -->
+                <div class="text-center">
+                    <div id="status-display" class="text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Ready to play!</div>
+                    <div id="note-display" class="text-sm text-gray-500 dark:text-gray-400"></div>
+                </div>
+            </div>
+
+            <!-- Piano Keyboard -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-6xl">
+                <div class="piano-container">
+                    <div id="piano-keyboard" class="relative flex justify-center" style="min-width: 1200px;">
+                        <!-- Piano keys will be generated here -->
+                    </div>
+                </div>
+                
+                <!-- Keyboard Mapping Overlay -->
+                <div id="keyboard-overlay" class="keyboard-overlay">
+                    <div class="font-semibold mb-2">Keyboard Shortcuts:</div>
+                    <div class="text-xs space-y-1">
+                        <div>A S D F G H J K L - White keys</div>
+                        <div>W E T Y U - Black keys</div>
+                        <div>Space - Sustain pedal</div>
+                        <div>↑↓ - Octave shift</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Built with <span class="text-blue-500">Tone.js</span> • 
+                    <span class="text-green-500">No installation required</span> • 
+                    <span class="text-purple-500">Works offline</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Piano Application
+        class OnlinePiano {
+            constructor() {
+                this.audioContext = null;
+                this.synth = null;
+                this.recording = [];
+                this.isRecording = false;
+                this.isPlaying = false;
+                this.currentOctave = 4;
+                this.sustainPedal = false;
+                this.volume = 0.7;
+                this.instrument = 'piano';
+                this.pressedKeys = new Set();
+                
+                // Note mapping for computer keyboard
+                this.keyMap = {
+                    'KeyA': 'C', 'KeyS': 'D', 'KeyD': 'E', 'KeyF': 'F', 'KeyG': 'G', 'KeyH': 'A', 'KeyJ': 'B', 'KeyK': 'C', 'KeyL': 'D',
+                    'KeyW': 'C#', 'KeyE': 'D#', 'KeyT': 'F#', 'KeyY': 'G#', 'KeyU': 'A#'
+                };
+                
+                this.init();
+            }
+
+            async init() {
+                await this.setupAudio();
+                this.createPianoKeys();
+                this.setupEventListeners();
+                this.updateUI();
+            }
+
+            async setupAudio() {
+                // Initialize Tone.js
+                await Tone.start();
+                
+                // Create synthesizer
+                this.synth = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: {
+                        type: 'triangle'
+                    },
+                    envelope: {
+                        attack: 0.02,
+                        decay: 0.1,
+                        sustain: 0.3,
+                        release: 0.5
+                    },
+                    volume: -8
+                }).toDestination();
+
+                // Set initial volume
+                this.synth.volume.value = Tone.gainToDb(this.volume);
+            }
+
+            createPianoKeys() {
+                const keyboard = document.getElementById('piano-keyboard');
+                keyboard.innerHTML = '';
+
+                // Create 88 keys (A0 to C8)
+                const startOctave = 0;
+                const endOctave = 8;
+                const whiteKeys = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+                const blackKeys = ['C#', 'D#', 'F#', 'G#', 'A#'];
+                const blackKeyPositions = [0, 1, 3, 4, 5]; // Positions of black keys relative to white keys
+
+                let keyIndex = 0;
+                for (let octave = startOctave; octave <= endOctave; octave++) {
+                    for (let i = 0; i < whiteKeys.length; i++) {
+                        const note = whiteKeys[i];
+                        const fullNote = `${note}${octave}`;
+                        
+                        // Create white key
+                        const whiteKey = document.createElement('div');
+                        whiteKey.className = 'piano-key white-key relative';
+                        whiteKey.style.width = '60px';
+                        whiteKey.style.height = '200px';
+                        whiteKey.dataset.note = fullNote;
+                        whiteKey.dataset.keyIndex = keyIndex;
+                        
+                        // Add note label
+                        const noteLabel = document.createElement('div');
+                        noteLabel.className = 'absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 dark:text-gray-400 font-mono';
+                        noteLabel.textContent = fullNote;
+                        whiteKey.appendChild(noteLabel);
+                        
+                        keyboard.appendChild(whiteKey);
+                        keyIndex++;
+
+                        // Create black key if it exists in this position
+                        if (blackKeyPositions.includes(i)) {
+                            const blackNote = blackKeys[blackKeyPositions.indexOf(i)];
+                            const fullBlackNote = `${blackNote}${octave}`;
+                            
+                            const blackKey = document.createElement('div');
+                            blackKey.className = 'piano-key black-key absolute';
+                            blackKey.style.width = '35px';
+                            blackKey.style.height = '120px';
+                            blackKey.style.left = `${(keyIndex - 1) * 60 + 45}px`;
+                            blackKey.style.top = '0px';
+                            blackKey.dataset.note = fullBlackNote;
+                            blackKey.dataset.keyIndex = keyIndex;
+                            
+                            // Add note label
+                            const blackNoteLabel = document.createElement('div');
+                            blackNoteLabel.className = 'absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-white font-mono';
+                            blackNoteLabel.textContent = fullBlackNote;
+                            blackKey.appendChild(blackNoteLabel);
+                            
+                            keyboard.appendChild(blackKey);
+                            keyIndex++;
+                        }
+                    }
+                }
+
+                // Add event listeners to keys
+                keyboard.addEventListener('mousedown', (e) => this.handleKeyPress(e));
+                keyboard.addEventListener('mouseup', (e) => this.handleKeyRelease(e));
+                keyboard.addEventListener('mouseleave', () => this.handleKeyRelease());
+                
+                // Touch events for mobile
+                keyboard.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    this.handleKeyPress(e);
+                });
+                keyboard.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    this.handleKeyRelease(e);
+                });
+            }
+
+            setupEventListeners() {
+                // Volume control
+                document.getElementById('volume-slider').addEventListener('input', (e) => {
+                    this.volume = parseFloat(e.target.value);
+                    this.synth.volume.value = Tone.gainToDb(this.volume);
+                    document.getElementById('volume-display').textContent = `${Math.round(this.volume * 100)}%`;
+                });
+
+                // Octave control
+                document.getElementById('octave-down').addEventListener('click', () => {
+                    this.currentOctave = Math.max(0, this.currentOctave - 1);
+                    this.updateUI();
+                });
+                document.getElementById('octave-up').addEventListener('click', () => {
+                    this.currentOctave = Math.min(8, this.currentOctave + 1);
+                    this.updateUI();
+                });
+
+                // Instrument selection
+                document.getElementById('instrument-select').addEventListener('change', (e) => {
+                    this.instrument = e.target.value;
+                    this.updateSynth();
+                });
+
+                // Sustain pedal
+                document.getElementById('sustain-pedal').addEventListener('click', () => {
+                    this.sustainPedal = !this.sustainPedal;
+                    this.updateUI();
+                });
+
+                // Recording controls
+                document.getElementById('record-btn').addEventListener('click', () => this.toggleRecording());
+                document.getElementById('play-btn').addEventListener('click', () => this.playRecording());
+                document.getElementById('stop-btn').addEventListener('click', () => this.stopPlayback());
+                document.getElementById('clear-btn').addEventListener('click', () => this.clearRecording());
+
+                // Theme toggle
+                document.getElementById('theme-toggle').addEventListener('click', () => this.toggleTheme());
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => this.handleKeyboardPress(e));
+                document.addEventListener('keyup', (e) => this.handleKeyboardRelease(e));
+            }
+
+            handleKeyPress(e) {
+                const key = e.target.closest('.piano-key');
+                if (!key) return;
+
+                const note = key.dataset.note;
+                if (this.pressedKeys.has(note)) return;
+
+                this.pressedKeys.add(note);
+                key.classList.add('pressed');
+                
+                this.playNote(note);
+                this.updateNoteDisplay(note);
+                
+                if (this.isRecording) {
+                    this.recording.push({
+                        note: note,
+                        time: Tone.now(),
+                        action: 'press'
+                    });
+                }
+            }
+
+            handleKeyRelease(e) {
+                const key = e.target.closest('.piano-key');
+                if (!key) return;
+
+                const note = key.dataset.note;
+                if (!this.pressedKeys.has(note)) return;
+
+                this.pressedKeys.delete(note);
+                key.classList.remove('pressed');
+                
+                if (!this.sustainPedal) {
+                    this.stopNote(note);
+                }
+                
+                if (this.isRecording) {
+                    this.recording.push({
+                        note: note,
+                        time: Tone.now(),
+                        action: 'release'
+                    });
+                }
+            }
+
+            handleKeyboardPress(e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+                const key = e.code;
+                if (key === 'Space') {
+                    e.preventDefault();
+                    this.sustainPedal = !this.sustainPedal;
+                    this.updateUI();
+                    return;
+                }
+
+                if (key === 'ArrowUp') {
+                    e.preventDefault();
+                    this.currentOctave = Math.min(8, this.currentOctave + 1);
+                    this.updateUI();
+                    return;
+                }
+
+                if (key === 'ArrowDown') {
+                    e.preventDefault();
+                    this.currentOctave = Math.max(0, this.currentOctave - 1);
+                    this.updateUI();
+                    return;
+                }
+
+                const note = this.keyMap[key];
+                if (note) {
+                    const fullNote = `${note}${this.currentOctave}`;
+                    this.playNote(fullNote);
+                    this.updateNoteDisplay(fullNote);
+                }
+            }
+
+            handleKeyboardRelease(e) {
+                const key = e.code;
+                const note = this.keyMap[key];
+                if (note && !this.sustainPedal) {
+                    const fullNote = `${note}${this.currentOctave}`;
+                    this.stopNote(fullNote);
+                }
+            }
+
+            playNote(note) {
+                try {
+                    this.synth.triggerAttack(note);
+                } catch (error) {
+                    console.warn('Invalid note:', note);
+                }
+            }
+
+            stopNote(note) {
+                try {
+                    this.synth.triggerRelease(note);
+                } catch (error) {
+                    console.warn('Invalid note:', note);
+                }
+            }
+
+            updateSynth() {
+                const instrumentConfigs = {
+                    piano: {
+                        oscillator: { type: 'triangle' },
+                        envelope: { attack: 0.02, decay: 0.1, sustain: 0.3, release: 0.5 }
+                    },
+                    organ: {
+                        oscillator: { type: 'sawtooth' },
+                        envelope: { attack: 0.01, decay: 0.1, sustain: 0.8, release: 0.1 }
+                    },
+                    synth: {
+                        oscillator: { type: 'square' },
+                        envelope: { attack: 0.05, decay: 0.2, sustain: 0.4, release: 0.3 }
+                    },
+                    strings: {
+                        oscillator: { type: 'sine' },
+                        envelope: { attack: 0.1, decay: 0.3, sustain: 0.6, release: 0.8 }
+                    }
+                };
+
+                const config = instrumentConfigs[this.instrument];
+                this.synth.set(config);
+            }
+
+            toggleRecording() {
+                this.isRecording = !this.isRecording;
+                const recordBtn = document.getElementById('record-btn');
+                const playBtn = document.getElementById('play-btn');
+                
+                if (this.isRecording) {
+                    this.recording = [];
+                    recordBtn.classList.add('recording-indicator');
+                    recordBtn.innerHTML = '<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>Stop Recording';
+                    this.updateStatus('Recording... Click keys to record!');
+                } else {
+                    recordBtn.classList.remove('recording-indicator');
+                    recordBtn.innerHTML = '<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>Record';
+                    playBtn.disabled = this.recording.length === 0;
+                    this.updateStatus(`Recording complete! ${this.recording.length} events recorded.`);
+                }
+            }
+
+            playRecording() {
+                if (this.recording.length === 0) return;
+
+                this.isPlaying = true;
+                const playBtn = document.getElementById('play-btn');
+                const stopBtn = document.getElementById('stop-btn');
+                
+                playBtn.disabled = true;
+                stopBtn.disabled = false;
+                
+                this.updateStatus('Playing recording...');
+                
+                // Play back the recording
+                this.recording.forEach(event => {
+                    if (event.action === 'press') {
+                        Tone.Transport.schedule(() => {
+                            this.playNote(event.note);
+                        }, event.time);
+                    } else if (event.action === 'release') {
+                        Tone.Transport.schedule(() => {
+                            this.stopNote(event.note);
+                        }, event.time);
+                    }
+                });
+                
+                Tone.Transport.start();
+                
+                // Stop after the last event
+                const lastEvent = this.recording[this.recording.length - 1];
+                Tone.Transport.schedule(() => {
+                    this.stopPlayback();
+                }, lastEvent.time + 1);
+            }
+
+            stopPlayback() {
+                this.isPlaying = false;
+                Tone.Transport.stop();
+                Tone.Transport.cancel();
+                
+                const playBtn = document.getElementById('play-btn');
+                const stopBtn = document.getElementById('stop-btn');
+                
+                playBtn.disabled = this.recording.length === 0;
+                stopBtn.disabled = true;
+                
+                this.updateStatus('Playback stopped.');
+            }
+
+            clearRecording() {
+                this.recording = [];
+                this.stopPlayback();
+                
+                const playBtn = document.getElementById('play-btn');
+                playBtn.disabled = true;
+                
+                this.updateStatus('Recording cleared.');
+            }
+
+            updateUI() {
+                document.getElementById('octave-display').textContent = this.currentOctave;
+                document.getElementById('sustain-text').textContent = this.sustainPedal ? 'On' : 'Off';
+                document.getElementById('sustain-pedal').className = 
+                    `px-4 py-2 rounded-lg transition-colors ${this.sustainPedal ? 'bg-green-500 text-white' : 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600'}`;
+            }
+
+            updateNoteDisplay(note) {
+                document.getElementById('note-display').textContent = `Playing: ${note}`;
+                setTimeout(() => {
+                    document.getElementById('note-display').textContent = '';
+                }, 1000);
+            }
+
+            updateStatus(message) {
+                document.getElementById('status-display').textContent = message;
+            }
+
+            toggleTheme() {
+                document.documentElement.classList.toggle('dark');
+                const sunIcon = document.getElementById('sun-icon');
+                const moonIcon = document.getElementById('moon-icon');
+                
+                if (document.documentElement.classList.contains('dark')) {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                } else {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                }
+            }
+        }
+
+        // Initialize the piano when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new OnlinePiano();
+        });
+    </script>
+</body>
+</html>
