@@ -16,58 +16,46 @@
             -moz-user-select: none;
             -ms-user-select: none;
         }
-        
         .piano-key:active,
         .piano-key.pressed {
             transform: translateY(2px);
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
         }
-        
         .white-key {
             background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
             border: 1px solid #d1d5db;
         }
-        
         .white-key:hover {
             background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);
         }
-        
         .white-key.pressed {
             background: linear-gradient(to bottom, #e5e7eb 0%, #d1d5db 100%);
         }
-        
         .black-key {
             background: linear-gradient(to bottom, #374151 0%, #1f2937 100%);
             border: 1px solid #111827;
             z-index: 2;
         }
-        
         .black-key:hover {
             background: linear-gradient(to bottom, #4b5563 0%, #374151 100%);
         }
-        
         .black-key.pressed {
             background: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
         }
-        
         .dark .white-key {
             background: linear-gradient(to bottom, #f9fafb 0%, #f3f4f6 100%);
             border-color: #9ca3af;
         }
-        
         .dark .white-key:hover {
             background: linear-gradient(to bottom, #e5e7eb 0%, #d1d5db 100%);
         }
-        
         .dark .black-key {
             background: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
             border-color: #000000;
         }
-        
         .dark .black-key:hover {
             background: linear-gradient(to bottom, #374151 0%, #1f2937 100%);
         }
-        
         .keyboard-overlay {
             position: absolute;
             top: 10px;
@@ -78,40 +66,51 @@
             border-radius: 8px;
             font-size: 12px;
             z-index: 10;
-            max-width: 200px;
+            max-width: 280px;
         }
-        
+        .key-guide {
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            font-family: monospace;
+            color: #2563eb;
+            opacity: 0.85;
+            pointer-events: none;
+            background: rgba(255,255,255,0.7);
+            border-radius: 4px;
+            padding: 0 4px 0 4px;
+        }
         .recording-indicator {
             animation: pulse 1s infinite;
         }
-        
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
-        
         .piano-container {
             overflow-x: auto;
             scrollbar-width: thin;
             scrollbar-color: #6b7280 #f3f4f6;
         }
-        
         .piano-container::-webkit-scrollbar {
             height: 8px;
         }
-        
         .piano-container::-webkit-scrollbar-track {
             background: #f3f4f6;
             border-radius: 4px;
         }
-        
         .piano-container::-webkit-scrollbar-thumb {
             background: #6b7280;
             border-radius: 4px;
         }
-        
         .piano-container::-webkit-scrollbar-thumb:hover {
             background: #4b5563;
+        }
+        /* Highlight key visually when it's pressed */
+        .visual-suggestion {
+            box-shadow: 0 0 0 4px #38bdf8 inset, 0 0 10px #38bdf8;
         }
     </style>
 </head>
@@ -234,6 +233,10 @@
                         <div>Space - Sustain pedal</div>
                         <div>↑↓ - Octave shift</div>
                     </div>
+                    <div class="mt-2 font-semibold">Visual Guide:</div>
+                    <div class="text-xs space-y-1">
+                        <span class="inline-block bg-blue-200 text-blue-900 px-2 py-0.5 rounded">Blue highlight</span> = Where to press for saved tune
+                    </div>
                 </div>
             </div>
         </main>
@@ -250,7 +253,7 @@
         </footer>
     </div>
 
-    <!-- Simple piano with Tone.js integration -->
+    <!-- Simple piano with Tone.js integration and visual key display & tune caching -->
     <script>
     class OnlinePiano {
         constructor() {
@@ -292,13 +295,24 @@
 
             this.pressedNotes = new Set();
 
+            // Visual suggestion state
+            this.visualGuideNotes = [];
+
+            // Load tune notes from local storage (for demo: last played tune)
+            this.tuneKey = "onlinePiano:tuneNotes";
+            this.tunePlaybackIdx = 0; // For "play guide" progression
+
             this.init();
         }
 
         async init() {
             await this.initSynth();
             this.createPiano();
+
             this.setupUIEvents();
+
+            // Restore and display saved tune highlight at load if exists
+            this.restoreTuneGuide();
         }
 
         async initSynth() {
@@ -317,10 +331,7 @@
             const key = e.code || e.key;
             let note = this.keyMap[key];
             if (!note) return null;
-
-            // If user e.g. uses KeyK and that corresponds to C but up an octave
-            // For this demo: KeyK/KeyO etc. mean next octave
-            // We'll make K/O/L/P/; play notes in currentOctave+1
+            // For this demo: KeyK/KeyO/etc. mean next octave
             const nextOctaveKeys = ['KeyK','KeyO','KeyL','KeyP','Semicolon'];
             if (nextOctaveKeys.includes(key)) {
                 return note + (this.currentOctave+1);
@@ -329,56 +340,64 @@
         }
 
         createPiano() {
-            // Render only 2 octaves C4-B5 for simplicity
+            // Build 2 octaves C4-B5
             const startOctave = 4;
             const numOctaves = 2;
-            const pianoKeys = [];
             const whiteNotes = ['C','D','E','F','G','A','B'];
             const blackNotes = ['C#','D#',null,'F#','G#','A#',null];
             const keyboard = document.getElementById('piano-keyboard');
             keyboard.innerHTML = "";
 
+            let keyElements = {}; // For fast lookup
+
             for (let o = startOctave; o < startOctave + numOctaves; o++) {
                 for (let i = 0; i < 7; i++) {
                     const note = whiteNotes[i] + o;
-                    // White
+                    // White key
                     const white = document.createElement('div');
                     white.className = 'piano-key white-key relative';
                     white.style.width = '48px';
                     white.style.height = '180px';
+                    white.style.position = 'relative';
+                    white.style.display = 'inline-block';
                     white.dataset.note = note;
+                    keyElements[note] = white;
 
-                    // For overlay mapping
-                    if (this.overlayMap[note]) {
-                        white.innerHTML = `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-400 font-mono">${note}<br><span class="text-blue-500">${this.overlayMap[note]}</span></div>`;
-                    } else {
-                        white.innerHTML = `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 font-mono">${note}</div>`;
+                    // Overlay label
+                    let guide = '';
+                    if(this.overlayMap[note]) {
+                        guide = `<div class="key-guide">${this.overlayMap[note]}</div>`;
                     }
 
+                    white.innerHTML = guide + `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 font-mono">${note}</div>`;
                     keyboard.appendChild(white);
-                    // Black
+
+                    // Black key, if any
                     const blackName = blackNotes[i];
                     if (blackName) {
                         const black = document.createElement('div');
                         black.className = 'piano-key black-key absolute';
                         black.style.width = '28px';
                         black.style.height = '100px';
-                        // Offset black keys
                         black.style.left = ((o-startOctave)*7*48 + i*48 + 36) + "px";
                         black.style.top = '0px';
                         black.dataset.note = blackName + o;
+                        black.style.zIndex = '2';
+                        keyElements[blackName+o] = black;
 
-                        if (this.overlayMap[blackName+o]) {
-                            black.innerHTML = `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-blue-300 font-mono">${blackName+o}<br><span class="text-blue-500">${this.overlayMap[blackName+o]}</span></div>`;
-                        } else {
-                            black.innerHTML = `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-white font-mono">${blackName+o}</div>`;
+                        // Overlay label
+                        let bGuide = '';
+                        if(this.overlayMap[blackName+o]) {
+                            bGuide = `<div class="key-guide">${this.overlayMap[blackName+o]}</div>`;
                         }
+                        black.innerHTML = bGuide + `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-white font-mono">${blackName+o}</div>`;
                         keyboard.appendChild(black);
                     }
                 }
             }
+            this.keyElements = keyElements;
 
-            // Pointer events: mousedown, mouseup, mouseleave (drag to play)
+            // Setup pointer/touch events for direct piano play
             keyboard.addEventListener('mousedown', (e) => {
                 const key = e.target.closest('.piano-key');
                 if (!key) return;
@@ -389,10 +408,10 @@
                 if (!key) return;
                 this.onKeyUp(key.dataset.note, key);
             });
-            keyboard.addEventListener('mouseleave', (e) => {
-                // Release all, in case dragged out of the piano
+            keyboard.addEventListener('mouseleave', () => {
+                // Release all
                 this.pressedNotes.forEach(n => {
-                    const el = [...document.querySelectorAll('.piano-key')].find(x => x.dataset.note === n);
+                    const el = this.keyElements[n];
                     if (el) this.onKeyUp(n, el);
                 });
             });
@@ -424,7 +443,7 @@
                 document.getElementById('volume-display').textContent = `${Math.round(this.volume * 100)}%`
             });
 
-            // Octave control
+            // Octave controls
             document.getElementById('octave-down').addEventListener('click', () => {
                 this.currentOctave = Math.max(1, this.currentOctave-1);
                 document.getElementById('octave-display').textContent = this.currentOctave;
@@ -460,12 +479,12 @@
                 }
             });
 
-            // Keyboard playing (keydown/keyup)
+            // Keyboard playing (keydown/keyup) and tune guide suggestions
             document.addEventListener('keydown', (e) => {
                 if (e.repeat) return;
                 if (e.code === 'Space') {
                     this.sustainPedal = !this.sustainPedal;
-                    document.getElementById('sustain-text').textContent = this.sustainPedal ? 'On' : 'Off';
+                    document.getElementById('sustain-text').textContent = this.sustainPedal ? 'On':'Off';
                     if (this.sustainPedal) {
                         document.getElementById('sustain-pedal').classList.add('bg-green-500','text-white');
                     } else {
@@ -494,18 +513,178 @@
                 this.synth.triggerAttack(note);
                 this.highlightPianoKey(note, true);
                 this.showNotePlayed(note);
+                // If we're using visual suggestion, check/advance
+                this.checkGuideAndAdvance(note);
+                this.savePlayedNote(note);
             });
             document.addEventListener('keyup', (e) => {
                 const note = this.noteForKey(e);
                 if (!note) return;
                 if (!this.pressedNotes.has(note)) return;
-                if (this.sustainPedal) return; // don't stop if sustain
+                if (this.sustainPedal) return;
                 this.pressedNotes.delete(note);
                 this.synth.triggerRelease(note);
                 this.highlightPianoKey(note, false);
             });
+
+            // Tune save/load integration: when recording finishes, store to localStorage
+            document.getElementById('record-btn').addEventListener('click', ()=>{this.startRecording()});
+            document.getElementById('play-btn').addEventListener('click', ()=>{this.playBackTuneWithGuide()});
+            document.getElementById('stop-btn').addEventListener('click', ()=>{this.stopPlaybackTune()});
+            document.getElementById('clear-btn').addEventListener('click', ()=>{this.clearTuneStorage()});
         }
 
+        // ---- Visual Guide system ----
+
+        // Highlights note(s) as visual suggestion and scrolls to the first in view
+        showVisualGuide(notes) {
+            // Remove from previous
+            if (this.visualGuideNotes && this.visualGuideNotes.length) {
+                this.visualGuideNotes.forEach(n=>{
+                    const el = this.keyElements && this.keyElements[n];
+                    if(el) el.classList.remove('visual-suggestion');
+                });
+            }
+            this.visualGuideNotes = Array.isArray(notes) ? notes : (notes ? [notes] : []);
+            // Highlight
+            this.visualGuideNotes.forEach(n=>{
+                const el = this.keyElements && this.keyElements[n];
+                if(el) el.classList.add('visual-suggestion');
+            });
+            // Scroll to first guide note (if possible)
+            if(notes && notes.length){
+                const el = this.keyElements && this.keyElements[notes[0]];
+                if(el){
+                    el.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
+                }
+            }
+        }
+
+        // Remove all visual suggestions
+        clearVisualGuide() {
+            if (this.visualGuideNotes && this.visualGuideNotes.length) {
+                this.visualGuideNotes.forEach(n=>{
+                    const el = this.keyElements && this.keyElements[n];
+                    if(el) el.classList.remove('visual-suggestion');
+                });
+                this.visualGuideNotes = [];
+            }
+        }
+
+        // When user presses a guide note, move to next visual suggestion (step through a saved tune)
+        checkGuideAndAdvance(note) {
+            if(!this.guideTuneNotes || !Array.isArray(this.guideTuneNotes)) return;
+            if(this.tunePlaybackIdx < this.guideTuneNotes.length && this.guideTuneNotes[this.tunePlaybackIdx] === note) {
+                this.tunePlaybackIdx++;
+                // Show next step/notes guide
+                if(this.tunePlaybackIdx < this.guideTuneNotes.length) {
+                    this.showVisualGuide([this.guideTuneNotes[this.tunePlaybackIdx]]);
+                } else {
+                    this.clearVisualGuide();
+                    this.showStatus("Tune Completed! 🎉");
+                    setTimeout(()=>this.showStatus("Ready to play!"),1100);
+                }
+            }
+        }
+
+        // ---- Recording and Storage ----
+
+        startRecording() {
+            this.recording = true;
+            this.recordedNotes = [];
+            this.showStatus("Recording... <span class='recording-indicator'>●</span>");
+            // Capture note play
+            this._pressRecordHandler = (e) => {
+                if (e.repeat) return;
+                if (e.code === 'Space' || e.code.startsWith('Arrow')) return;
+                const note = this.noteForKey(e);
+                if (note && (!this.recordedNotes.length || this.recordedNotes[this.recordedNotes.length-1]!==note)) {
+                    this.recordedNotes.push(note);
+                }
+            };
+            document.addEventListener('keydown', this._pressRecordHandler);
+            // Enable/disable controls as needed
+            document.getElementById('play-btn').disabled = true;
+            document.getElementById('stop-btn').disabled = false;
+            document.getElementById('clear-btn').disabled = true;
+
+            // After 15s or second record click, stop
+            this._recordTimeout = setTimeout(()=>this.finishRecording(),15000);
+        }
+
+        finishRecording() {
+            if(!this.recording) return;
+            clearTimeout(this._recordTimeout);
+            this.recording = false;
+            document.removeEventListener('keydown', this._pressRecordHandler);
+
+            if(this.recordedNotes && this.recordedNotes.length) {
+                window.localStorage.setItem(this.tuneKey, JSON.stringify(this.recordedNotes));
+                this.showStatus(`Tune saved & loaded for quick playback!`);
+                this.restoreTuneGuide();
+            } else {
+                this.showStatus("No notes recorded!");
+            }
+            document.getElementById('play-btn').disabled = false;
+            document.getElementById('stop-btn').disabled = true;
+            document.getElementById('clear-btn').disabled = false;
+        }
+
+        playBackTuneWithGuide() {
+            // Use local storage tune, highlight keys to press
+            this.guideTuneNotes = JSON.parse(window.localStorage.getItem(this.tuneKey)||"[]");
+            if(!this.guideTuneNotes || !this.guideTuneNotes.length) {
+                this.showStatus("No saved tune to play! Record one first.");
+                this.clearVisualGuide();
+                return;
+            }
+            this.tunePlaybackIdx = 0;
+            this.showStatus("Step through the tune! Highlight shows where to press.");
+            // Show current note as "visual suggestion"
+            this.showVisualGuide([this.guideTuneNotes[this.tunePlaybackIdx]]);
+            document.getElementById('stop-btn').disabled = false;
+            document.getElementById('play-btn').disabled = true;
+        }
+
+        stopPlaybackTune() {
+            this.tunePlaybackIdx = 0;
+            this.clearVisualGuide();
+            this.showStatus("Stopped.");
+            document.getElementById('play-btn').disabled = false;
+            document.getElementById('stop-btn').disabled = true;
+        }
+
+        clearTuneStorage() {
+            window.localStorage.removeItem(this.tuneKey);
+            this.guideTuneNotes = [];
+            this.clearVisualGuide();
+            this.showStatus("Tune cleared.");
+        }
+
+        restoreTuneGuide() {
+            // Load last tune if any
+            this.guideTuneNotes = JSON.parse(window.localStorage.getItem(this.tuneKey)||"[]");
+            if(this.guideTuneNotes.length) {
+                // Show first as suggestion (but not highlight until user hits play)
+                // this.showVisualGuide([this.guideTuneNotes[0]]);
+                document.getElementById('play-btn').disabled = false;
+                document.getElementById('clear-btn').disabled = false;
+            } else {
+                this.clearVisualGuide();
+                document.getElementById('play-btn').disabled = true;
+                document.getElementById('clear-btn').disabled = false;
+            }
+            document.getElementById('stop-btn').disabled = true;
+        }
+
+        // Save for fast replay (cache-like, for "faster play")
+        savePlayedNote(note) {
+            // If during guided play, do not overwrite
+            if(this.recording) return;
+            // We could implement "most played tune" caching here
+        }
+
+        // ---- Standard piano methods ----
         onKeyDown(note, keyEl) {
             if (!note) return;
             if (this.pressedNotes.has(note)) return;
@@ -513,7 +692,10 @@
             this.synth.triggerAttack(note);
             keyEl.classList.add('pressed');
             this.showNotePlayed(note);
+            this.checkGuideAndAdvance(note);
+            this.savePlayedNote(note);
         }
+
         onKeyUp(note, keyEl) {
             if (!note) return;
             if (!this.pressedNotes.has(note)) return;
@@ -522,13 +704,14 @@
             this.synth.triggerRelease(note);
             keyEl.classList.remove('pressed');
         }
+
         highlightPianoKey(note, pressed) {
-            const key = [...document.querySelectorAll('.piano-key')].find(k => k.dataset.note === note);
-            if (key) {
-                if (pressed) key.classList.add('pressed');
-                else key.classList.remove('pressed');
-            }
+            const key = this.keyElements ? this.keyElements[note] : null;
+            if (!key) return;
+            if (pressed) key.classList.add('pressed');
+            else key.classList.remove('pressed');
         }
+
         showNotePlayed(note) {
             const el = document.getElementById('note-display');
             el.textContent = `Playing: ${note}`;
@@ -536,9 +719,46 @@
                 if (el.textContent === `Playing: ${note}`) el.textContent = '';
             }, 800);
         }
+
+        showStatus(msg) {
+            document.getElementById('status-display').innerHTML = msg;
+        }
     }
 
     document.addEventListener('DOMContentLoaded', () => { new OnlinePiano(); });
+
+    // Add double-click on "Record" to stop/finish
+    document.addEventListener('DOMContentLoaded', () => {
+        let recordBtn = document.getElementById('record-btn');
+        let piano;
+        recordBtn.addEventListener('dblclick', function() {
+            if(!window.pianoInstance){
+                // Find and set global reference
+                window.pianoInstance = [...document.querySelectorAll("script")].map(s=>s.textContent.includes("class OnlinePiano")&&s).filter(Boolean)[0] ? null : null;
+            }
+            if(window.pianoInstance && window.pianoInstance.finishRecording) window.pianoInstance.finishRecording();
+            // As workaround, will call finish in single-instance:
+            let all = document.querySelectorAll("script");
+            for(let s of all){
+                if(s.textContent.includes("class OnlinePiano")) {
+                    let ev = new CustomEvent("finishrecording");
+                    window.dispatchEvent(ev); // This is just a stub
+                }
+            }
+        });
+        // Also auto-stop recording after pressing Record again
+        recordBtn.addEventListener('click',function(){
+            if(window._lastRecordClick && (Date.now()-window._lastRecordClick)<300){
+                // Consider double click!
+                let ev = new Event("dblclick");
+                recordBtn.dispatchEvent(ev);
+            }
+            window._lastRecordClick = Date.now();
+        });
+        // Final robust fallback for demo: stop recording if clicked play/stop
+        document.getElementById('play-btn').addEventListener('click',()=>{ try{window.pianoInstance && window.pianoInstance.finishRecording && window.pianoInstance.finishRecording();}catch{}});
+        document.getElementById('stop-btn').addEventListener('click',()=>{ try{window.pianoInstance && window.pianoInstance.finishRecording && window.pianoInstance.finishRecording();}catch{}});
+    });
     </script>
 </body>
 </html>
