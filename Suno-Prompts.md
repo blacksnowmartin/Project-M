@@ -74,7 +74,7 @@ Havana Electropop with edm effects
 [Outro]
 ```
 ```bash
-Instrumental remix
+Instrumental Cover
 ```
 # Prepared by
 ## Blacksnow Martin 2023 ©
