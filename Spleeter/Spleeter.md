@@ -71,3 +71,6 @@ spleeter separate -i your_song.mp3 -p spleeter:2stems -o output_dir
 If you want to integrate this into a larger pipeline (Flask app, CLI tool, etc.), I can help modularize or package it.
 
 Let me know if you want a version using **Demucs** or if GPU support matters to you.
+
+
+Figure out on how the GUI will look like.
