@@ -59,7 +59,6 @@ Dakar afrobeat
 Spanish Acoustic Rock
 ```
 ```bash
-Havana Electropop with edm effects
 ```
 
 
