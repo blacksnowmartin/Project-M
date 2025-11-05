@@ -36,17 +36,6 @@ soothing afro beat made into a calming electro-house with a taste of upbeat danc
 ```
 
 
-
-
-```bash
-[Instrumental]
-[Intro] 
-[Verse]
-[Build-up] 
-[Chorus]
-[Breakdown] 
-[Outro]
-```
 ```bash
 Instrumental Cover
 ```
