@@ -2,6 +2,10 @@
 Following are prompts
 
 ```bash
+Future Bass, Trap, Pop EDM, Electro House Style: DJ Remix, Super Bass Boost, Heavy Drums, Bass Drum Mixing, High Tension, Explosive Drop Description: An amazing remix featuring pristine acoustics and heavy bass drum mixing. Blends Future Bass and Trap melodies with Electro-House structural builds. Features long tension build-ups leading into heavy, bass-boosted climax drops.
+```
+
+```bash
 amazing remix bass acoustics with bass drum mixing with electrohouse builds for climax sessions for the beat
 ```
 ```bash
