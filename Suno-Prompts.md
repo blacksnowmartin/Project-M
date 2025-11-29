@@ -8,9 +8,7 @@ Future Bass, Trap, Pop EDM, Electro House Style: DJ Remix, Super Bass Boost, Hea
 ```bash
 amazing remix bass acoustics with bass drum mixing with electrohouse builds for climax sessions for the beat
 ```
-```bash
-smooth upbeat piano play at first then electro-house beat next with super deejaying of acoustics backed by bass mixing
-```
+
 ```bash
 Melancholic yet uplifting Tropical House, Bright, echoing piano melody, airy synths, deep bass, relaxed four-on-the-floor rhythm, shakers, snaps, light electronic drums create a spacious atmosphere
 ```
