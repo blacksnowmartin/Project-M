@@ -41,6 +41,8 @@
     // UI State
     let currentStep = 0;
     let loop = null;
+    let currentSlot = 0;
+    const maxSlots = 5;
 
     /** Utility */
     function showMessage(message, error) {
@@ -64,8 +66,10 @@
                 tempo: Tone.Transport.bpm.value,
                 timestamp: Date.now()
             };
-            localStorage.setItem('melodyPattern', JSON.stringify(patternData));
-            showMessage("Pattern saved locally!", false);
+            const slotKey = `melodyPattern_slot_${currentSlot}`;
+            localStorage.setItem(slotKey, JSON.stringify(patternData));
+            updateSlotDisplay();
+            showMessage(`Pattern saved to Slot ${currentSlot + 1}!`, false);
         } catch (error) {
             console.error("Save error:", error);
             showMessage("Save error", true);
@@ -74,7 +78,8 @@
 
     function loadPattern() {
         try {
-            const savedData = localStorage.getItem('melodyPattern');
+            const slotKey = `melodyPattern_slot_${currentSlot}`;
+            const savedData = localStorage.getItem(slotKey);
             if (savedData) {
                 const patternData = JSON.parse(savedData);
                 if (patternData.notes && patternData.notes.length === notes.length && patternData.notes[0].length === numSteps) {
@@ -84,17 +89,220 @@
                         Tone.Transport.bpm.value = patternData.tempo;
                         document.getElementById('tempo-display').textContent = `${patternData.tempo} BPM`;
                     }
-                    showMessage("Pattern loaded!", false);
+                    showMessage(`Pattern loaded from Slot ${currentSlot + 1}!`, false);
                 } else {
                     showMessage("Invalid pattern format", true);
                 }
             } else {
-                showMessage("No saved pattern found", true);
+                showMessage(`No saved pattern in Slot ${currentSlot + 1}`, true);
             }
         } catch (error) {
             console.error("Load error:", error);
             showMessage("Load error", true);
         }
+    }
+
+    function deleteSlot() {
+        const slotKey = `melodyPattern_slot_${currentSlot}`;
+        localStorage.removeItem(slotKey);
+        updateSlotDisplay();
+        showMessage(`Slot ${currentSlot + 1} cleared!`, false);
+    }
+
+    function updateSlotDisplay() {
+        for (let i = 0; i < maxSlots; i++) {
+            const btn = document.getElementById(`slot-${i}`);
+            const slotKey = `melodyPattern_slot_${i}`;
+            const hasData = localStorage.getItem(slotKey) !== null;
+            if (i === currentSlot) {
+                btn.classList.add('ring-4', 'ring-yellow-400');
+            } else {
+                btn.classList.remove('ring-4', 'ring-yellow-400');
+            }
+            if (hasData) {
+                btn.classList.add('bg-indigo-400');
+                btn.classList.remove('bg-gray-300');
+            } else {
+                btn.classList.remove('bg-indigo-400');
+                btn.classList.add('bg-gray-300');
+            }
+        }
+    }
+
+    function exportPattern() {
+        try {
+            const slotKey = `melodyPattern_slot_${currentSlot}`;
+            const savedData = localStorage.getItem(slotKey);
+            if (!savedData) {
+                showMessage("No pattern in current slot to export", true);
+                return;
+            }
+            const patternData = JSON.parse(savedData);
+            const exportData = {
+                version: 1,
+                name: `Melody_Slot_${currentSlot + 1}_${new Date().getTime()}`,
+                grid: patternData.notes,
+                tempo: patternData.tempo,
+                exportDate: new Date().toISOString()
+            };
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `melody_pattern_${currentSlot + 1}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showMessage("Pattern exported!", false);
+        } catch (error) {
+            console.error("Export error:", error);
+            showMessage("Export error", true);
+        }
+    }
+
+    function importPattern() {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = '.json';
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const importedData = JSON.parse(event.target.result);
+                    if (importedData.grid && importedData.grid.length === notes.length && importedData.grid[0].length === numSteps) {
+                        const patternData = {
+                            notes: importedData.grid,
+                            tempo: importedData.tempo || Tone.Transport.bpm.value,
+                            timestamp: Date.now()
+                        };
+                        const slotKey = `melodyPattern_slot_${currentSlot}`;
+                        localStorage.setItem(slotKey, JSON.stringify(patternData));
+                        setGrid(patternData.notes, true);
+                        tempoSlider.value = patternData.tempo;
+                        Tone.Transport.bpm.value = patternData.tempo;
+                        document.getElementById('tempo-display').textContent = `${patternData.tempo} BPM`;
+                        updateSlotDisplay();
+                        showMessage("Pattern imported successfully!", false);
+                    } else {
+                        showMessage("Invalid pattern file format", true);
+                    }
+                } catch (error) {
+                    console.error("Import error:", error);
+                    showMessage("Import error", true);
+                }
+            };
+            reader.readAsText(file);
+        };
+        fileInput.click();
+    }
+
+    function downloadAsAudio() {
+        try {
+            if (currentStep !== 0) {
+                showMessage("Stop playback before exporting audio", true);
+                return;
+            }
+
+            showMessage("Generating audio... please wait", false);
+
+            // Create a new synth for rendering
+            const renderSynth = new Tone.PolySynth(Tone.Synth, {
+                envelope: { attack: 0.04, release: 0.2 },
+                volume: -8,
+            });
+
+            // Create an offline context
+            const offlineContext = new Tone.Offline(({ transport }) => {
+                const notesArray = ["C5", "B4", "A4", "G4", "F4", "E4", "D4", "C4"];
+                const patternGrid = grid;
+                const beatsPerLoop = numSteps;
+                const loopsToRender = 2;
+
+                transport.bpm.value = Tone.Transport.bpm.value;
+
+                for (let loop = 0; loop < loopsToRender; loop++) {
+                    for (let step = 0; step < beatsPerLoop; step++) {
+                        const time = loop * beatsPerLoop / 2 + step / 2;
+                        notesArray.forEach((note, noteIdx) => {
+                            if (patternGrid[noteIdx] && patternGrid[noteIdx][step]) {
+                                renderSynth.triggerAttackRelease(note, '8n', `${time}:0:0`);
+                            }
+                        });
+                    }
+                }
+
+                renderSynth.connect(transport.destination);
+            }, beatsPerLoop * 4 / (Tone.Transport.bpm.value / 60));
+
+            offlineContext.render().then((audioBuffer) => {
+                // Convert audio buffer to WAV
+                const wav = audioBufferToWav(audioBuffer);
+                const blob = new Blob([wav], { type: 'audio/wav' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `melody_pattern_${currentSlot + 1}_${Date.now()}.wav`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                showMessage("Audio downloaded!", false);
+            });
+        } catch (error) {
+            console.error("Audio download error:", error);
+            showMessage("Audio export error", true);
+        }
+    }
+
+    function audioBufferToWav(audioBuffer) {
+        const numberOfChannels = audioBuffer.numberOfChannels;
+        const sampleRate = audioBuffer.sampleRate;
+        const format = 1;
+        const bitDepth = 16;
+
+        const bytesPerSample = bitDepth / 8;
+        const blockAlign = numberOfChannels * bytesPerSample;
+        const wavLength = audioBuffer.length * numberOfChannels * bytesPerSample;
+        const headerLength = 44;
+        const totalLength = headerLength + wavLength;
+
+        const arrayBuffer = new ArrayBuffer(totalLength);
+        const view = new DataView(arrayBuffer);
+
+        const writeString = (offset, string) => {
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        };
+
+        writeString(0, 'RIFF');
+        view.setUint32(4, totalLength - 8, true);
+        writeString(8, 'WAVE');
+        writeString(12, 'fmt ');
+        view.setUint32(16, 16, true);
+        view.setUint16(20, format, true);
+        view.setUint16(22, numberOfChannels, true);
+        view.setUint32(24, sampleRate, true);
+        view.setUint32(28, sampleRate * blockAlign, true);
+        view.setUint16(32, blockAlign, true);
+        view.setUint16(34, bitDepth, true);
+        writeString(36, 'data');
+        view.setUint32(40, wavLength, true);
+
+        let offset = 44;
+        for (let i = 0; i < audioBuffer.length; i++) {
+            for (let channel = 0; channel < numberOfChannels; channel++) {
+                const sample = Math.max(-1, Math.min(1, audioBuffer.getChannelData(channel)[i]));
+                view.setInt16(offset, sample < 0 ? sample * 0x8000 : sample * 0x7FFF, true);
+                offset += 2;
+            }
+        }
+
+        return arrayBuffer;
     }
 
     // Grid Aesthetic Enhancement
@@ -222,6 +430,23 @@
     // Load from localStorage
     loadButton.addEventListener('click', loadPattern);
 
+    // Slot management
+    for (let i = 0; i < maxSlots; i++) {
+        const slotBtn = document.getElementById(`slot-${i}`);
+        if (slotBtn) {
+            slotBtn.addEventListener('click', () => {
+                currentSlot = i;
+                updateSlotDisplay();
+                showMessage(`Selected Slot ${i + 1}`, false);
+            });
+        }
+    }
+
+    document.getElementById('delete-slot-btn').addEventListener('click', deleteSlot);
+    document.getElementById('export-btn').addEventListener('click', exportPattern);
+    document.getElementById('import-btn').addEventListener('click', importPattern);
+    document.getElementById('download-audio-btn').addEventListener('click', downloadAsAudio);
+
     // Clear
     document.getElementById('clear-btn').addEventListener('click', () => {
         stopPlayback();
@@ -259,6 +484,7 @@
       stopButton.disabled = true;
       playButton.disabled = false;
       document.getElementById('tempo-display').textContent = `${tempoSlider.value} BPM`;
+      updateSlotDisplay();
     };
 
     </script>
@@ -288,6 +514,17 @@
     <section id="sequencer" class="bg-white py-5 px-0 md:px-6 rounded-xl shadow-inner border-2 border-indigo-100 overflow-auto" style="min-width: min(677px, 98vw)">
       <!-- Grid is built here -->
     </section>
+    <!-- Save Slots Section -->
+    <div class="w-full max-w-5xl">
+      <p class="text-sm font-semibold text-gray-700 mb-2">Save Slots:</p>
+      <div class="flex flex-wrap justify-center gap-2">
+        <button id="slot-0" class="slot-btn w-12 h-12 bg-gray-300 text-white font-bold rounded-lg transition-all hover:scale-110 shadow-md">1</button>
+        <button id="slot-1" class="slot-btn w-12 h-12 bg-gray-300 text-white font-bold rounded-lg transition-all hover:scale-110 shadow-md">2</button>
+        <button id="slot-2" class="slot-btn w-12 h-12 bg-gray-300 text-white font-bold rounded-lg transition-all hover:scale-110 shadow-md">3</button>
+        <button id="slot-3" class="slot-btn w-12 h-12 bg-gray-300 text-white font-bold rounded-lg transition-all hover:scale-110 shadow-md">4</button>
+        <button id="slot-4" class="slot-btn w-12 h-12 bg-gray-300 text-white font-bold rounded-lg transition-all hover:scale-110 shadow-md">5</button>
+      </div>
+    </div>
     <!-- Controls Row -->
     <nav aria-label="Controls" class="flex flex-wrap justify-center gap-2 md:gap-4 w-full">
       <button id="play-btn" class="flex items-center px-6 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600 focus:ring-2 ring-green-400 transition-all transition-transform hover:scale-105 outline-none" aria-label="Play">
@@ -307,6 +544,22 @@
       <button id="load-btn" class="flex items-center px-6 py-3 bg-purple-600 text-white font-bold rounded-full shadow-lg hover:bg-purple-700 focus:ring-2 ring-purple-400 transition-all hover:scale-105 outline-none" aria-label="Load">
         <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 19V6m0 13l-6-6m6 6l6-6"></path></svg>
         Load
+      </button>
+      <button id="delete-slot-btn" class="flex items-center px-6 py-3 bg-orange-500 text-white font-bold rounded-full shadow-lg hover:bg-orange-600 focus:ring-2 ring-orange-400 transition-all hover:scale-105 outline-none" aria-label="Delete Slot">
+        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+        Delete Slot
+      </button>
+      <button id="export-btn" class="flex items-center px-6 py-3 bg-cyan-600 text-white font-bold rounded-full shadow-lg hover:bg-cyan-700 focus:ring-2 ring-cyan-400 transition-all hover:scale-105 outline-none" aria-label="Export Pattern">
+        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 15v6m0 0l-3-3m3 3l3-3M3 12a9 9 0 0118 0 9 9 0 01-18 0z"></path></svg>
+        Export
+      </button>
+      <button id="import-btn" class="flex items-center px-6 py-3 bg-cyan-600 text-white font-bold rounded-full shadow-lg hover:bg-cyan-700 focus:ring-2 ring-cyan-400 transition-all hover:scale-105 outline-none" aria-label="Import Pattern">
+        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 9v6m0 0l-3-3m3 3l3-3M3 12a9 9 0 0118 0 9 9 0 01-18 0z"></path></svg>
+        Import
+      </button>
+      <button id="download-audio-btn" class="flex items-center px-6 py-3 bg-pink-600 text-white font-bold rounded-full shadow-lg hover:bg-pink-700 focus:ring-2 ring-pink-400 transition-all hover:scale-105 outline-none" aria-label="Download Audio">
+        <svg class="w-4 h-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 15v6m0 0l-3-3m3 3l3-3M3 12a9 9 0 0118 0 9 9 0 01-18 0z"></path></svg>
+        Audio
       </button>
     </nav>
     <!-- Tempo Slider/Display -->
