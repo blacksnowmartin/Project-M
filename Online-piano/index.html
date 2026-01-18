@@ -725,39 +725,41 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => { new OnlinePiano(); });
+    // Initialize piano and make it global for access
+    let pianoInstance = null;
+    document.addEventListener('DOMContentLoaded', () => { 
+        pianoInstance = new OnlinePiano();
+        window.pianoInstance = pianoInstance;
+    });
 
-    // Add double-click on "Record" to stop/finish
+    // Add double-click on "Record" to stop/finish recording
     document.addEventListener('DOMContentLoaded', () => {
         let recordBtn = document.getElementById('record-btn');
-        let piano;
-        recordBtn.addEventListener('dblclick', function() {
-            if(!window.pianoInstance){
-                // Find and set global reference
-                window.pianoInstance = [...document.querySelectorAll("script")].map(s=>s.textContent.includes("class OnlinePiano")&&s).filter(Boolean)[0] ? null : null;
+        let lastRecordClick = 0;
+        
+        recordBtn.addEventListener('click', function() {
+            const now = Date.now();
+            if (now - lastRecordClick < 300 && pianoInstance && pianoInstance.recording) {
+                // Double click detected while recording
+                pianoInstance.finishRecording();
             }
-            if(window.pianoInstance && window.pianoInstance.finishRecording) window.pianoInstance.finishRecording();
-            // As workaround, will call finish in single-instance:
-            let all = document.querySelectorAll("script");
-            for(let s of all){
-                if(s.textContent.includes("class OnlinePiano")) {
-                    let ev = new CustomEvent("finishrecording");
-                    window.dispatchEvent(ev); // This is just a stub
-                }
+            lastRecordClick = now;
+            
+            // Single click - start recording if not already
+            if (pianoInstance && !pianoInstance.recording) {
+                pianoInstance.startRecording();
+            } else if (pianoInstance && pianoInstance.recording) {
+                // Second single click stops it
+                pianoInstance.finishRecording();
             }
         });
-        // Also auto-stop recording after pressing Record again
-        recordBtn.addEventListener('click',function(){
-            if(window._lastRecordClick && (Date.now()-window._lastRecordClick)<300){
-                // Consider double click!
-                let ev = new Event("dblclick");
-                recordBtn.dispatchEvent(ev);
+        
+        // Stop recording if play button is clicked during recording
+        document.getElementById('play-btn').addEventListener('click', () => {
+            if (pianoInstance && pianoInstance.recording) {
+                pianoInstance.finishRecording();
             }
-            window._lastRecordClick = Date.now();
         });
-        // Final robust fallback for demo: stop recording if clicked play/stop
-        document.getElementById('play-btn').addEventListener('click',()=>{ try{window.pianoInstance && window.pianoInstance.finishRecording && window.pianoInstance.finishRecording();}catch{}});
-        document.getElementById('stop-btn').addEventListener('click',()=>{ try{window.pianoInstance && window.pianoInstance.finishRecording && window.pianoInstance.finishRecording();}catch{}});
     });
     </script>
 </body>
