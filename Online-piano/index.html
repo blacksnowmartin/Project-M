@@ -255,10 +255,70 @@
 
     <!-- Simple piano with Tone.js integration and visual key display & tune caching -->
     <script>
+    // ========== PIANO KEY CONFIGURATION ==========
+    // Central configuration for piano keys and keyboard mapping
+    const PIANO_CONFIGURATION = {
+        // Define the chromatic scale
+        NOTES: ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+        
+        // Piano display range
+        START_OCTAVE: 4,
+        NUM_OCTAVES: 2,
+        
+        // Natural (white) keys in order
+        WHITE_KEYS: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
+        
+        // Black key positions (relative to white key index)
+        BLACK_KEYS_POSITIONS: {
+            0: 'C#',  // After C
+            1: 'D#',  // After D
+            3: 'F#',  // After F
+            4: 'G#',  // After G
+            5: 'A#'   // After A
+        },
+        
+        // Keyboard mapping: Computer key -> Note name (without octave)
+        KEYBOARD_MAP: {
+            // Row 1 (white keys C-B, octave 4)
+            'KeyA': { note: 'C', octaveOffset: 0 },
+            'KeyS': { note: 'D', octaveOffset: 0 },
+            'KeyD': { note: 'E', octaveOffset: 0 },
+            'KeyF': { note: 'F', octaveOffset: 0 },
+            'KeyG': { note: 'G', octaveOffset: 0 },
+            'KeyH': { note: 'A', octaveOffset: 0 },
+            'KeyJ': { note: 'B', octaveOffset: 0 },
+            
+            // Row 2 (black keys, octave 4)
+            'KeyW': { note: 'C#', octaveOffset: 0 },
+            'KeyE': { note: 'D#', octaveOffset: 0 },
+            'KeyT': { note: 'F#', octaveOffset: 0 },
+            'KeyY': { note: 'G#', octaveOffset: 0 },
+            'KeyU': { note: 'A#', octaveOffset: 0 },
+            
+            // Row 3 (octave 5)
+            'KeyK': { note: 'C', octaveOffset: 1 },
+            'KeyL': { note: 'D', octaveOffset: 1 },
+            'Semicolon': { note: 'E', octaveOffset: 1 },
+            'KeyP': { note: 'F', octaveOffset: 1 },
+            'BracketLeft': { note: 'G', octaveOffset: 1 },
+            
+            'KeyO': { note: 'C#', octaveOffset: 1 },
+            'Digit0': { note: 'D#', octaveOffset: 1 }
+        },
+        
+        // Visual display mapping (which keyboard key shows on which piano key)
+        KEYBOARD_VISUAL_MAP: {
+            'C4': 'A', 'C#4': 'W', 'D4': 'S', 'D#4': 'E', 'E4': 'D',
+            'F4': 'F', 'F#4': 'T', 'G4': 'G', 'G#4': 'Y', 'A4': 'H', 'A#4': 'U', 'B4': 'J',
+            'C5': 'K', 'C#5': 'O', 'D5': 'L', 'D#5': 'P', 'E5': ';',
+            'F5': 'P', 'G5': '[',
+        }
+    };
+
     class OnlinePiano {
         constructor() {
             this.synth = null;
-            this.currentOctave = 4;
+            this.currentOctave = PIANO_CONFIGURATION.START_OCTAVE;
             this.sustainPedal = false;
             this.volume = 0.7; // Gain (0 to 1)
             this.keyDownMap = new Map();
@@ -266,35 +326,9 @@
             this.midiAccess = null;
             this.activeMidiNotes = new Set();
 
-            // Simple keyboard map for main white/black notes (for demo)
-            this.keyMap = {
-                'KeyA': 'C',
-                'KeyW': 'C#',
-                'KeyS': 'D',
-                'KeyE': 'D#',
-                'KeyD': 'E',
-                'KeyF': 'F',
-                'KeyT': 'F#',
-                'KeyG': 'G',
-                'KeyY': 'G#',
-                'KeyH': 'A',
-                'KeyU': 'A#',
-                'KeyJ': 'B',
-                // Next octave
-                'KeyK': 'C',
-                'KeyO': 'C#',
-                'KeyL': 'D',
-                'KeyP': 'D#',
-                'Semicolon': 'E'
-            };
-
-            // Which computer keyboard notes display on which piano key, for overlay
-            this.overlayMap = {
-                'C4': 'A',  'C#4': 'W',  'D4': 'S',  'D#4': 'E',  'E4': 'D',
-                'F4': 'F',  'F#4': 'T',  'G4': 'G',  'G#4': 'Y',  'A4': 'H',  'A#4': 'U', 'B4': 'J',
-                // Also label next octave if visible
-                'C5': 'K',  'C#5': 'O',  'D5': 'L',  'D#5': 'P',  'E5': ';'
-            };
+            // Use centralized keyboard mapping
+            this.keyMap = this.buildKeyboardMap();
+            this.overlayMap = PIANO_CONFIGURATION.KEYBOARD_VISUAL_MAP;
 
             this.pressedNotes = new Set();
 
@@ -306,6 +340,27 @@
             this.tunePlaybackIdx = 0; // For "play guide" progression
 
             this.init();
+        }
+
+        // Build the keyboard map with proper octave handling
+        buildKeyboardMap() {
+            const map = {};
+            for (const [key, config] of Object.entries(PIANO_CONFIGURATION.KEYBOARD_MAP)) {
+                map[key] = config;
+            }
+            return map;
+        }
+
+        // Resolve note from keyboard event
+        noteForKey(e) {
+            const code = e.code || e.key;
+            const keyConfig = this.keyMap[code];
+            if (!keyConfig) return null;
+            
+            const note = keyConfig.note;
+            const octave = this.currentOctave + keyConfig.octaveOffset;
+            
+            return note + octave;
         }
 
         async init() {
@@ -423,33 +478,23 @@
             return noteName + octave;
         }
 
-        noteForKey(e) {
-            const key = e.code || e.key;
-            let note = this.keyMap[key];
-            if (!note) return null;
-            // For this demo: KeyK/KeyO/etc. mean next octave
-            const nextOctaveKeys = ['KeyK','KeyO','KeyL','KeyP','Semicolon'];
-            if (nextOctaveKeys.includes(key)) {
-                return note + (this.currentOctave+1);
-            }
-            return note + this.currentOctave;
-        }
-
         createPiano() {
-            // Build 2 octaves C4-B5
-            const startOctave = 4;
-            const numOctaves = 2;
-            const whiteNotes = ['C','D','E','F','G','A','B'];
-            const blackNotes = ['C#','D#',null,'F#','G#','A#',null];
+            // Use centralized configuration
+            const startOctave = PIANO_CONFIGURATION.START_OCTAVE;
+            const numOctaves = PIANO_CONFIGURATION.NUM_OCTAVES;
+            const whiteNotes = PIANO_CONFIGURATION.WHITE_KEYS;
+            const blackKeysPositions = PIANO_CONFIGURATION.BLACK_KEYS_POSITIONS;
+            
             const keyboard = document.getElementById('piano-keyboard');
             keyboard.innerHTML = "";
 
             let keyElements = {}; // For fast lookup
 
             for (let o = startOctave; o < startOctave + numOctaves; o++) {
-                for (let i = 0; i < 7; i++) {
+                for (let i = 0; i < whiteNotes.length; i++) {
                     const note = whiteNotes[i] + o;
-                    // White key
+                    
+                    // Create white key
                     const white = document.createElement('div');
                     white.className = 'piano-key white-key relative';
                     white.style.width = '48px';
@@ -459,7 +504,7 @@
                     white.dataset.note = note;
                     keyElements[note] = white;
 
-                    // Overlay label
+                    // Add keyboard mapping label if exists
                     let guide = '';
                     if(this.overlayMap[note]) {
                         guide = `<div class="key-guide">${this.overlayMap[note]}</div>`;
@@ -468,25 +513,26 @@
                     white.innerHTML = guide + `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 font-mono">${note}</div>`;
                     keyboard.appendChild(white);
 
-                    // Black key, if any
-                    const blackName = blackNotes[i];
+                    // Create black key if needed at this position
+                    const blackName = blackKeysPositions[i];
                     if (blackName) {
                         const black = document.createElement('div');
                         black.className = 'piano-key black-key absolute';
                         black.style.width = '28px';
                         black.style.height = '100px';
-                        black.style.left = ((o-startOctave)*7*48 + i*48 + 36) + "px";
+                        // Position black key between white keys
+                        black.style.left = ((o - startOctave) * whiteNotes.length * 48 + i * 48 + 36) + "px";
                         black.style.top = '0px';
                         black.dataset.note = blackName + o;
                         black.style.zIndex = '2';
-                        keyElements[blackName+o] = black;
+                        keyElements[blackName + o] = black;
 
-                        // Overlay label
+                        // Add keyboard mapping label if exists
                         let bGuide = '';
-                        if(this.overlayMap[blackName+o]) {
-                            bGuide = `<div class="key-guide">${this.overlayMap[blackName+o]}</div>`;
+                        if(this.overlayMap[blackName + o]) {
+                            bGuide = `<div class="key-guide">${this.overlayMap[blackName + o]}</div>`;
                         }
-                        black.innerHTML = bGuide + `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-white font-mono">${blackName+o}</div>`;
+                        black.innerHTML = bGuide + `<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-white font-mono">${blackName + o}</div>`;
                         keyboard.appendChild(black);
                     }
                 }
