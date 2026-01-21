@@ -18,7 +18,7 @@ Welcome! This directory contains a fully documented Online Piano implementation 
 | [VISUAL_GUIDE.md](VISUAL_GUIDE.md) | Understanding system design | ~300 lines | ⏱️ 8 min |
 | [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | Common lookup tasks | ~200 lines | ⏱️ 3 min |
 | [CHEAT_SHEET.md](CHEAT_SHEET.md) | Code snippets & fixes | ~250 lines | ⏱️ 5 min |
-| [PIANO_IMPLEMENTATION.md](PIANO_IMPLEMENTATION.md) | **Complete reference** | ~400 lines | ⏱️ 20 min |
+| [PIANO_IMPLEMENTzATION.md](PIANO_IMPLEMENTATION.md) | **Complete reference** | ~400 lines | ⏱️ 20 min |
 
 ---
 
