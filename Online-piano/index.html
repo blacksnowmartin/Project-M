@@ -262,6 +262,9 @@
             this.sustainPedal = false;
             this.volume = 0.7; // Gain (0 to 1)
             this.keyDownMap = new Map();
+            this.currentInstrument = 'piano';
+            this.midiAccess = null;
+            this.activeMidiNotes = new Set();
 
             // Simple keyboard map for main white/black notes (for demo)
             this.keyMap = {
@@ -319,12 +322,105 @@
             // Force audio context to start so WebAudio works on some browsers
             await Tone.start();
 
-            // Main synth, Poly
-            this.synth = new Tone.PolySynth(Tone.Synth, {
-                oscillator: { type: "triangle" },
-                envelope: { attack: 0.02, decay: 0.1, sustain: 0.3, release: 0.5 },
-                volume: Tone.gainToDb(this.volume)
-            }).toDestination();
+            this.createSynth(this.currentInstrument);
+            this.initMIDI();
+        }
+
+        createSynth(instrument) {
+            // Dispose old synth if exists
+            if (this.synth) {
+                this.synth.dispose();
+            }
+
+            const synthConfigs = {
+                piano: {
+                    oscillator: { type: "triangle" },
+                    envelope: { attack: 0.02, decay: 0.1, sustain: 0.3, release: 0.5 },
+                    volume: Tone.gainToDb(this.volume)
+                },
+                organ: {
+                    oscillator: { type: "sine" },
+                    envelope: { attack: 0.03, decay: 0.05, sustain: 1, release: 0.2 },
+                    volume: Tone.gainToDb(this.volume * 0.8)
+                },
+                synth: {
+                    oscillator: { type: "square" },
+                    envelope: { attack: 0.1, decay: 0.15, sustain: 0.6, release: 0.3 },
+                    volume: Tone.gainToDb(this.volume * 0.9)
+                },
+                strings: {
+                    oscillator: { type: "sawtooth" },
+                    envelope: { attack: 0.3, decay: 0.2, sustain: 0.7, release: 0.8 },
+                    volume: Tone.gainToDb(this.volume * 0.85)
+                }
+            };
+
+            const config = synthConfigs[instrument] || synthConfigs.piano;
+            this.synth = new Tone.PolySynth(Tone.Synth, config).toDestination();
+            this.currentInstrument = instrument;
+        }
+
+        async initMIDI() {
+            try {
+                if (navigator.requestMIDIAccess) {
+                    this.midiAccess = await navigator.requestMIDIAccess();
+                    this.connectMIDIInputs();
+                    this.midiAccess.onstatechange = () => this.connectMIDIInputs();
+                    console.log('MIDI Access granted');
+                    this.showStatus("MIDI keyboard connected!", false);
+                } else {
+                    console.log('Web MIDI API not supported');
+                }
+            } catch (err) {
+                console.error('MIDI not available:', err);
+            }
+        }
+
+        connectMIDIInputs() {
+            if (!this.midiAccess) return;
+            const inputs = this.midiAccess.inputs.values();
+            for (let input of inputs) {
+                input.onmidimessage = (event) => this.handleMIDIMessage(event);
+            }
+        }
+
+        handleMIDIMessage(event) {
+            const [command, note, velocity] = event.data;
+            // Note on: command 0x90, Note off: command 0x80
+            // Also handle 0x91-0x9F for different channels
+            const isNoteOn = (command & 0xF0) === 0x90 && velocity > 0;
+            const isNoteOff = (command & 0xF0) === 0x80 || ((command & 0xF0) === 0x90 && velocity === 0);
+
+            if (isNoteOn) {
+                // Convert MIDI note number (0-127) to note name
+                // MIDI 60 = C4
+                const midiNote = this.midiNoteToNoteName(note);
+                if (!this.activeMidiNotes.has(note)) {
+                    this.activeMidiNotes.add(note);
+                    this.synth.triggerAttack(midiNote);
+                    const keyEl = this.keyElements[midiNote];
+                    if (keyEl) keyEl.classList.add('pressed');
+                    this.showNotePlayed(midiNote);
+                    this.checkGuideAndAdvance(midiNote);
+                    this.savePlayedNote(midiNote);
+                }
+            } else if (isNoteOff) {
+                this.activeMidiNotes.delete(note);
+                const midiNote = this.midiNoteToNoteName(note);
+                if (!this.sustainPedal) {
+                    this.synth.triggerRelease(midiNote);
+                    const keyEl = this.keyElements[midiNote];
+                    if (keyEl) keyEl.classList.remove('pressed');
+                }
+            }
+        }
+
+        midiNoteToNoteName(midiNote) {
+            // MIDI note 0 = C-1, MIDI note 60 = C4, etc.
+            const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+            const noteName = notes[midiNote % 12];
+            const octave = Math.floor(midiNote / 12) - 1;
+            return noteName + octave;
         }
 
         noteForKey(e) {
@@ -453,6 +549,12 @@
                 document.getElementById('octave-display').textContent = this.currentOctave;
             });
             document.getElementById('octave-display').textContent = this.currentOctave;
+
+            // Instrument selection
+            document.getElementById('instrument-select').addEventListener('change', (e) => {
+                this.createSynth(e.target.value);
+                this.showStatus(`Switched to ${e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)}!`, false);
+            });
 
             // Sustain
             document.getElementById('sustain-pedal').addEventListener('click', () => {
