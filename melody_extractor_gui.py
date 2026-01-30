@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinterdnd2 import TkinterDnD, DND_FILES
 import librosa
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,8 +11,11 @@ class MelodyExtractorApp:
         self.root = root
         self.root.title("Melody Extractor")
         
-        self.load_button = tk.Button(root, text="Load Audio File", command=self.load_file)
-        self.load_button.pack(pady=10)
+        self.load_label = tk.Label(root, text="Drop audio file here or click to browse", bg="lightgray", relief="ridge", padx=10, pady=10)
+        self.load_label.pack(pady=10)
+        self.load_label.bind("<Button-1>", lambda e: self.load_file())
+        self.load_label.drop_target_register(DND_FILES)
+        self.load_label.dnd_bind('<<Drop>>', self.on_drop)
         
         self.save_pitch_button = tk.Button(root, text="Save Pitch Values", command=self.save_pitch, state=tk.DISABLED)
         self.save_pitch_button.pack(pady=10)
@@ -28,6 +32,10 @@ class MelodyExtractorApp:
         file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.wav *.mp3")])
         if file_path:
             self.extract_melody(file_path)
+
+    def on_drop(self, event):
+        file_path = event.data.strip('{}')
+        self.extract_melody(file_path)
 
     def extract_melody(self, audio_path):
         y, sr = librosa.load(audio_path)
@@ -63,6 +71,6 @@ class MelodyExtractorApp:
             np.savetxt(file_path, self.midi_notes, delimiter=',')
 
 if __name__ == "__main__":
-    root = tk.Tk()
+    root = TkinterDnD.Tk()
     app = MelodyExtractorApp(root)
     root.mainloop()
