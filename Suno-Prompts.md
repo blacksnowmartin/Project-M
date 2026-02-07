@@ -39,7 +39,7 @@ Kindly check the full remix Youtube Blacksnow Martin and don't forget to subcrib
 soothing afro beat made into a calming electro-house with a taste of upbeat dancehall and reggaeton
 ```
 ```bash
-UK Drill, aggressive sliding 808 bass, dark haunting piano, sharp 142 BPM, 3+3+2 hi-hat pattern, heavy drums, London street atmosphere, male vocals, gritty storytelling.
+UK Drill, sharp sliding 808 bass, melody piano, sharp 142 BPM, 3+3+2 hi-hat pattern, heavy drums, London street atmosphere, male vocals, gritty storytelling.
 ```
 
 ```bash
