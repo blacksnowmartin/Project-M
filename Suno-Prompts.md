@@ -46,6 +46,13 @@ UK Drill, sharp sliding 808 bass, melody piano, sharp 142 BPM, 3+3+2 hi-hat patt
 ```
 
 ```bash
+edm, euphoric drops, minimal house
+```
+```bash
+edm, powerful bass,iconic synth
+```
+
+```bash
 Instrumental Cover
 ```
 # Prepared by
