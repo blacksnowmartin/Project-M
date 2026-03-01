@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChromaBeat - A Gift for You</title>
+    <style>
+        body { background: #0f0f1a; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
+        h1 { letter-spacing: 5px; color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
+        .grid { display: grid; grid-template-columns: repeat(8, 50px); gap: 10px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        .step { width: 50px; height: 50px; border-radius: 8px; background: #2a2a40; cursor: pointer; transition: 0.2s; border: 1px solid #3d3d5c; }
+        .step.active { background: #00f2ff; box-shadow: 0 0 15px #00f2ff; border-color: #fff; }
+        .step.playing { transform: scale(1.1); filter: brightness(1.5); }
+        .controls { margin-top: 30px; display: flex; gap: 20px; }
+        button { background: #6200ea; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #7c4dff; transform: translateY(-2px); }
+        .hint { margin-top: 20px; font-size: 0.8rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <h1>CHROMABEAT</h1>
+    <div class="grid" id="grid"></div>
+
+    <div class="controls">
+        <button id="playBtn">START BEAT</button>
+        <button id="clearBtn">CLEAR ALL</button>
+    </div>
+
+    <p class="hint">Click the squares to create a rhythm. Balika and Sinawa would love this beat!</p>
+
+    <script>
+        const gridContainer = document.getElementById('grid');
+        const playBtn = document.getElementById('playBtn');
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        let isPlaying = false;
+        let currentStep = 0;
+        const totalSteps = 8;
+        const rows = 4; // Kick, Snare, Hi-Hat, Synth
+        let gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
+
+        // Create Grid UI
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < totalSteps; c++) {
+                const div = document.createElement('div');
+                div.className = 'step';
+                div.dataset.row = r;
+                div.dataset.col = c;
+                div.onclick = () => {
+                    gridState[r][c] = !gridState[r][c];
+                    div.classList.toggle('active');
+                };
+                gridContainer.appendChild(div);
+            }
+        }
+
+        // Sound Synthesis Logic
+        function playSound(type) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            const now = audioCtx.currentTime;
+
+            if (type == 0) { // Kick
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(0.01, now + 0.5);
+                gain.gain.setValueAtTime(1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                osc.type = 'sine';
+                osc.start(); osc.stop(now + 0.5);
+            } else if (type == 1) { // Snare
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(250, now);
+                gain.gain.setValueAtTime(0.8, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(); osc.stop(now + 0.2);
+            } else if (type == 2) { // Hi-Hat
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(10000, now);
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(); osc.stop(now + 0.05);
+            } else { // "Sweet" Acoustic-style Synth
+                osc.type = 'sine';
+                const notes = [440, 523.25, 659.25, 783.99]; // A, C, E, G
+                osc.frequency.setValueAtTime(notes[Math.floor(Math.random()*notes.length)], now);
+                gain.gain.setValueAtTime(0.4, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.8);
+                osc.start(); osc.stop(now + 0.8);
+            }
+        }
+
+        // Sequencer Loop
+        function runSequencer() {
+            if (!isPlaying) return;
+
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(s => s.classList.remove('playing'));
+
+            for (let r = 0; r < rows; r++) {
+                if (gridState[r][currentStep]) playSound(r);
+                const activeEl = document.querySelector(`[data-row="${r}"][data-col="${currentStep}"]`);
+                activeEl.classList.add('playing');
+            }
+
+            currentStep = (currentStep + 1) % totalSteps;
+            setTimeout(runSequencer, 200); // 150 BPM approx
+        }
+
+        playBtn.onclick = () => {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            isPlaying = !isPlaying;
+            playBtn.innerText = isPlaying ? "STOP" : "START BEAT";
+            if (isPlaying) runSequencer();
+        };
+
+        document.getElementById('clearBtn').onclick = () => {
+            gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        };
+    </script>
+</body>
+</html>
