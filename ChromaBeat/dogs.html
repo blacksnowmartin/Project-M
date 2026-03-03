@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChromaBeat: Balika & Sinawa</title>
+    <style>
+        body { background: #121212; color: #eee; font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        
+        /* The Header with the dog themes */
+        .title { font-size: 2.5rem; font-weight: bold; margin-bottom: 5px; }
+        .balika { color: #555; } /* Dark Grey/Black */
+        .sinawa { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); } /* White */
+
+        .grid { display: grid; grid-template-columns: repeat(8, 60px); gap: 8px; background: #1e1e1e; padding: 25px; border-radius: 20px; border: 2px solid #333; }
+        
+        .step { width: 60px; height: 60px; border-radius: 4px; background: #222; cursor: pointer; transition: 0.1s; border: 1px solid #333; }
+        
+        /* Row-Specific Active Colors */
+        .step[data-row="0"].active { background: #000; border: 2px solid #fff; box-shadow: 0 0 15px #000; } /* Balika Row */
+        .step[data-row="1"].active { background: #fff; border: 2px solid #000; box-shadow: 0 0 15px #fff; } /* Sinawa Row */
+        .step[data-row="2"].active { background: #444; } 
+        .step[data-row="3"].active { background: #888; }
+
+        .step.playing { transform: scale(1.15); filter: brightness(2); z-index: 10; }
+
+        .controls { margin-top: 40px; }
+        button { background: transparent; color: white; border: 2px solid #fff; padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; letter-spacing: 2px; }
+        button:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="title"><span class="balika">BALIKA</span> & <span class="sinawa">SINAWA</span></div>
+    <p style="color: #666; margin-bottom: 30px;">Top Row: Balika (Bass) | 2nd Row: Sinawa (Synth)</p>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="controls">
+        <button id="playBtn">RUN THE PACK</button>
+    </div>
+
+    <script>
+        const gridContainer = document.getElementById('grid');
+        const playBtn = document.getElementById('playBtn');
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        let isPlaying = false;
+        let currentStep = 0;
+        const totalSteps = 8;
+        const rows = 4;
+        let gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
+
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < totalSteps; c++) {
+                const div = document.createElement('div');
+                div.className = 'step';
+                div.dataset.row = r;
+                div.dataset.col = c;
+                div.onclick = () => {
+                    gridState[r][c] = !gridState[r][c];
+                    div.classList.toggle('active');
+                };
+                gridContainer.appendChild(div);
+            }
+        }
+
+        function playSound(type) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+
+            if (type == 0) { // BALIKA: Deep Heavy Kick
+                osc.frequency.setValueAtTime(100, now);
+                osc.frequency.exponentialRampToValueAtTime(0.01, now + 0.4);
+                gain.gain.setValueAtTime(1, now);
+                osc.start(); osc.stop(now + 0.4);
+            } else if (type == 1) { // SINAWA: Bright White Synth
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(880, now); // High A
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.6);
+                osc.start(); osc.stop(now + 0.6);
+            } else if (type == 2) { // Playful Snare
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(200, now);
+                gain.gain.setValueAtTime(0.5, now);
+                osc.start(); osc.stop(now + 0.1);
+            } else { // Rapid Taps
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(5000, now);
+                gain.gain.setValueAtTime(0.1, now);
+                osc.start(); osc.stop(now + 0.05);
+            }
+        }
+
+        function runSequencer() {
+            if (!isPlaying) return;
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(s => s.classList.remove('playing'));
+
+            for (let r = 0; r < rows; r++) {
+                if (gridState[r][currentStep]) playSound(r);
+                const activeEl = document.querySelector(`[data-row="${r}"][data-col="${currentStep}"]`);
+                activeEl.classList.add('playing');
+            }
+
+            currentStep = (currentStep + 1) % totalSteps;
+            setTimeout(runSequencer, 180); // Fast tempo for the dogs!
+        }
+
+        playBtn.onclick = () => {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            isPlaying = !isPlaying;
+            playBtn.innerText = isPlaying ? "PAUSE" : "RUN THE PACK";
+            if (isPlaying) runSequencer();
+        };
+    </script>
+</body>
+</html>
