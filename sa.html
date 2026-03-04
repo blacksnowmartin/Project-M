@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChromaBeat: Balika & Sinawa (Save Feature)</title>
+    <style>
+        body { background: #121212; color: #eee; font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .title { font-size: 2.5rem; font-weight: bold; margin-bottom: 5px; }
+        .balika { color: #555; }
+        .sinawa { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+        .grid { display: grid; grid-template-columns: repeat(8, 60px); gap: 8px; background: #1e1e1e; padding: 25px; border-radius: 20px; border: 2px solid #333; }
+        .step { width: 60px; height: 60px; border-radius: 4px; background: #222; cursor: pointer; transition: 0.1s; border: 1px solid #333; }
+        
+        /* Balika & Sinawa Colors */
+        .step[data-row="0"].active { background: #000; border: 2px solid #fff; box-shadow: 0 0 15px #000; } 
+        .step[data-row="1"].active { background: #fff; border: 2px solid #000; box-shadow: 0 0 15px #fff; } 
+        .step[data-row="2"].active { background: #444; } 
+        .step[data-row="3"].active { background: #888; }
+        .step.playing { transform: scale(1.15); filter: brightness(2); z-index: 10; }
+
+        .controls { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        button { background: transparent; color: white; border: 2px solid #fff; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 0.8rem; }
+        button:hover { background: #fff; color: #000; }
+        .save-btn { border-color: #4CAF50; color: #4CAF50; }
+        .save-btn:hover { background: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="title"><span class="balika">BALIKA</span> & <span class="sinawa">SINAWA</span></div>
+    <p style="color: #666; margin-bottom: 20px;">The beat that never forgets.</p>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="controls">
+        <button id="playBtn">START</button>
+        <button id="saveBtn" class="save-btn">SAVE BEAT</button>
+        <button id="loadBtn">LOAD BEAT</button>
+        <button id="clearBtn" style="border-color: #ff4444; color: #ff4444;">CLEAR</button>
+    </div>
+
+    <script>
+        const gridContainer = document.getElementById('grid');
+        const playBtn = document.getElementById('playBtn');
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        let isPlaying = false;
+        let currentStep = 0;
+        const totalSteps = 8;
+        const rows = 4;
+        let gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
+
+        // Build Grid
+        function createGrid() {
+            gridContainer.innerHTML = '';
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < totalSteps; c++) {
+                    const div = document.createElement('div');
+                    div.className = 'step' + (gridState[r][c] ? ' active' : '');
+                    div.dataset.row = r;
+                    div.dataset.col = c;
+                    div.onclick = () => {
+                        gridState[r][c] = !gridState[r][c];
+                        div.classList.toggle('active');
+                    };
+                    gridContainer.appendChild(div);
+                }
+            }
+        }
+        createGrid();
+
+        // Audio Logic (Same as before)
+        function playSound(type) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            if (type == 0) { // Balika Kick
+                osc.frequency.setValueAtTime(120, now);
+                osc.frequency.exponentialRampToValueAtTime(0.01, now + 0.3);
+                gain.gain.setValueAtTime(1, now);
+                osc.start(); osc.stop(now + 0.3);
+            } else if (type == 1) { // Sinawa Synth
+                osc.type = 'sine'; osc.frequency.setValueAtTime(900, now);
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                osc.start(); osc.stop(now + 0.5);
+            } else { // Shimmer
+                osc.type = 'square'; osc.frequency.setValueAtTime(type == 2 ? 200 : 6000, now);
+                gain.gain.setValueAtTime(0.1, now);
+                osc.start(); osc.stop(now + 0.05);
+            }
+        }
+
+        function runSequencer() {
+            if (!isPlaying) return;
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('playing'));
+            for (let r = 0; r < rows; r++) {
+                if (gridState[r][currentStep]) playSound(r);
+                document.querySelector(`[data-row="${r}"][data-col="${currentStep}"]`).classList.add('playing');
+            }
+            currentStep = (currentStep + 1) % totalSteps;
+            setTimeout(runSequencer, 180);
+        }
+
+        // --- NEW FEATURES ---
+        
+        // Save to LocalStorage
+        document.getElementById('saveBtn').onclick = () => {
+            localStorage.setItem('dogBeatPattern', JSON.stringify(gridState));
+            alert("Beat saved to memory!");
+        };
+
+        // Load from LocalStorage
+        document.getElementById('loadBtn').onclick = () => {
+            const saved = localStorage.getItem('dogBeatPattern');
+            if (saved) {
+                gridState = JSON.parse(saved);
+                createGrid();
+            } else {
+                alert("No saved beat found.");
+            }
+        };
+
+        document.getElementById('clearBtn').onclick = () => {
+            gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
+            createGrid();
+        };
+
+        playBtn.onclick = () => {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            isPlaying = !isPlaying;
+            playBtn.innerText = isPlaying ? "PAUSE" : "START";
+            if (isPlaying) runSequencer();
+        };
+    </script>
+</body>
+</html>
