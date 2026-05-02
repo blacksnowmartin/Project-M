@@ -9,7 +9,7 @@ acoustics with super deejaying with super drums and have a blend of future bass,
 Future Bass, Trap, Pop EDM, Electro House Style: DJ Remix, Super Bass Boost, Heavy Drums, Bass Drum Mixing, High Tension, Explosive Drop Description: An amazing remix featuring pristine acoustics and heavy bass drum mixing. Blends Future Bass and Trap melodies with Electro-House structural builds. Features long tension build-ups leading into heavy, bass-boosted climax drops.
 ```
 ```bash
-create a music album cover of the artist with a beautiful professional ebony doctor titled "Dr Mueni"   with artist name "Ken Wa Maria" add the short detail that it is an instrumental cover ..... "Blacksnow Martin" .... smooth and sensual sleek design
+create a youtube thumbnail for a music video title " " artist name " "   Indicate it is an instrumental cover include the logo. (the background should be the artist ....) 
 ```
 
 ```bash
