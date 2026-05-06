@@ -127,3 +127,5 @@ loop = new Tone.Loop((time) => {
 - Complex implementations get a detailed `.md` file (see PIANO_SOLUTION.md as template)
 - Include "What You Got" summary, implementation code, and technical reference
 - Provide copy-paste code examples and ASCII diagrams for clarity
+
+  👋Blacksnow Martin 2023 ™️ 
