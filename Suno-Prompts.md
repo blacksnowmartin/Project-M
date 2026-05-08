@@ -36,7 +36,7 @@ Instrumental remix
 ```
 
 ```bash
-Kindly check the full remix Youtube Blacksnow Martin and don't forget to subcribe and like.
+More like this on Youtbe
 ```
 ```bash
 soothing afro beat made into a calming electro-house with a taste of upbeat dancehall and reggaeton
