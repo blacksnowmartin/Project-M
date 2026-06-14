@@ -58,6 +58,9 @@ edm, powerful bass,iconic synth
 ```bash
 Instrumental Cover
 ```
+```bash
+bass acoustics, edm, electrohose
+```
 # Prepared by
 ## Blacksnow Martin 2023 ©
 
