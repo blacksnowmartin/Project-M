@@ -1,8 +1,17 @@
 
 Following are prompts
+```bash
+bass acoustics, edm, electrohose
+```
+```bash
+Mid-tempo rap hip-hop beat with EDM energy, punchy 808 kick, crisp clap, rolling trap hi-hats, and sidechained synth chords, Thick sub-bass, bright saw-lead hooks, riser FX, filtered builds, and punchy drop sections, Tight verse pocket with space for vocals, glossy club-ready mix, wide stereo hats, and compressed drums
+```
 
 ```bash
 acoustics with super deejaying with super drums and have a blend of future bass, trap, and pop-influenced EDM with super bass boosts and build up tension sessions
+```
+```bash
+UK Drill, sharp sliding 808 bass, melody piano, sharp 142 BPM, 3+3+2 hi-hat pattern, heavy drums, London street atmosphere, male vocals, gritty storytelling.
 ```
 
 ```bash
@@ -41,12 +50,8 @@ More like this on Youtbe
 ```bash
 soothing afro beat made into a calming electro-house with a taste of upbeat dancehall and reggaeton
 ```
-```bash
-UK Drill, sharp sliding 808 bass, melody piano, sharp 142 BPM, 3+3+2 hi-hat pattern, heavy drums, London street atmosphere, male vocals, gritty storytelling.
-```
-```bash
-Mid-tempo rap hip-hop beat with EDM energy, punchy 808 kick, crisp clap, rolling trap hi-hats, and sidechained synth chords, Thick sub-bass, bright saw-lead hooks, riser FX, filtered builds, and punchy drop sections, Tight verse pocket with space for vocals, glossy club-ready mix, wide stereo hats, and compressed drums
-```
+
+
 
 ```bash
 edm, euphoric drops, minimal house
@@ -58,9 +63,7 @@ edm, powerful bass,iconic synth
 ```bash
 Instrumental Cover
 ```
-```bash
-bass acoustics, edm, electrohose
-```
+
 # Prepared by
 ## Blacksnow Martin 2023 ©
 
