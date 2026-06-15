@@ -1,7 +1,7 @@
 
 Following are prompts
 ```bash
-bass acoustics, edm, electrohose
+bass acoustics, edm, electrohouse
 ```
 ```bash
 Mid-tempo rap hip-hop beat with EDM energy, punchy 808 kick, crisp clap, rolling trap hi-hats, and sidechained synth chords, Thick sub-bass, bright saw-lead hooks, riser FX, filtered builds, and punchy drop sections, Tight verse pocket with space for vocals, glossy club-ready mix, wide stereo hats, and compressed drums
