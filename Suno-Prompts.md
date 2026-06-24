@@ -17,9 +17,7 @@ UK Drill, sharp sliding 808 bass, melody piano, sharp 142 BPM, 3+3+2 hi-hat patt
 ```bash
 Future Bass, Trap, Pop EDM, Electro House Style: DJ Remix, Super Bass Boost, Heavy Drums, Bass Drum Mixing, High Tension, Explosive Drop Description: An amazing remix featuring pristine acoustics and heavy bass drum mixing. Blends Future Bass and Trap melodies with Electro-House structural builds. Features long tension build-ups leading into heavy, bass-boosted climax drops.
 ```
-```bash
-create a youtube thumbnail for a music video title " " artist name " "   Indicate it is an instrumental cover include the logo. (the background should be the artist ....) 
-```
+
 
 ```bash
 amazing remix bass acoustics with bass drum mixing with electrohouse builds for climax sessions for the beat
@@ -59,7 +57,9 @@ edm, euphoric drops, minimal house
 ```bash
 edm, powerful bass,iconic synth
 ```
-
+```bash
+create a youtube thumbnail for a music video title " " artist name " "   Indicate it is an instrumental cover include the logo. (the background should be the artist ....) 
+```
 ```bash
 Instrumental Cover
 ```
