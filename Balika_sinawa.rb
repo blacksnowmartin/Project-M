@@ -65,3 +65,5 @@ class DogGame < Gosu::Window
 end
 
 DogGame.new.show
+
+ 
