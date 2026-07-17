@@ -4,122 +4,252 @@
     <meta charset="UTF-8">
     <title>ChromaBeat - A Gift for You</title>
     <style>
-        body { background: #0f0f1a; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
-        h1 { letter-spacing: 5px; color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
-        .grid { display: grid; grid-template-columns: repeat(8, 50px); gap: 10px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
-        .step { width: 50px; height: 50px; border-radius: 8px; background: #2a2a40; cursor: pointer; transition: 0.2s; border: 1px solid #3d3d5c; }
-        .step.active { background: #00f2ff; box-shadow: 0 0 15px #00f2ff; border-color: #fff; }
-        .step.playing { transform: scale(1.1); filter: brightness(1.5); }
-        .controls { margin-top: 30px; display: flex; gap: 20px; }
-        button { background: #6200ea; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        body { background: #0f0f1a; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+        h1 { letter-spacing: 5px; color: #00f2ff; text-shadow: 0 0 10px #00f2ff; margin-bottom: 10px; }
+        .layout { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 760px; }
+        .grid { display: grid; gap: 12px; background: rgba(255,255,255,0.05); padding: 24px; border-radius: 18px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+        .row { display: grid; grid-template-columns: 90px repeat(8, 50px); gap: 10px; align-items: center; }
+        .label { font-size: 0.9rem; color: #9ad1ff; text-transform: uppercase; letter-spacing: 1px; }
+        .step { width: 50px; height: 50px; border-radius: 10px; background: #24243d; cursor: pointer; transition: 0.2s ease; border: 1px solid #3b3b5c; display: flex; align-items: center; justify-content: center; }
+        .step.active { background: #00f2ff; box-shadow: 0 0 14px #00f2ff; border-color: #fff; }
+        .step.playing { transform: scale(1.05); filter: brightness(1.25); }
+        .controls { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+        .control-group { display: flex; flex-direction: column; gap: 8px; }
+        label { font-size: 0.85rem; color: #c7d7ff; }
+        input[type=range], select { width: 180px; }
+        button { background: #6200ea; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
         button:hover { background: #7c4dff; transform: translateY(-2px); }
-        .hint { margin-top: 20px; font-size: 0.8rem; color: #666; }
+        .hint { font-size: 0.85rem; color: #9aa7c3; text-align: center; }
+        .status { text-align: center; color: #8ae5ff; }
+        @media (max-width: 660px) {
+            .row { grid-template-columns: 70px repeat(8, 40px); }
+            .step { width: 40px; height: 40px; }
+            .controls { flex-direction: column; align-items: stretch; }
+            input[type=range], select { width: 100%; }
+        }
     </style>
 </head>
 <body>
+    <div class="layout">
+        <h1>CHROMABEAT</h1>
 
-    <h1>CHROMABEAT</h1>
-    <div class="grid" id="grid"></div>
+        <div class="grid" id="grid"></div>
 
-    <div class="controls">
-        <button id="playBtn">START BEAT</button>
-        <button id="clearBtn">CLEAR ALL</button>
+        <div class="controls">
+            <button id="playBtn">START BEAT</button>
+            <button id="clearBtn">CLEAR ALL</button>
+            <button id="randomBtn">RANDOMIZE</button>
+            <div class="control-group">
+                <label for="presetSelect">Pattern Preset</label>
+                <select id="presetSelect">
+                    <option value="basic">Basic Groove</option>
+                    <option value="house">House Pulse</option>
+                    <option value="funk">Funky Slice</option>
+                    <option value="ambient">Ambient Pad</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="tempoRange">Tempo: <span id="tempoValue">120</span> BPM</label>
+                <input id="tempoRange" type="range" min="60" max="180" value="120">
+            </div>
+            <div class="control-group">
+                <label for="volumeRange">Master Volume</label>
+                <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="0.75">
+            </div>
+        </div>
+
+        <p class="status" id="statusText">Ready to build a beat for Balika and Sinawa.</p>
+        <p class="hint">Click the squares to create a rhythm. Use tempo and volume to shape the groove.</p>
     </div>
 
-    <p class="hint">Click the squares to create a rhythm. Balika and Sinawa would love this beat!</p>
-
     <script>
+        const instruments = ['Kick', 'Snare', 'Hi-Hat', 'Synth'];
         const gridContainer = document.getElementById('grid');
         const playBtn = document.getElementById('playBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const randomBtn = document.getElementById('randomBtn');
+        const presetSelect = document.getElementById('presetSelect');
+        const tempoRange = document.getElementById('tempoRange');
+        const tempoValue = document.getElementById('tempoValue');
+        const volumeRange = document.getElementById('volumeRange');
+        const statusText = document.getElementById('statusText');
+
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
+        const masterGain = audioCtx.createGain();
+        masterGain.gain.value = 0.75;
+        masterGain.connect(audioCtx.destination);
+
         let isPlaying = false;
         let currentStep = 0;
         const totalSteps = 8;
-        const rows = 4; // Kick, Snare, Hi-Hat, Synth
+        const rows = instruments.length;
+        let tempo = 120;
         let gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
 
-        // Create Grid UI
-        for (let r = 0; r < rows; r++) {
-            for (let c = 0; c < totalSteps; c++) {
-                const div = document.createElement('div');
-                div.className = 'step';
-                div.dataset.row = r;
-                div.dataset.col = c;
-                div.onclick = () => {
-                    gridState[r][c] = !gridState[r][c];
-                    div.classList.toggle('active');
-                };
-                gridContainer.appendChild(div);
+        const presets = {
+            basic: [
+                [1,0,0,0,1,0,0,0],
+                [0,0,1,0,0,1,0,0],
+                [1,1,1,1,1,1,1,1],
+                [1,0,0,1,0,0,0,1]
+            ],
+            house: [
+                [1,0,1,0,1,0,1,0],
+                [0,0,1,0,0,0,1,0],
+                [1,1,1,1,1,1,1,1],
+                [0,0,0,1,0,0,0,1]
+            ],
+            funk: [
+                [1,0,0,1,0,0,1,0],
+                [0,1,0,0,1,0,0,1],
+                [1,0,1,0,1,0,1,0],
+                [1,0,0,0,1,0,0,0]
+            ],
+            ambient: [
+                [1,0,0,0,1,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,1,0,1,0,1,0,1],
+                [1,0,1,0,1,0,1,0]
+            ]
+        };
+
+        function buildGrid() {
+            gridContainer.innerHTML = '';
+            for (let r = 0; r < rows; r++) {
+                const row = document.createElement('div');
+                row.className = 'row';
+                const label = document.createElement('div');
+                label.className = 'label';
+                label.textContent = instruments[r];
+                row.appendChild(label);
+
+                for (let c = 0; c < totalSteps; c++) {
+                    const step = document.createElement('div');
+                    step.className = 'step';
+                    step.dataset.row = r;
+                    step.dataset.col = c;
+                    step.onclick = () => {
+                        gridState[r][c] = !gridState[r][c];
+                        step.classList.toggle('active');
+                    };
+                    row.appendChild(step);
+                }
+                gridContainer.appendChild(row);
             }
         }
 
-        // Sound Synthesis Logic
+        function loadPreset(name) {
+            const pattern = presets[name];
+            gridState = pattern.map(row => row.map(value => !!value));
+            document.querySelectorAll('.step').forEach(step => {
+                const r = Number(step.dataset.row);
+                const c = Number(step.dataset.col);
+                step.classList.toggle('active', gridState[r][c]);
+            });
+            statusText.textContent = `Loaded preset: ${name.replace(/^(.)/, m => m.toUpperCase())}`;
+        }
+
+        function randomizePattern() {
+            gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < totalSteps; c++) {
+                    gridState[r][c] = Math.random() > 0.65;
+                }
+            }
+            document.querySelectorAll('.step').forEach(step => {
+                const r = Number(step.dataset.row);
+                const c = Number(step.dataset.col);
+                step.classList.toggle('active', gridState[r][c]);
+            });
+            statusText.textContent = 'Random pattern created.';
+        }
+
+        function updateTempoDisplay() {
+            tempoValue.textContent = tempo;
+        }
+
         function playSound(type) {
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.connect(gain);
-            gain.connect(audioCtx.destination);
-
+            gain.connect(masterGain);
             const now = audioCtx.currentTime;
 
-            if (type == 0) { // Kick
-                osc.frequency.setValueAtTime(150, now);
-                osc.frequency.exponentialRampToValueAtTime(0.01, now + 0.5);
-                gain.gain.setValueAtTime(1, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+            if (type === 0) {
                 osc.type = 'sine';
-                osc.start(); osc.stop(now + 0.5);
-            } else if (type == 1) { // Snare
+                osc.frequency.setValueAtTime(160, now);
+                osc.frequency.exponentialRampToValueAtTime(0.01, now + 0.4);
+                gain.gain.setValueAtTime(1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+                osc.start(now);
+                osc.stop(now + 0.4);
+            } else if (type === 1) {
                 osc.type = 'triangle';
-                osc.frequency.setValueAtTime(250, now);
-                gain.gain.setValueAtTime(0.8, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-                osc.start(); osc.stop(now + 0.2);
-            } else if (type == 2) { // Hi-Hat
+                osc.frequency.setValueAtTime(240, now);
+                gain.gain.setValueAtTime(0.7, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.18);
+                osc.start(now);
+                osc.stop(now + 0.18);
+            } else if (type === 2) {
                 osc.type = 'square';
                 osc.frequency.setValueAtTime(10000, now);
-                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.setValueAtTime(0.25, now);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
-                osc.start(); osc.stop(now + 0.05);
-            } else { // "Sweet" Acoustic-style Synth -check out why my laptop is slow
+                osc.start(now);
+                osc.stop(now + 0.05);
+            } else {
                 osc.type = 'sine';
-                const notes = [440, 523.25, 659.25, 783.99]; // A, C, E, G
-                osc.frequency.setValueAtTime(notes[Math.floor(Math.random()*notes.length)], now);
-                gain.gain.setValueAtTime(0.4, now);
+                const chords = [440, 523.25, 659.25, 783.99];
+                osc.frequency.setValueAtTime(chords[Math.floor(Math.random() * chords.length)], now);
+                gain.gain.setValueAtTime(0.35, now);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + 0.8);
-                osc.start(); osc.stop(now + 0.8);
+                osc.start(now);
+                osc.stop(now + 0.8);
             }
         }
 
-        // Sequencer Loop CLAUDE
         function runSequencer() {
             if (!isPlaying) return;
-
-            const steps = document.querySelectorAll('.step');
-            steps.forEach(s => s.classList.remove('playing'));
-
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('playing'));
             for (let r = 0; r < rows; r++) {
                 if (gridState[r][currentStep]) playSound(r);
                 const activeEl = document.querySelector(`[data-row="${r}"][data-col="${currentStep}"]`);
-                activeEl.classList.add('playing');
+                if (activeEl) activeEl.classList.add('playing');
             }
-
             currentStep = (currentStep + 1) % totalSteps;
-            setTimeout(runSequencer, 200); // 150 BPM approx
+            const interval = (60000 / tempo) / 2;
+            setTimeout(runSequencer, interval);
         }
 
         playBtn.onclick = () => {
             if (audioCtx.state === 'suspended') audioCtx.resume();
             isPlaying = !isPlaying;
-            playBtn.innerText = isPlaying ? "STOP" : "START BEAT";
+            playBtn.innerText = isPlaying ? 'STOP' : 'START BEAT';
+            statusText.textContent = isPlaying ? 'Groove is playing.' : 'Stopped. Ready for your next pattern.';
             if (isPlaying) runSequencer();
         };
 
-        document.getElementById('clearBtn').onclick = () => {
+        clearBtn.onclick = () => {
             gridState = Array(rows).fill().map(() => Array(totalSteps).fill(false));
-            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('active', 'playing'));
+            statusText.textContent = 'Pattern cleared.';
         };
+
+        randomBtn.onclick = () => randomizePattern();
+        presetSelect.onchange = () => loadPreset(presetSelect.value);
+        tempoRange.oninput = () => {
+            tempo = Number(tempoRange.value);
+            updateTempoDisplay();
+            statusText.textContent = `Tempo set to ${tempo} BPM.`;
+        };
+        volumeRange.oninput = () => {
+            masterGain.gain.value = Number(volumeRange.value);
+            statusText.textContent = `Volume set to ${Math.round(masterGain.gain.value * 100)}%.`;
+        };
+
+        buildGrid();
+        loadPreset('basic');
+        updateTempoDisplay();
     </script>
 </body>
 </html>
