@@ -63,6 +63,8 @@ create a youtube thumbnail for a music video title " " artist name " "   Indicat
 ```bash
 Instrumental Cover
 ```
+```bash
+...===///,,,!!!@@@###$$$%%%&&&((()))
 
 # Prepared by
 ## Blacksnow Martin 2023 ©
