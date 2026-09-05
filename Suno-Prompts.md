@@ -67,6 +67,10 @@ Instrumental Cover
 ...===///,,,!!!@@@###$$$%%%&&&((()))
 ```
 
+```bash
+Melodic UK Drill, emotional guitar loops, sharp sliding 808s, crisp rimshots, 140 BPM, melancholic storytelling vibe, gritty street ambience.
+```
+
 # Prepared by
 ## Blacksnow Martin 2023 ©
 
