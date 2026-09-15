@@ -71,7 +71,18 @@ Instrumental Cover
 Melodic UK Drill, emotional guitar loops, sharp sliding 808s, crisp rimshots, 140 BPM, melancholic storytelling vibe, gritty street ambience.
 ```
 ```text
-[Instrumental Intro][Acoustic Melodic Verse][Pre-Chorus][Build up][Riser FX][Tension high][Explosive Drop][Heavy Bass Boost Drop][Punchy Drums][Outro][Fade out]```For a Melodic Rap/Vocal track:```text[Intro][Clean acoustic guitar][Verse][Gritty male vocals][Tight verse pocket][Pre-Chorus][Filtered build][Sidechained chords][Chorus][Euphoric drop][Glossy clubmix][End]
+[Instrumental Intro]
+[Acoustic Melodic Verse]
+[Pre-Chorus]
+[Build up]
+[Riser FX]
+[Tension high]
+[Explosive Drop]
+[Heavy Bass Boost Drop]
+[Punchy Drums]
+[Outro][Fade out]```
+```bash
+[Intro][Clean acoustic guitar][Verse][Gritty male vocals][Tight verse pocket][Pre-Chorus][Filtered build][Sidechained chords][Chorus][Euphoric drop][Glossy clubmix][End]
 ```
 
 # Prepared by
